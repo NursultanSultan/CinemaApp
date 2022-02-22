@@ -1,0 +1,15 @@
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.DataAcces.deps.json
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.DataAcces.dll
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.DataAcces.pdb
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\obj\Debug\netcoreapp3.1\CinemaApp.DataAcces.csproj.AssemblyReference.cache
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\obj\Debug\netcoreapp3.1\CinemaApp.DataAcces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\obj\Debug\netcoreapp3.1\CinemaApp.DataAcces.AssemblyInfoInputs.cache
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\obj\Debug\netcoreapp3.1\CinemaApp.DataAcces.AssemblyInfo.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\obj\Debug\netcoreapp3.1\CinemaApp.DataAcces.csproj.CoreCompileInputs.cache
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\obj\Debug\netcoreapp3.1\CinemaApp.DataAcces.dll
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\obj\Debug\netcoreapp3.1\CinemaApp.DataAcces.pdb
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.Core.dll
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.Entity.dll
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.Entity.pdb
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.Core.pdb
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\obj\Debug\netcoreapp3.1\CinemaApp.DataAcces.csproj.CopyComplete

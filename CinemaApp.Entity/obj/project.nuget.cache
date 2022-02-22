@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "awQJwHN9MRQ1JGgNwNMyIsDTDG+TZ24K7EhKt8JJ9ARjwkC+WgfQqfvfAeTgUCpYxdo0A1zdLpqtXKCR+s603A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Home\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.22\\microsoft.aspnetcore.http.features.3.1.22.nupkg.sha512",
+    "C:\\Users\\Home\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.22\\microsoft.extensions.primitives.3.1.22.nupkg.sha512",
+    "C:\\Users\\Home\\.nuget\\packages\\system.io.pipelines\\4.7.4\\system.io.pipelines.4.7.4.nupkg.sha512"
+  ],
+  "logs": []
+}

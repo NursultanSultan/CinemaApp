@@ -1,0 +1,10 @@
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\bin\Debug\netcoreapp3.1\CinemaApp.Business.deps.json
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\bin\Debug\netcoreapp3.1\CinemaApp.Business.dll
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\bin\Debug\netcoreapp3.1\CinemaApp.Business.pdb
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\obj\Debug\netcoreapp3.1\CinemaApp.Business.csproj.AssemblyReference.cache
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\obj\Debug\netcoreapp3.1\CinemaApp.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\obj\Debug\netcoreapp3.1\CinemaApp.Business.AssemblyInfoInputs.cache
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\obj\Debug\netcoreapp3.1\CinemaApp.Business.AssemblyInfo.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\obj\Debug\netcoreapp3.1\CinemaApp.Business.csproj.CoreCompileInputs.cache
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\obj\Debug\netcoreapp3.1\CinemaApp.Business.dll
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\obj\Debug\netcoreapp3.1\CinemaApp.Business.pdb
