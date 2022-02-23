@@ -1,11 +1,141 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Microsoft.AspNetCore.Http.Features/3.1.22": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.1.22",
+          "System.IO.Pipelines": "4.7.4"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Http.Features.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Primitives/3.1.22": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
+        }
+      },
+      "System.IO.Pipelines/4.7.4": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/System.IO.Pipelines.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.IO.Pipelines.dll": {}
+        }
+      },
+      "CinemaApp.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/CinemaApp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CinemaApp.Core.dll": {}
+        }
+      },
+      "CinemaApp.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CinemaApp.Core": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "3.1.22"
+        },
+        "compile": {
+          "bin/placeholder/CinemaApp.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CinemaApp.Entity.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Microsoft.AspNetCore.Http.Features/3.1.22": {
+      "sha512": "3r4x0qzhw62a3ith73OmkdSfrff4NbGvpJCXjAz/ezTPtrF1pznY6y5nwxzlVX6Fu8OdAAn32gP1MXD2124IBw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/3.1.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.3.1.22.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
+      ]
+    },
+    "Microsoft.Extensions.Primitives/3.1.22": {
+      "sha512": "B5CNTMTdzVj/xMpazYcczFk3aUg/qduSfKAfUCH0gJ54NETETHaJBPy2GV6VlIeIw4UZqzXV3DroUkuHP561zg==",
+      "type": "package",
+      "path": "microsoft.extensions.primitives/3.1.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
+        "microsoft.extensions.primitives.3.1.22.nupkg.sha512",
+        "microsoft.extensions.primitives.nuspec"
+      ]
+    },
+    "System.IO.Pipelines/4.7.4": {
+      "sha512": "TQqNjDcTVu6eTDB2S0vjSUhn0udEugL93D9zgsOsSiJO1kv1UWDM2o0+79H95I5X+S0VPEzm4ihj6KPwhNEb7g==",
+      "type": "package",
+      "path": "system.io.pipelines/4.7.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.IO.Pipelines.dll",
+        "lib/net461/System.IO.Pipelines.xml",
+        "lib/netcoreapp3.0/System.IO.Pipelines.dll",
+        "lib/netcoreapp3.0/System.IO.Pipelines.xml",
+        "lib/netstandard1.3/System.IO.Pipelines.dll",
+        "lib/netstandard1.3/System.IO.Pipelines.xml",
+        "lib/netstandard2.0/System.IO.Pipelines.dll",
+        "lib/netstandard2.0/System.IO.Pipelines.xml",
+        "ref/net461/System.IO.Pipelines.dll",
+        "ref/net461/System.IO.Pipelines.xml",
+        "ref/netcoreapp2.0/System.IO.Pipelines.dll",
+        "ref/netcoreapp2.0/System.IO.Pipelines.xml",
+        "system.io.pipelines.4.7.4.nupkg.sha512",
+        "system.io.pipelines.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "CinemaApp.Core/1.0.0": {
+      "type": "project",
+      "path": "../CinemaApp.Core/CinemaApp.Core.csproj",
+      "msbuildProject": "../CinemaApp.Core/CinemaApp.Core.csproj"
+    },
+    "CinemaApp.Entity/1.0.0": {
+      "type": "project",
+      "path": "../CinemaApp.Entity/CinemaApp.Entity.csproj",
+      "msbuildProject": "../CinemaApp.Entity/CinemaApp.Entity.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "CinemaApp.Entity >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Home\\.nuget\\packages\\": {}
@@ -33,7 +163,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj": {
+              "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

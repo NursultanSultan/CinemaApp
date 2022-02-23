@@ -5,11 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTOs\" />
     <Folder Include="Implementations\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Profiles\" />
     <Folder Include="Validators\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CinemaApp.Entity\CinemaApp.Entity.csproj" />
   </ItemGroup>
 
 </Project>

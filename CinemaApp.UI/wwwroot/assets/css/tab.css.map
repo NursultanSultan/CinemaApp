@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/partials/pages/movie/tab.scss"
+    ],
+    "names": [],
+    "file": "tab.css"
+}

@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/BFj6f+4rzXLmx3UnJjw1X5Nd5OsPQ9VafNVbrC0aO7W7xC78l6vkY5AJq1TDUdqqqtUK01JqlfYEOBy+wob3w==",
+  "dgSpecHash": "yKrsdZt7lSFuJmV7o/OSmRlmOsZRXgk9xdjgaqVlfihLP3ZC8Wt20F7/ud7JSD0tyfFHNM0lpHmgeVv88uM1yw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Business\\CinemaApp.Business.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Home\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.22\\microsoft.aspnetcore.http.features.3.1.22.nupkg.sha512",
+    "C:\\Users\\Home\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.22\\microsoft.extensions.primitives.3.1.22.nupkg.sha512",
+    "C:\\Users\\Home\\.nuget\\packages\\system.io.pipelines\\4.7.4\\system.io.pipelines.4.7.4.nupkg.sha512"
+  ],
   "logs": []
 }

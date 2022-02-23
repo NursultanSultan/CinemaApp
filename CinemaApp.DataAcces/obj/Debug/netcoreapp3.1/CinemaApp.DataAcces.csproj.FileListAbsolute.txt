@@ -12,4 +12,6 @@ C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.Entity.dll
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.Entity.pdb
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.Core.pdb
-C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\obj\Debug\netcoreapp3.1\CinemaApp.DataAcces.csproj.CopyComplete
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.DataAcces.runtimeconfig.json
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\bin\Debug\netcoreapp3.1\CinemaApp.DataAcces.runtimeconfig.dev.json
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.DataAcces\obj\Debug\netcoreapp3.1\CinemaApp.DataAcces.genruntimeconfig.cache

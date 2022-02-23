@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/partials/pages/movie/trailer.scss"
+    ],
+    "names": [],
+    "file": "trailer.css"
+}

@@ -1,0 +1,41 @@
+.hero-image {
+  position: relative;
+}
+
+.cinema_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 20px 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.cinema_content h2 {
+  font-size: 50px !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.cinema_content p {
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+}
+/*# sourceMappingURL=cinema_hero.css.map */

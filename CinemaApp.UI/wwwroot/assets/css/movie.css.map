@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/partials/pages/movie/movie.scss",
+        "../scss/partials/pages/movie/tab.scss",
+        "../scss/partials/pages/movie/trailer.scss"
+    ],
+    "names": [],
+    "file": "movie.css"
+}
