@@ -55,3 +55,30 @@ for (let i = 0; i < tab_header.length; i++) {
     });
   }
 
+
+$(document).ready(function () {
+
+    $("#SelectCinemas").change(function () {
+        var CinemaId = $(this).val();
+        console.log(CinemaId);
+        var Movies = document.querySelector("#Movies")
+
+        $.ajax({
+            type: "GET",
+            url: "/Home/GetFilterMovie",
+            data: {
+                "CineId": CinemaId == 'all' ? null : CinemaId
+            },
+            success: function (response) {
+                Movies.innerHTML = "";
+                Movies.innerHTML = response;
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    });
+});

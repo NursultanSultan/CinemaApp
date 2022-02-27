@@ -18,6 +18,9 @@ namespace CinemaApp.DataAcces.Configurations
             builder.Property(m => m.PosterUrl).IsRequired();
             builder.Ignore(m => m.PosterFile);
 
+            builder.Property(m => m.BackgroundImgUrl).IsRequired();
+            builder.Ignore(m => m.BackgroundImgFile);
+
             builder.Property(m => m.TrailerUrl).IsRequired();
             
 

@@ -1,0 +1,166 @@
+﻿@model Cinema
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<main>
+
+    <!-- cinema hero start -->
+
+    <section id="cinema_hero">
+        <div class="hero-image">
+            <img style="width: 100%;height: 720px;" src="./assets/image/cinehero3.jpg" alt="photo">
+        </div>
+
+        <div class="container h-100">
+            <div class="cinema_content h-100">
+                <h2>@Model.CinemaName</h2>
+                <p>
+                    @Model.ShortContent
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- cinema hero end -->
+    <!-- tabs start  -->
+
+    <section id="tabs">
+        <div class="tab_header">
+            <a href="#schedule_list" class="active btn" id="schedule_list" rel="schedule">CƏDVƏL</a>
+            <a href="#contact" class="btn" id="contact" rel="contact">Elaqe</a>
+        </div>
+
+
+        <div class="tab_body">
+            <div class="schedule_list tab_list">
+
+                <div class="container">
+
+                    <div class="filter_blocks">
+
+
+                        <div class="filter_block">
+                            <div class="form-group">
+                                <select class="form-control selected" id="exampleFormControlSelect1">
+                                    <option>03.03.2022</option>
+                                    <option>04.03.2022</option>
+                                    <option>05.03.2022</option>
+                                    <option>06.03.2022</option>
+                                    <option>07.03.2022</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Film</th>
+                                    <th scope="col">Seans</th>
+                                    <th scope="col">Kinoteatr</th>
+                                    <th scope="col">Zal</th>
+                                    <th scope="col">Format</th>
+                                    <th scope="col">Qiymet</th>
+                                    <th scope="col">Almaq</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>SpiderMan</th>
+                                    <td>17 : 00</td>
+                                    <td>
+                                        <a class="table_link" href="./cinema.html">Ganjlik Mall</a>
+                                    </td>
+                                    <td>Zal1</td>
+                                    <td>
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_tur.png" alt="">
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_twod.png" alt="">
+                                    </td>
+                                    <td>8.00 AZN</td>
+                                    <td></td>
+
+                                </tr>
+                                <tr>
+                                    <th>SpiderMan</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="contact_us tab_list tab_display mt-5">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="contact-items">
+                                <div class="contact-item pt-4">
+                                    <h5>Bizim Unvan</h5>
+                                    <p>
+                                        @Model.OurAdress
+                                    </p>
+                                </div>
+
+                                <div class="contact-item pt-4">
+                                    <h5>Telefon</h5>
+                                    <p>
+                                        @Model.PhoneNumber
+                                    </p>
+                                </div>
+
+                                <div class="contact-item pt-4">
+                                    <h5>Elektron Unvan</h5>
+                                    <p>
+                                        @Model.EMail
+                                    </p>
+                                </div>
+
+                                <div class="contact-item pt-4">
+                                    <h5>Marketing Sobesi</h5>
+                                    <p>
+                                        media@cinemaplus.az
+                                    </p>
+                                </div>
+
+                                <div class="contact-item pt-4">
+                                    <h5>İş saatı</h5>
+                                    <p>
+                                        @Model.WorkingHour
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+
+                            @Model.MapLocation
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- tabs end -->
+
+</main>
+

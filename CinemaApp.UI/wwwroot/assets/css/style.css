@@ -744,7 +744,7 @@
   .card__list--subs {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center;
+            justify-content: center; 
   }
   .card__list--subs li {
     text-align: center;
@@ -882,6 +882,11 @@
 #movie_about .tab_header {
   margin-bottom: 30px;
   border-bottom: 5px solid #151f30;
+}
+
+#movie_about .trailer_player iframe{
+    width: 100%;
+    height: 400px;
 }
 
 .movie_about_content {

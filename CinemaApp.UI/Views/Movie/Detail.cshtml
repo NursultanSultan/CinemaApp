@@ -1,0 +1,254 @@
+﻿@model Movie
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Main start -->
+<main>
+
+    <section id="movie_hero">
+        <div class="movie_hero_image">
+            <img src="~/assets/image/@Model.BackgroundImgUrl" alt="">
+        </div>
+
+
+    </section>
+
+    <section id="movie_about">
+
+        <div class="tab_header">
+            <a href="#about" class="active btn" id="about" rel="schedule">About</a>
+
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="trailer_player">
+                        @Html.Raw(Model.TrailerUrl);
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+
+                    <div class="movie_about_content">
+                        <h3> @Model.MovieName </h3>
+
+
+
+                        <ul class="list">
+                            <li>
+                                <span>IMDB : </span>
+                                <div class="list-detail">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22,9.67A1,1,0,0,0,21.14,9l-5.69-.83L12.9,3a1,1,0,0,0-1.8,0L8.55,8.16,2.86,9a1,1,0,0,0-.81.68,1,1,0,0,0,.25,1l4.13,4-1,5.68A1,1,0,0,0,6.9,21.44L12,18.77l5.1,2.67a.93.93,0,0,0,.46.12,1,1,0,0,0,.59-.19,1,1,0,0,0,.4-1l-1-5.68,4.13-4A1,1,0,0,0,22,9.67Zm-6.15,4a1,1,0,0,0-.29.88l.72,4.2-3.76-2a1.06,1.06,0,0,0-.94,0l-3.76,2,.72-4.2a1,1,0,0,0-.29-.88l-3-3,4.21-.61a1,1,0,0,0,.76-.55L12,5.7l1.88,3.82a1,1,0,0,0,.76.55l4.21.61Z"></path></svg>
+                                    @Model.ImdbPoint
+                                </div>
+                            </li>
+                            <li>
+                                <span>Janr : </span>
+                                <div class="list-detail">Action</div>
+                            </li>
+                            <li>
+                                <span>Olke : </span>
+                                <div class="list-detail">@Model.Country</div>
+                            </li>
+                            <li>
+                                <span>Muddet : </span>
+                                <div class="list-detail">@Model.Duration deqiqe</div>
+                            </li>
+                            <li>
+                                <span>Yas heddi : </span>
+                                <div class="list-detail">@Model.AgeLimit +</div>
+                            </li>
+                        </ul>
+
+                        <p>
+                            @Model.AboutContent
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- trailer start -->
+    <!-- <section id="trailer" >
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="trailer_player">
+              <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/goQ2JKulBnQ"
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+                encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+    </section> -->
+    <!-- trailer end -->
+    <!-- tab start -->
+    <section id="tabs">
+        <div class="tab_header">
+            <a href="#Session" class="active btn" id="session" rel="session">Seanslar</a>
+
+        </div>
+
+        <div class="tab_body">
+
+            <div class="session_list tab_list">
+
+                <div class="container">
+
+                    <div class="filter_blocks">
+
+
+                        <div class="filter_block">
+                            <div class="form-group">
+                                <select class="form-control selected" id="exampleFormControlSelect1">
+                                    <option>03.03.2022</option>
+                                    <option>04.03.2022</option>
+                                    <option>05.03.2022</option>
+                                    <option>06.03.2022</option>
+                                    <option>07.03.2022</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="filter_block">
+                            <select class="form-control selected" id="exampleFormControlSelect1">
+                                <option>Kinoteatrlar</option>
+                                <option>Kinoteatrlar</option>
+                                <option>28 Mall</option>
+                                <option>Ganjlik Mall</option>
+                                <option>Deniz Mall</option>
+                                <option>Azerbaijan Cinema</option>
+                                <option>Amburan Mall</option>
+                                <option>Sumqayıt</option>
+                                <option>Khamsa Park (Ganja)</option>
+                                <option>Ganja Mall (Ganja)</option>
+                                <option>Şamaxı</option>
+                            </select>
+                        </div>
+
+                        <div class="filter_block">
+                            <select class="form-control selected" id="exampleFormControlSelect1">
+                                <option>Filmin dili</option>
+                                <option>Bütün dillərdə</option>
+                                <option>Azərbaycanca</option>
+                                <option>Ha pyccкoм</option>
+                                <option>In English</option>
+                                <option>Türkçe</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Film</th>
+                                    <th scope="col">Seans</th>
+                                    <th scope="col">Kinoteatr</th>
+                                    <th scope="col">Zal</th>
+                                    <th scope="col">Format</th>
+                                    <th scope="col">Qiymet</th>
+                                    <th scope="col">Almaq</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>@Model.MovieName</th>
+                                    <td>17 : 00</td>
+                                    <td>Ganjlik Mall</td>
+                                    <td>Zal1</td>
+                                    <td>
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_tur.png" alt="">
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_twod.png" alt="">
+                                    </td>
+                                    <td>8.00 AZN</td>
+                                    <td>bos</td>
+
+                                </tr>
+
+                                <tr>
+                                    <th>SpiderMan</th>
+                                    <td>17 : 00</td>
+                                    <td>
+                                        <a class="table_link" href="./cinema.html">Ganjlik Mall</a>
+                                    </td>
+                                    <td>Zal1</td>
+                                    <td>
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_tur.png" alt="">
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_twod.png" alt="">
+                                    </td>
+                                    <td>8.00 AZN</td>
+                                    <td>bos</td>
+
+                                </tr>
+
+                                <tr>
+                                    <th>SpiderMan</th>
+                                    <td>17 : 00</td>
+                                    <td>
+                                        <a class="table_link" href="./cinema.html">Ganjlik Mall</a>
+                                    </td>
+                                    <td>Zal1</td>
+                                    <td>
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_tur.png" alt="">
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_twod.png" alt="">
+                                    </td>
+                                    <td>8.00 AZN</td>
+                                    <td>bos</td>
+
+                                </tr>
+
+                                <tr>
+                                    <th>SpiderMan</th>
+                                    <td>17 : 00</td>
+                                    <td>
+                                        <a class="table_link" href="./cinema.html">Ganjlik Mall</a>
+                                    </td>
+                                    <td>Zal1</td>
+                                    <td>
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_tur.png" alt="">
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_twod.png" alt="">
+                                    </td>
+                                    <td>8.00 AZN</td>
+                                    <td>bos</td>
+
+                                </tr>
+
+                                <tr>
+                                    <th>SpiderMan</th>
+                                    <td>17 : 00</td>
+                                    <td>
+                                        <a class="table_link" href="./cinema.html">Ganjlik Mall</a>
+                                    </td>
+                                    <td>Zal1</td>
+                                    <td>
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_tur.png" alt="">
+                                        <img style="width:55px;height: 50px;" src="./assets/image/ni_twod.png" alt="">
+                                    </td>
+                                    <td>8.00 AZN</td>
+                                    <td>bos</td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- tab end -->
+
+
+</main>
+<!-- Main end -->

@@ -16,6 +16,8 @@ namespace CinemaApp.Entity.Entities
         public string PosterUrl { get; set; }
         public IFormFile PosterFile { get; set; }
 
+        public string BackgroundImgUrl { get; set; }
+        public IFormFile BackgroundImgFile { get; set; }
 
         public string TrailerUrl { get; set; }
 

@@ -8,5 +8,7 @@ namespace CinemaApp.Business.DTOs
     public class HomeDto
     {
         public List<Movie> Movies { get; set; }
+        public List<Cinema> Cinemas { get; set; }
+        public List<Language> Languages { get; set; }
     }
 }

@@ -157,3 +157,6 @@ C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\bin\Debug\netcoreapp3.1\CinemaApp.Business.dll
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\bin\Debug\netcoreapp3.1\CinemaApp.Business.pdb
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\Movie\Detail.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\Cinema\Detail.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MoviePartial.cshtml.g.cs
