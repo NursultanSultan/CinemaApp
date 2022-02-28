@@ -12,6 +12,8 @@ namespace CinemaApp.DataAcces.Configurations
         public void Configure(EntityTypeBuilder<Format> builder)
         {
             builder.Property(f => f.FormatType).IsRequired();
+            builder.Property(f => f.FormatIconUrl).IsRequired();
+            builder.Ignore(f => f.FormatIconFile);
         }
     }
 }

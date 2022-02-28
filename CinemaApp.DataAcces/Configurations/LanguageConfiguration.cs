@@ -12,6 +12,8 @@ namespace CinemaApp.DataAcces.Configurations
         public void Configure(EntityTypeBuilder<Language> builder)
         {
             builder.Property(l => l.Lang).IsRequired();
+            builder.Property(l => l.LangIconUrl).IsRequired();
+            builder.Ignore(l => l.LangIconFile);
             
         }
     }

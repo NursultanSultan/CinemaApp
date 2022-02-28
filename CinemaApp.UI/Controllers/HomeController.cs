@@ -28,7 +28,7 @@ namespace CinemaApp.UI.Controllers
         }
 
         
-        public async Task<IActionResult> GetFilterMovie(int? CineId)
+        public async Task<IActionResult> GetFilterMovie(int? CineId , int? LangId)
         {
             var MovieCineIds = await _context.MovieCinemas
                     .Where(mc => (CineId != null ? mc.CinemaId == CineId : true))
@@ -36,16 +36,44 @@ namespace CinemaApp.UI.Controllers
                     .Distinct()
                     .ToListAsync();
 
-            
+            var MovieLangIds = await _context.MovieLanguages
+                    .Where(ml => (LangId != null ? ml.LanguageId == LangId : true))
+                    .Select(m => m.MovieId)
+                    .Distinct()
+                    .ToListAsync();
+
 
             var result = await _context.Movies
-                                .Where(m => MovieCineIds.Contains(m.Id) )
+                                .Where(m => MovieCineIds.Contains(m.Id) && MovieLangIds.Contains(m.Id))
                                 .ToListAsync();
 
             return PartialView("_MoviePartial", result);
 
         }
 
-        
+        public async Task<IActionResult> GetSchedule()
+        {
+            //var sessions = await _context.Sessions
+            //       .Include(x => x.MovieSessions)
+            //       .ThenInclude(x => x.Movie)
+            //       .ThenInclude(x => x.MovieCinemas)
+            //       .ThenInclude(x => x.Movie)
+            //       .ThenInclude(x => x.MovieLanguages)
+            //       .ThenInclude(x => x.Movie)
+            //       .ThenInclude(x => x.MovieFormats)
+            //       .ToListAsync();
+
+            var sessions = await _context.MovieSessions
+                  .Include(x => x.Movie)
+                  .Include(x => x.Movie.MovieCinemas)
+                  .ThenInclude(x => x.Cinema)
+                  .Include(x => x.Movie.MovieLanguages)
+                  .ThenInclude(x => x.Language)
+                  .Include(x => x.Movie.MovieFormats)
+                  .ThenInclude(x => x.Format)
+                  .ToListAsync();
+
+            return Json(sessions);
+        }
     }
 }

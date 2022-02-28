@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220228072650_ICreatNewColomnMovieSessionTable.cs" />
+    <Compile Remove="Migrations\20220228072650_ICreatNewColomnMovieSessionTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.22">
       <PrivateAssets>all</PrivateAssets>

@@ -15,5 +15,14 @@ namespace CinemaApp.Entity.Entities
 
         public int SessionId { get; set; }
         public Session Session { get; set; }
+
+        //public int CinemaId { get; set; }
+        //public Cinema Cinema { get; set; }
+
+        //public int FormatId { get; set; }
+        //public Format Format { get; set; }
+
+        //public int LanguageId { get; set; }
+        //public Language Language { get; set; }
     }
 }
