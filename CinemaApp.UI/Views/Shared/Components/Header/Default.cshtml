@@ -27,6 +27,23 @@
                     <li class="nav-item">
                         <a class="nav-link " href="#">Haqqimizda</a>
                     </li>
+
+                    <li class="nav-item">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <h3 style="color:white; display:inline-block" class="mt-2">
+                                <a style="color:white; text-decoration:none;" asp-controller="Account" asp-action="Profile">@User.Identity.Name</a>
+                            </h3>
+                            <a asp-controller="Account" asp-action="SignOut" class="btn btn-primary mb-2">Sign Out</a>
+                        }
+                        else
+                        {
+                            <a style="margin-left:10px;" asp-controller="Account" asp-action="Login" class="btn btn-success">Sign In</a>
+                            <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Sign Up</a>
+
+                        }
+                    </li>
+                    
                 </ul>
 
 

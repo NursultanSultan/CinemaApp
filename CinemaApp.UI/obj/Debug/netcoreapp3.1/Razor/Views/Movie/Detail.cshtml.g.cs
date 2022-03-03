@@ -33,8 +33,15 @@ using CinemaApp.Entity.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3a1a1cdc75486339120774e1af524f2d637d0541", @"/Views/Movie/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e7ef1b620fb44008169c455b3553d1d308f574c1", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5358c61fa6329958e0ac68f05ca1ac581d4321e0", @"/Views/_ViewImports.cshtml")]
     public class Views_Movie_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Movie>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("alt", new global::Microsoft.AspNetCore.Html.HtmlString(""), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -72,7 +79,7 @@ using CinemaApp.Entity.Entities;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<!-- Main start -->\r\n<main>\r\n\r\n    <section id=\"movie_hero\">\r\n        <div class=\"movie_hero_image\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "3a1a1cdc75486339120774e1af524f2d637d05414073", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "3a1a1cdc75486339120774e1af524f2d637d05414267", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -232,7 +239,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
                             <div class=""form-group"">
                                 <select class=""form-control selected"" id=""exampleFormControlSelect1"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054111253", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054111447", async() => {
                 WriteLiteral("03.03.2022");
             }
             );
@@ -246,7 +253,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054112252", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054112446", async() => {
                 WriteLiteral("04.03.2022");
             }
             );
@@ -260,7 +267,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054113251", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054113445", async() => {
                 WriteLiteral("05.03.2022");
             }
             );
@@ -274,7 +281,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054114250", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054114444", async() => {
                 WriteLiteral("06.03.2022");
             }
             );
@@ -288,7 +295,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054115249", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054115443", async() => {
                 WriteLiteral("07.03.2022");
             }
             );
@@ -309,7 +316,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
                         <div class=""filter_block"">
                             <select class=""form-control selected"" id=""exampleFormControlSelect1"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054116513", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054116707", async() => {
                 WriteLiteral("Kinoteatrlar");
             }
             );
@@ -323,7 +330,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054117510", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054117704", async() => {
                 WriteLiteral("Kinoteatrlar");
             }
             );
@@ -337,7 +344,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054118507", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054118701", async() => {
                 WriteLiteral("28 Mall");
             }
             );
@@ -351,7 +358,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054119499", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054119693", async() => {
                 WriteLiteral("Ganjlik Mall");
             }
             );
@@ -365,7 +372,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054120496", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054120690", async() => {
                 WriteLiteral("Deniz Mall");
             }
             );
@@ -379,7 +386,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054121491", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054121685", async() => {
                 WriteLiteral("Azerbaijan Cinema");
             }
             );
@@ -393,7 +400,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054122493", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054122687", async() => {
                 WriteLiteral("Amburan Mall");
             }
             );
@@ -407,7 +414,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054123490", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054123684", async() => {
                 WriteLiteral("Sumqayıt");
             }
             );
@@ -421,7 +428,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054124483", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054124677", async() => {
                 WriteLiteral("Khamsa Park (Ganja)");
             }
             );
@@ -435,7 +442,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054125487", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054125681", async() => {
                 WriteLiteral("Ganja Mall (Ganja)");
             }
             );
@@ -449,7 +456,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054126490", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054126684", async() => {
                 WriteLiteral("Şamaxı");
             }
             );
@@ -469,7 +476,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
                         <div class=""filter_block"">
                             <select class=""form-control selected"" id=""exampleFormControlSelect1"">
                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054127710", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054127904", async() => {
                 WriteLiteral("Filmin dili");
             }
             );
@@ -483,7 +490,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054128706", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054128900", async() => {
                 WriteLiteral("Bütün dillərdə");
             }
             );
@@ -497,7 +504,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054129705", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054129899", async() => {
                 WriteLiteral("Azərbaycanca");
             }
             );
@@ -511,7 +518,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054130702", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054130896", async() => {
                 WriteLiteral("Ha pyccкoм");
             }
             );
@@ -525,7 +532,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054131697", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054131891", async() => {
                 WriteLiteral("In English");
             }
             );
@@ -539,7 +546,7 @@ AddHtmlAttributeValue("", 196, Model.BackgroundImgUrl, 196, 23, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054132692", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a1a1cdc75486339120774e1af524f2d637d054132886", async() => {
                 WriteLiteral("Türkçe");
             }
             );

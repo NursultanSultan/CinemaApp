@@ -17,464 +17,171 @@
 <section id="tabs">
 
     <div class="tab_header">
-        <a href="#today_list" class="active btn" id="today_list" rel="today">BU GÜN</a>
-        <a href="#schedule_list" class="btn" id="schedule_list" rel="schedule">CƏDVƏL</a>
+        @*<a class="active btn" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">BU GÜN</a>
+            <a class="btn" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">CƏDVƏL</a>*@
+        <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="pills-today-tab" data-toggle="pill" href="#pills-today" role="tab" aria-controls="pills-home" aria-selected="true">In Cinema</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-schedule-tab" data-toggle="pill" href="#pills-schedule" role="tab" aria-controls="pills-profile" aria-selected="false">Schedule</a>
+            </li>
+
+        </ul>
     </div>
 
     <div class="tab_body">
-        <div class="today_list tab_list">
-            <div class="container">
-                <div class="filter_blocks mobile_hide">
-                    <button id="filter"> Filter </button>
-                    <div class="filter_block">
-                        <select class="form-control selected" id="SelectCinemas">
-                            <option value="all">Kinoteatrlar</option>
-                            @foreach (var item in Model.Cinemas)
-                            {
-                              
-                                    <option value="@item.Id">
-                                        @item.CinemaName
-                                    </option>
-                                
-                            }
-                        </select>
-                    </div>
-
-                    <div class="filter_block">
-                        <select class="form-control selected" id="SelectLanguages">
-                            <option value="all">Filmin dili</option>
-                            @foreach (var item in Model.Languages)
-                            {
-                                <option value="@item.Id">
-                                    @item.Lang
-                                </option>
-                            }
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="container"> -->
-            <!-- <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="movie-items">
-                        <div class="movie-name">
-                            <h2>
-                                <a href="./movie.html">
-                                    Dayi : Bir adamin hikayesi
-                                </a>
-                            </h2>
-                        </div>
-                        <div class="movie-poster">
-                            <a href="./movie.html">
-                                <img src="./assets/image/700x1000_1.350x0.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="poster-icons">
-                            <span class="poster-icon">
-                                <img src="./assets/image/ni_twod.png" alt="">
-                            </span>
-                            <span class="poster-icon">
-                                <img src="./assets/image/ni_tur.png" alt="">
-                            </span>
-                        </div>
-
-                        <div class="go-sessio">
-                            <a href="./movie.html"> SEANSLAR</a>
-                            <span class="age-limit">
-                                16+
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="movie-items">
-                        <div class="movie-name">
-                            <h2>
-                                <a href="#">
-                                    Dayi : Bir adamin hikayesi
-                                </a>
-                            </h2>
-                        </div>
-                        <div class="movie-poster">
-                            <a href="#">
-                                <img src="./assets/image/17221.350x0.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="poster-icons">
-                            <span class="poster-icon">
-                                <img src="./assets/image/ni_twod.png" alt="">
-                            </span>
-                            <span class="poster-icon">
-                                <img src="./assets/image/ni_tur.png" alt="">
-                            </span>
-                        </div>
-
-                        <div class="go-sessio">
-                            <a href="./movie.html"> SEANSLAR</a>
-                            <span class="age-limit">
-                                16+
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="movie-items">
-                        <div class="movie-name">
-                            <h2>
-                                <a href="#">
-                                    Dayi : Bir adamin hikayesi
-                                </a>
-                            </h2>
-                        </div>
-                        <div class="movie-poster">
-                            <a href="#">
-                                <img src="./assets/image/ancharted.350x0.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="poster-icons">
-                            <span class="poster-icon">
-                                <img src="./assets/image/ni_twod.png" alt="">
-                            </span>
-                            <span class="poster-icon">
-                                <img src="./assets/image/ni_tur.png" alt="">
-                            </span>
-                        </div>
-
-                        <div class="go-sessio">
-                            <a href="./movie.html"> SEANSLAR</a>
-                            <span class="age-limit">
-                                16+
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-
-
-            </div> -->
-            <!-- <div class="wrapper">
-                <section class="cards">
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-today" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="today_list tab_list show active">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="cards__wrapper">
-                                    <div class="cards__title">The Batman</div>
-                                    <div class="cards__img">
-                                        <a href="./movie.html" class="cards__link">
-                                            <img src="./assets/image/baydirman.jpg" alt="">
-                                        </a>
-                                        <div class="cards__sale">presale</div>
-                                    </div>
-                                    <ul class="cards__language">
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_rus.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_tur.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_eng.png" alt="">
-                                        </li>
-                                    </ul>
-                                    <div class="cards__seans">
-                                        <a href="./movie.html" class="cards__button">sessions</a>
-                                        <span class="cards__raiting">16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="cards__wrapper">
-                                    <div class="cards__title">Dayı: Bir Adamın Hikayesi</div>
-                                    <div class="cards__img">
-                                        <a href="#" class="cards__link">
-                                            <img src="./assets/image/Dayi.jpg" alt="">
-                                        </a>
-                                        <div class="cards__sale">presale</div>
-                                    </div>
-                                    <ul class="cards__language">
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_rus.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_tur.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_eng.png" alt="">
-                                        </li>
-                                    </ul>
-                                    <div class="cards__seans">
-                                        <a href="#" class="cards__button">sessions</a>
-                                        <span class="cards__raiting">16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="cards__wrapper">
-                                    <div class="cards__title">The Desperate Hour</div>
-                                    <div class="cards__img">
-                                        <a href="#" class="cards__link">
-                                            <img src="./assets/image/ancharted.350x0.jpg" alt="">
-                                        </a>
-                                        <div class="cards__sale">presale</div>
-                                    </div>
-                                    <ul class="cards__language">
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_rus.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_tur.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_eng.png" alt="">
-                                        </li>
-                                    </ul>
-                                    <div class="cards__seans">
-                                        <a href="#" class="cards__button">sessions</a>
-                                        <span class="cards__raiting">16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="cards__wrapper">
-                                    <div class="cards__title">Fireheart</div>
-                                    <div class="cards__img">
-                                        <a href="#" class="cards__link">
-                                            <img src="./assets/image/nildeolum.jpg" alt="">
-                                        </a>
-                                        <div class="cards__sale">presale</div>
-                                    </div>
-                                    <ul class="cards__language">
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_rus.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_tur.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_eng.png" alt="">
-                                        </li>
-                                    </ul>
-                                    <div class="cards__seans">
-                                        <a href="#" class="cards__button">sessions</a>
-                                        <span class="cards__raiting">16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="cards__wrapper">
-                                    <div class="cards__title">Uncharted</div>
-                                    <div class="cards__img">
-                                        <a href="#" class="cards__link">
-                                            <img src="./assets/image/moondown.jpg" alt="">
-                                        </a>
-                                        <div class="cards__sale">presale</div>
-                                    </div>
-                                    <ul class="cards__language">
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_rus.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_tur.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_eng.png" alt="">
-                                        </li>
-                                    </ul>
-                                    <div class="cards__seans">
-                                        <a href="#" class="cards__button">sessions</a>
-                                        <span class="cards__raiting">16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="cards__wrapper">
-                                    <div class="cards__title">Death on the Nile</div>
-                                    <div class="cards__img">
-                                        <a href="#" class="cards__link">
-                                            <img src="./assets/image/krik.jpg" alt="">
-                                        </a>
-                                        <div class="cards__sale">presale</div>
-                                    </div>
-                                    <ul class="cards__language">
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_rus.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_tur.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_eng.png" alt="">
-                                        </li>
-                                    </ul>
-                                    <div class="cards__seans">
-                                        <a href="#" class="cards__button">sessions</a>
-                                        <span class="cards__raiting">16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="cards__wrapper">
-                                    <div class="cards__title">Marry Me</div>
-                                    <div class="cards__img">
-                                        <a href="#" class="cards__link">
-                                            <img src="./assets/image/alovluurek.png" alt="">
-                                        </a>
-                                        <div class="cards__sale">presale</div>
-                                    </div>
-                                    <ul class="cards__language">
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_rus.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_tur.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_eng.png" alt="">
-                                        </li>
-                                    </ul>
-                                    <div class="cards__seans">
-                                        <a href="#" class="cards__button">sessions</a>
-                                        <span class="cards__raiting">16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12">
-                                <div class="cards__wrapper">
-                                    <div class="cards__title">Realm of Terracotta</div>
-                                    <div class="cards__img">
-                                        <a href="#" class="cards__link">
-                                            <img src="./assets/image/terrakota.jpg" alt="">
-                                        </a>
-                                        <div class="cards__sale">presale</div>
-                                    </div>
-                                    <ul class="cards__language">
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_rus.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_tur.png" alt="">
-                                        </li>
-                                        <li class="cards__item">
-                                            <img src="./assets/image/ni_eng.png" alt="">
-                                        </li>
-                                    </ul>
-                                    <div class="cards__seans">
-                                        <a href="#" class="cards__button">sessions</a>
-                                        <span class="cards__raiting">16+</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div> -->
+                        <div class="filter_blocks mobile_hide">
 
-            <div class="catalog catalog--list">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div id="Movies" class="row row--grid">
-                               <partial name="_MoviePartial" model="Model.Movies"/>
+                            <div class="filter_block">
+                                <button class="form-control" id="filter"> Filter </button>
+                            </div>
+
+                            <div class="filter_block">
+                                <select class="form-control selected" id="SelectCinemas">
+                                    <option value="all">Kinoteatrlar</option>
+                                    @foreach (var item in Model.Cinemas)
+                                    {
+
+                                        <option value="@item.Id">
+                                            @item.CinemaName
+                                        </option>
+
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="filter_block">
+                                <select class="form-control selected" id="SelectLanguages">
+                                    <option value="all">Filmin dili</option>
+                                    @foreach (var item in Model.Languages)
+                                    {
+                                        <option value="@item.Id">
+                                            @item.Lang
+                                        </option>
+                                    }
+                                </select>
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="catalog catalog--list">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="Movies" class="row row--grid">
+                                        <partial name="_MoviePartial" model="Model.Movies" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
-            <!-- </div> -->
-        </div>
-        <div class="schedule_list tab_list tab_display">
+            <div class="tab-pane fade" id="pills-schedule" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="schedule_list tab_list">
 
-            <div class="container">
+                    <div class="container">
 
-                <div class="filter_blocks mobile_hide">
+                        <div class="filter_blocks mobile_hide">
 
-                    <div class="filter_block">
-                        <div class="form-group">
-                            <select class="form-control selected" id="exampleFormControlSelect1">
-                                <option>03.03.2022</option>
-                                <option>04.03.2022</option>
-                                <option>05.03.2022</option>
-                                <option>06.03.2022</option>
-                                <option>07.03.2022</option>
-                            </select>
+                            <div class="filter_block">
+                                <div class="form-group">
+                                    <select class="form-control selected" id="exampleFormControlSelect1">
+                                        <option>03.03.2022</option>
+                                        <option>04.03.2022</option>
+                                        <option>05.03.2022</option>
+                                        <option>06.03.2022</option>
+                                        <option>07.03.2022</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="filter_block">
+                                <select class="form-control selected" id="exampleFormControlSelect1">
+                                    <option>Kinoteatrlar</option>
+                                    <option>Kinoteatrlar</option>
+                                    <option>28 Mall</option>
+                                    <option>Ganjlik Mall</option>
+                                    <option>Deniz Mall</option>
+                                    <option>Azerbaijan Cinema</option>
+                                    <option>Amburan Mall</option>
+                                    <option>Sumqayıt</option>
+                                    <option>Khamsa Park (Ganja)</option>
+                                    <option>Ganja Mall (Ganja)</option>
+                                    <option>Şamaxı</option>
+                                </select>
+                            </div>
+
+                            <div class="filter_block">
+                                <select class="form-control selected" id="exampleFormControlSelect1">
+                                    <option>Filmin dili</option>
+                                    <option>Bütün dillərdə</option>
+                                    <option>Azərbaycanca</option>
+                                    <option>Ha pyccкoм</option>
+                                    <option>In English</option>
+                                    <option>Türkçe</option>
+                                </select>
+                            </div>
                         </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-hover table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Film</th>
+                                        <th scope="col">Seans</th>
+                                        <th scope="col">Kinoteatr</th>
+                                        <th scope="col">Zal</th>
+                                        <th scope="col">Format</th>
+                                        <th scope="col">Dil</th>
+                                        <th scope="col">Qiymet</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>SpiderMan</th>
+                                        <td>17 : 00</td>
+                                        <td>
+                                            <a class="table_link">Ganjlik Mall</a>
+                                        </td>
+                                        <td>Zal1</td>
+                                        <td>
+                                            <img style="width:55px;height: 50px;" src="./assets/image/ni_twod.png" alt="">
+                                        </td>
+                                        <td>
+                                            <img style="width:55px;height: 50px;" src="./assets/image/ni_tur.png" alt="">
+                                        </td>
+                                        <td>8.00 AZN</td>
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
 
-                    <div class="filter_block">
-                        <select class="form-control selected" id="exampleFormControlSelect1">
-                            <option>Kinoteatrlar</option>
-                            <option>Kinoteatrlar</option>
-                            <option>28 Mall</option>
-                            <option>Ganjlik Mall</option>
-                            <option>Deniz Mall</option>
-                            <option>Azerbaijan Cinema</option>
-                            <option>Amburan Mall</option>
-                            <option>Sumqayıt</option>
-                            <option>Khamsa Park (Ganja)</option>
-                            <option>Ganja Mall (Ganja)</option>
-                            <option>Şamaxı</option>
-                        </select>
-                    </div>
-
-                    <div class="filter_block">
-                        <select class="form-control selected" id="exampleFormControlSelect1">
-                            <option>Filmin dili</option>
-                            <option>Bütün dillərdə</option>
-                            <option>Azərbaycanca</option>
-                            <option>Ha pyccкoм</option>
-                            <option>In English</option>
-                            <option>Türkçe</option>
-                        </select>
-                    </div>
                 </div>
-
-                <div class="table-responsive">
-                    <table class="table table-hover table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col">Film</th>
-                                <th scope="col">Seans</th>
-                                <th scope="col">Kinoteatr</th>
-                                <th scope="col">Zal</th>
-                                <th scope="col">Format</th>
-                                <th scope="col">Dil</th>
-                                <th scope="col">Qiymet</th>
-
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>SpiderMan</th>
-                                <td>17 : 00</td>
-                                <td>
-                                    <a class="table_link">Ganjlik Mall</a>
-                                </td>
-                                <td>Zal1</td>
-                                <td>
-                                    <img style="width:55px;height: 50px;" src="./assets/image/ni_twod.png" alt="">
-                                </td>
-                                <td>
-                                    <img style="width:55px;height: 50px;" src="./assets/image/ni_tur.png" alt="">
-                                </td> 
-                                <td>8.00 AZN</td>
-
-                            </tr>
-                            
-
-                        </tbody>
-                    </table>
-                </div>
-
             </div>
 
         </div>
-        <div class="soon_list tab_list tab_display"></div>
+
+
+
     </div>
 </section>
+
+
 <!-- Tabs end -->
 <!-- Parallax start -->
 
@@ -495,4 +202,96 @@
     </div>
 </section>
 <!-- Parallax end -->
+<!-- Testimonial start -->
+
+<section id="testimonial">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="testimonial-slider" class="owl-carousel">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-icon">
+                                <i class="fa fa-quote-left"></i>
+                            </div>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
+                            </p>
+                        </div>
+                        <h3 class="title">John</h3>
+                        <span class="post">Web Developer</span>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-icon">
+                                <i class="fa fa-quote-left"></i>
+                            </div>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
+                            </p>
+                        </div>
+                        <h3 class="title">Kelle</h3>
+                        <span class="post">Web Designer</span>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-icon">
+                                <i class="fa fa-quote-left"></i>
+                            </div>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
+                            </p>
+                        </div>
+                        <h3 class="title">Steven</h3>
+                        <span class="post">Web Developer</span>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-icon">
+                                <i class="fa fa-quote-left"></i>
+                            </div>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
+                            </p>
+                        </div>
+                        <h3 class="title">Peter</h3>
+                        <span class="post">Web Developer</span>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-icon">
+                                <i class="fa fa-quote-left"></i>
+                            </div>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
+                            </p>
+                        </div>
+                        <h3 class="title">Peter</h3>
+                        <span class="post">Web Developer</span>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <div class="testimonial-icon">
+                                <i class="fa fa-quote-left"></i>
+                            </div>
+                            <p class="description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
+                            </p>
+                        </div>
+                        <h3 class="title">Peter</h3>
+                        <span class="post">Web Developer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Testimonial end -->
 <!-- Main end -->

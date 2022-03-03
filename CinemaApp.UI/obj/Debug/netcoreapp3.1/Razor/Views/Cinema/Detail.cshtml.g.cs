@@ -33,8 +33,15 @@ using CinemaApp.Entity.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c5fcfe3a74a845d36e6f92abd57975ce907444b1", @"/Views/Cinema/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e7ef1b620fb44008169c455b3553d1d308f574c1", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5358c61fa6329958e0ac68f05ca1ac581d4321e0", @"/Views/_ViewImports.cshtml")]
     public class Views_Cinema_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Cinema>
     {
         #line hidden
@@ -125,7 +132,7 @@ using CinemaApp.Entity.Entities;
                             <div class=""form-group"">
                                 <select class=""form-control selected"" id=""exampleFormControlSelect1"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5fcfe3a74a845d36e6f92abd57975ce907444b15180", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5fcfe3a74a845d36e6f92abd57975ce907444b15374", async() => {
                 WriteLiteral("03.03.2022");
             }
             );
@@ -139,7 +146,7 @@ using CinemaApp.Entity.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5fcfe3a74a845d36e6f92abd57975ce907444b16178", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5fcfe3a74a845d36e6f92abd57975ce907444b16372", async() => {
                 WriteLiteral("04.03.2022");
             }
             );
@@ -153,7 +160,7 @@ using CinemaApp.Entity.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5fcfe3a74a845d36e6f92abd57975ce907444b17176", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5fcfe3a74a845d36e6f92abd57975ce907444b17370", async() => {
                 WriteLiteral("05.03.2022");
             }
             );
@@ -167,7 +174,7 @@ using CinemaApp.Entity.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5fcfe3a74a845d36e6f92abd57975ce907444b18174", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5fcfe3a74a845d36e6f92abd57975ce907444b18368", async() => {
                 WriteLiteral("06.03.2022");
             }
             );
@@ -181,7 +188,7 @@ using CinemaApp.Entity.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5fcfe3a74a845d36e6f92abd57975ce907444b19172", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c5fcfe3a74a845d36e6f92abd57975ce907444b19366", async() => {
                 WriteLiteral("07.03.2022");
             }
             );

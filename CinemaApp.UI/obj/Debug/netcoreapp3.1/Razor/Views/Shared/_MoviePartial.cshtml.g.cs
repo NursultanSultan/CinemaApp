@@ -33,8 +33,15 @@ using CinemaApp.Entity.Entities;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"07b3e2fd5b78373a3a4a2f7ba957d6549236ec87", @"/Views/Shared/_MoviePartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e7ef1b620fb44008169c455b3553d1d308f574c1", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5358c61fa6329958e0ac68f05ca1ac581d4321e0", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__MoviePartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Movie>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Movie", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -74,7 +81,7 @@ using CinemaApp.Entity.Entities;
 #line hidden
 #nullable disable
             WriteLiteral("    <div class=\"col-12 col-md-6 col-xl-4\">\r\n        <div class=\"card card--big\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07b3e2fd5b78373a3a4a2f7ba957d6549236ec874595", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07b3e2fd5b78373a3a4a2f7ba957d6549236ec874789", async() => {
                 WriteLiteral("\r\n                <img");
                 BeginWriteAttribute("src", " src=\"", 270, "\"", 307, 2);
                 WriteAttributeValue("", 276, "./assets/image/", 276, 15, true);

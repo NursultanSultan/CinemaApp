@@ -18,6 +18,7 @@ namespace CinemaApp.Entity.Entities
 
         public ICollection<MovieLanguage> MovieLanguages { get; set; }
 
+
         public bool IsDeleted { get; set; }
     }
 }

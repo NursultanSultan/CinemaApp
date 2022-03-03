@@ -15,6 +15,7 @@ namespace CinemaApp.Entity.Entities
         public string ShortContent { get; set; }
 
         public ICollection<Hall> Halls { get; set; }
+        public ICollection<MovieCinema> MovieCinemas { get; set; }
 
         public string OurAdress { get; set; }
 
