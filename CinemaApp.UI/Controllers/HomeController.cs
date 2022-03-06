@@ -28,7 +28,7 @@ namespace CinemaApp.UI.Controllers
         }
 
         
-        public async Task<IActionResult> GetFilterMovie(int? CineId , int? LangId)
+        public async Task<IActionResult> GetFilterMovie(int? CineId , int? LangId) 
         {
             var MovieCineIds = await _context.MovieCinemas
                     .Where(mc => (CineId != null ? mc.CinemaId == CineId : true))

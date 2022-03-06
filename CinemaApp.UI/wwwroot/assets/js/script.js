@@ -113,3 +113,38 @@ $(document).ready(function () {
 
     
 });
+
+
+$(document).ready(function () {
+
+
+    $(".card__add").click(function () {
+
+        var MvId = $(this).parent().data("id");
+
+        console.log("movie :" + MvId);
+
+        //var Movies = document.querySelector("#Movies")
+
+        $.ajax({
+            type: "GET",
+            url: `/Favorite/AddFavorite?movieId=${MvId}`,
+            //data: {
+            //    "movieId":+MvId
+            //},
+            success: function (response) {
+                //Movies.innerHTML = "";
+                //Movies.innerHTML = response;
+                console.log(response);
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    });
+
+
+});

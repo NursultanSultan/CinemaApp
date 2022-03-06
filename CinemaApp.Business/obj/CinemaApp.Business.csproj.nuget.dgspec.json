@@ -159,6 +159,10 @@
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[3.1.22, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.22, )"
             }
           },
           "imports": [

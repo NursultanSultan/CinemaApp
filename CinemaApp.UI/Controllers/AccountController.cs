@@ -1,4 +1,5 @@
 ﻿using CinemaApp.Business.DTOs;
+using CinemaApp.DataAcces.DAL;
 using CinemaApp.UI.Utilities.Email;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -16,13 +17,15 @@ namespace CinemaApp.UI.Controllers
         private UserManager<IdentityUser> _userManager { get; }
         private SignInManager<IdentityUser> _signInManager { get; }
         private IConfiguration _configuration { get; }
+        private AppDbContext _context { get; }
 
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager
-            , IConfiguration configuration)
+            , IConfiguration configuration , AppDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _configuration = configuration;
+            _context = context;
         }
 
         public IActionResult Register()
@@ -124,6 +127,23 @@ namespace CinemaApp.UI.Controllers
             IdentityUser user = await _userManager.FindByNameAsync(User.Identity.Name);
             return View(user);
 
+        }
+
+        public async Task<IActionResult> ShowFavorite()
+        {
+            var userId = _userManager.GetUserId(User);
+
+            var MovieIds = _context.Favorites
+                    .Where(f => f.UserId == userId)
+                    .Select(m => m.MovieId)
+                    .Distinct()
+                    .ToList();
+
+            var result =  _context.Movies
+                                .Where(m => MovieIds.Contains(m.Id) )
+                                .ToList();
+
+            return View(result);
         }
 
         public IActionResult SuccesSending()

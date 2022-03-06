@@ -1595,7 +1595,8 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "CinemaApp.Core": "1.0.0",
-          "Microsoft.AspNetCore.Http.Features": "3.1.22"
+          "Microsoft.AspNetCore.Http.Features": "3.1.22",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.22"
         },
         "compile": {
           "bin/placeholder/CinemaApp.Entity.dll": {}
