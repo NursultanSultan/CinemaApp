@@ -28,22 +28,47 @@
                         <a class="nav-link " href="#">Haqqimizda</a>
                     </li>
 
-                    <li class="nav-item">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <h3 style="color:white; display:inline-block" class="mt-2">
-                                <a style="color:white; text-decoration:none;" asp-controller="Account" asp-action="Profile">@User.Identity.Name</a>
-                            </h3>
-                            <a asp-controller="Account" asp-action="SignOut" class="btn btn-primary mb-2">Sign Out</a>
-                        }
-                        else
-                        {
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div style="background-color: #fff; border-radius:10px;" class="dropdown ml-auto mt-1">
+                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+
+                                <i style="font-size: 15px;  " class="bi bi-person"></i>
+
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" asp-controller="Account" asp-action="AccountProfil">
+
+                                    Profile:
+                                    <span class="text-dark">@User.Identity.Name</span><hr />
+                                </a>
+
+                                <a class="dropdown-item" asp-controller="Favorite" asp-action="ShowFavorite">
+                                    <i class="bi bi-save"></i>
+                                    Saved
+                                </a>
+                                <a class="dropdown-item" asp-controller="Account" asp-action="AccountSetting">
+                                    <i class="bi bi-gear"></i>
+                                    Settings
+                                </a>
+                                <a class="dropdown-item" asp-controller="Account" asp-action="SignOut">
+                                    <i class="bi bi-door-open"></i>
+                                    Log out
+                                </a>
+
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <li class="nav-item mt-1">
                             <a style="margin-left:10px;" asp-controller="Account" asp-action="Login" class="btn btn-success">Sign In</a>
                             <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Sign Up</a>
+                        </li>
+                    }
 
-                        }
-                    </li>
-                    
+                   
+
                 </ul>
 
 

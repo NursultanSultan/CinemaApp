@@ -30,24 +30,50 @@ namespace CinemaApp.UI.Controllers
         {
             ClaimsPrincipal currentUser = User;
             var userId = _userManager.GetUserId(User);
-            //var user = _userManager.FindByIdAsync(userId);
-            //var movie = _context.Movies.Where(m => m.Id == movieId).FirstOrDefault();
 
             Favorite favorite = _context.Favorites.Where(f => f.UserId == userId && f.MovieId == movieId).FirstOrDefault();
-            if (favorite == null && userId != null)
+
+            if (userId != null)
             {
-                favorite = new Favorite
+
+                if (favorite == null)
                 {
-                    UserId = userId,
-                    MovieId = movieId,
-                };
-                await _context.Favorites.AddAsync(favorite);
+                    favorite = new Favorite
+                    {
+                        UserId = userId,
+                        MovieId = movieId,
+                    };
+                    await _context.Favorites.AddAsync(favorite);
+
+                }
+                else
+                {
+                    _context.Favorites.Remove(favorite);
+                }
 
             }
+            
 
             await _context.SaveChangesAsync();
 
-            
+        }
+
+        public async Task<IActionResult> ShowFavorite()
+        {
+            var userId = _userManager.GetUserId(User);
+
+            var MovieIds = _context.Favorites
+                    .Where(f => f.UserId == userId)
+                    .Select(m => m.MovieId)
+                    .Distinct()
+                    .ToList();
+
+            var favMovie = _context.Movies
+                                .Where(m => MovieIds.Contains(m.Id))
+                                .ToList();
+
+            return View(favMovie);
+
         }
     }
 }

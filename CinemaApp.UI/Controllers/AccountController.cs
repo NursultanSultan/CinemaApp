@@ -129,22 +129,23 @@ namespace CinemaApp.UI.Controllers
 
         }
 
-        public async Task<IActionResult> ShowFavorite()
-        {
-            var userId = _userManager.GetUserId(User);
+        //public async Task<IActionResult> ShowFavorite()
+        //{
+        //    var userId = _userManager.GetUserId(User);
 
-            var MovieIds = _context.Favorites
-                    .Where(f => f.UserId == userId)
-                    .Select(m => m.MovieId)
-                    .Distinct()
-                    .ToList();
+        //    var MovieIds = _context.Favorites
+        //            .Where(f => f.UserId == userId)
+        //            .Select(m => m.MovieId)
+        //            .Distinct()
+        //            .ToList();
 
-            var result =  _context.Movies
-                                .Where(m => MovieIds.Contains(m.Id) )
-                                .ToList();
+        //    var result =  _context.Movies
+        //                        .Where(m => MovieIds.Contains(m.Id) )
+        //                        .ToList();
 
-            return View(result);
-        }
+        //    //return PartialView("_FavoriteMoviePartial", result);
+        //    return View(result);
+        //}
 
         public IActionResult SuccesSending()
         {

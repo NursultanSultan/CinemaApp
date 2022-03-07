@@ -1,5 +1,6 @@
 ﻿using CinemaApp.Business.DTOs;
 using CinemaApp.DataAcces.DAL;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -10,9 +11,11 @@ namespace CinemaApp.UI.Controllers
     public class HomeController : Controller
     {
         private AppDbContext _context { get; }
-        public HomeController(AppDbContext context)
+        private UserManager<IdentityUser> _userManager { get; }
+        public HomeController(AppDbContext context , UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -51,6 +54,8 @@ namespace CinemaApp.UI.Controllers
 
         }
 
+
+
         public async Task<IActionResult> GetSchedule()
         {
             //var sessions = await _context.Sessions
@@ -75,5 +80,8 @@ namespace CinemaApp.UI.Controllers
 
             return Json(sessions);
         }
+
+
+        
     }
 }
