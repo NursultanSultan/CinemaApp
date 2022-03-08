@@ -129,23 +129,68 @@ namespace CinemaApp.UI.Controllers
 
         }
 
-        //public async Task<IActionResult> ShowFavorite()
-        //{
-        //    var userId = _userManager.GetUserId(User);
+        public IActionResult ResetPassword(string token, string email)
+        {
+            if (token == null || email == null)
+            {
+                ModelState.AddModelError(string.Empty, "Invalid operation");
+                return View();
+            }
+            return View();
+        }
 
-        //    var MovieIds = _context.Favorites
-        //            .Where(f => f.UserId == userId)
-        //            .Select(m => m.MovieId)
-        //            .Distinct()
-        //            .ToList();
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordDto resetDto)
+        {
+            if (!ModelState.IsValid) return View(resetDto);
 
-        //    var result =  _context.Movies
-        //                        .Where(m => MovieIds.Contains(m.Id) )
-        //                        .ToList();
+            var user = await _userManager.FindByEmailAsync(resetDto.Email);
 
-        //    //return PartialView("_FavoriteMoviePartial", result);
-        //    return View(result);
-        //}
+            var result = await _userManager.ResetPasswordAsync(user, resetDto.Token, resetDto.NewPassword);
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return View();
+            }
+
+            return RedirectToAction("Login", "Account");
+        }
+
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgetPassword(ForgetPasswordDto forgetDto)
+        {
+            if (!ModelState.IsValid) return View(forgetDto);
+            var user = await _userManager.FindByEmailAsync(forgetDto.Email);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Your account is incorrect");
+                return View();
+            }
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var confirmationLink = Url.Action("ResetPassword", "Account", new { token, email = forgetDto.Email }, Request.Scheme);
+            EmailHelper emailHelper = new EmailHelper(_configuration.GetSection("EmailConfirmation:fromEmail").Value, _configuration.GetSection("EmailConfirmation:fromPassword").Value);
+            bool emailResponse = emailHelper.SendEmail(forgetDto.Email, confirmationLink);
+
+
+            if (emailResponse)
+            {
+                ModelState.AddModelError(string.Empty, "Succesed ");
+                return View();
+            }
+
+            return View();
+        }
 
         public IActionResult SuccesSending()
         {

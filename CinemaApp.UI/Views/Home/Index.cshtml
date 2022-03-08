@@ -39,11 +39,11 @@
             <div class="tab-pane fade show active" id="pills-today" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="today_list tab_list show active">
                     <div class="container">
-                        <div class="filter_blocks mobile_hide">
+                        <div style="justify-content: space-between;" class="filter_blocks mobile_hide">
 
                             <div>
                                 <div class="filter_block">
-                                    <button class="form-control selected" id="filter"> Filter </button>
+                                    <button class="form-control selected" id="filter"> Apply Filter </button>
                                 </div>
 
                                 <div class="filter_block">
@@ -75,9 +75,11 @@
 
                             <div class="d-flex justify-content-end h-100">
 
-                                <form method="get" asp-action="Index" class="searchbar">
+                                <form  method="get" asp-action="Index" class="searchbar">
                                     <input class="search_input" type="text" name="moviesearch" placeholder="Search movie...">
-                                    <button type="submit" class="search_icon"><i class="fas fa-search"></i></button>
+                                    <button type="submit" class="search_icon">
+                                        <i  class="fas fa-search"></i>
+                                    </button>
 
                                 </form>
 
@@ -85,19 +87,7 @@
 
                         </div>
 
-                        @*<div class="input-group">
-                        <div class="form-outline">
-                            <input type="search" id="form1" class="form-control" />
-                            <label class="form-label" for="form1">Search</label>
-                        </div>
-                        <button type="button" class="btn btn-primary">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>*@
-
-
-
-
+                      
                         <div class="catalog catalog--list">
                             <div class="container">
                                 <div class="row">
@@ -123,15 +113,15 @@
                         <div class="filter_blocks mobile_hide">
 
                             <div class="filter_block">
-                                <div class="form-group">
-                                    <select class="form-control selected" id="exampleFormControlSelect1">
-                                        <option>03.03.2022</option>
-                                        <option>04.03.2022</option>
-                                        <option>05.03.2022</option>
-                                        <option>06.03.2022</option>
-                                        <option>07.03.2022</option>
-                                    </select>
-                                </div>
+                                
+                                <select class="form-control selected" id="exampleFormControlSelect1">
+                                    <option>03.03.2022</option>
+                                    <option>04.03.2022</option>
+                                    <option>05.03.2022</option>
+                                    <option>06.03.2022</option>
+                                    <option>07.03.2022</option>
+                                </select>
+                                
                             </div>
 
                             <div class="filter_block">

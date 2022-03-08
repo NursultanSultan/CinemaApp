@@ -175,3 +175,5 @@ C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\Account\SuccesSending.cshtml.g.cs
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_FavoritePartial.cshtml.g.cs
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\Favorite\ShowFavorite.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgetPassword.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs

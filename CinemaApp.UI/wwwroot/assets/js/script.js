@@ -19,6 +19,7 @@ $(document).ready(function () {
         navigation: false,
         slideSpeed: 1000,
         autoPlay: true
+        
     });
 });
 

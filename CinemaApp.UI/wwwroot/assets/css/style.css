@@ -81,7 +81,7 @@
     z-index: 101;
     border-bottom: 1px solid #222028;
   }
-  .header__logo {
+.header__logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -89,12 +89,14 @@
     height: 70px;
     width: 80px;
     font-size: 35px;
+    font-weight: 500;
     text-decoration: none;
-  }
-  
-  .header__logo span{
-      color: orange;
-  }
+    
+}
+
+    .header__logo span {
+        color: orange;
+    }
 
   .header__logo:hover{
     text-decoration: none;
@@ -163,6 +165,10 @@
   dropdown-item{
       color:#fff !important;
   }
+  .dropdown-item:hover{
+      background-color:transparent !important;
+  }
+
 .header__dropdown {
     position: relative;
     display: block;
@@ -439,8 +445,10 @@
 
 
 
+
+
 #hero {
-  position: relative;
+    position: relative;
 }
 
 #hero::before {
@@ -484,7 +492,7 @@
 .tab_header a {
   border-radius: 5px 5px 0 0;
   font-size: 20px;
-  font-weight: 480px;
+  font-weight: 480;
   padding: 20px;
   line-height: 4px;
   display: inline-block;
@@ -501,6 +509,16 @@
   }
 }
 
+#filter {
+    border: 2px solid #f9ab00;
+    transition: 0.5s;
+    background-color: transparent ;
+}
+
+#filter:hover{
+    background-color: rgba(249,171,0,0.05);
+}
+
 .filter_blocks {
   
   margin-bottom:40px;
@@ -511,7 +529,7 @@
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-  justify-content: space-between;
+  justify-content: center;
   align-items:center;
   text-align: center;
   border-radius: 16px;
@@ -523,7 +541,7 @@
 }
 
 .filter_blocks .filter_block .selected {
-    font-size: 20px -4;
+    font-size: 16px ;
     font-weight: 500;
     line-height: 20px -1;
     padding: 0 15px 0 20px;
@@ -533,6 +551,17 @@
     border:none;
     background-color: #353b48;
     color:#fff;
+}
+
+@media screen and (max-width: 768px) {
+    .filter_blocks {
+        display: flex;
+        flex-direction:column;
+
+    }
+    .filter_blocks .filter_block{
+        margin-top:5px;
+    }
 }
 
 .searchbar {
@@ -582,7 +611,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
