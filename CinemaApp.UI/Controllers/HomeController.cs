@@ -3,6 +3,7 @@ using CinemaApp.DataAcces.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,11 +19,15 @@ namespace CinemaApp.UI.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string? moviesearch)
         {
+            var movies = _context.Movies.Where(m => !m.IsDeleted && moviesearch != null ? (
+            m.MovieName.Contains(moviesearch)
+            ) :true);
+           
             HomeDto homedto = new HomeDto
             {
-                Movies = _context.Movies.Where(m => m.IsDeleted == false).ToList(),
+                Movies = movies.ToList(),
                 Cinemas = _context.Cinemas.Where(c => c.IsDeleted == false).ToList(),
                 Languages = _context.Languages.Where(l => l.IsDeleted == false).ToList()
             };
@@ -81,7 +86,7 @@ namespace CinemaApp.UI.Controllers
             return Json(sessions);
         }
 
-
         
+
     }
 }

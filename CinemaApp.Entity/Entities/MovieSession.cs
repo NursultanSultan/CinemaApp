@@ -16,6 +16,5 @@ namespace CinemaApp.Entity.Entities
         public int SessionId { get; set; }
         public Session Session { get; set; }
 
-        
     }
 }

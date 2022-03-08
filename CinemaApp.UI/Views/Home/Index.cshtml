@@ -12,9 +12,14 @@
     </div>
 </section>
 
+
+
+
 <!-- Tabs start -->
 
 <section id="tabs">
+
+    
 
     <div class="tab_header">
         @*<a class="active btn" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">BU GÜN</a>
@@ -26,7 +31,7 @@
             <li class="nav-item" role="presentation">
                 <a class="nav-link" id="pills-schedule-tab" data-toggle="pill" href="#pills-schedule" role="tab" aria-controls="pills-profile" aria-selected="false">Schedule</a>
             </li>
-           
+
         </ul>
     </div>
 
@@ -37,52 +42,79 @@
                     <div class="container">
                         <div class="filter_blocks mobile_hide">
 
-                            <div class="filter_block">
-                                <button class="form-control" id="filter"> Filter </button>
+                            <div>
+                                <div class="filter_block">
+                                    <button class="form-control selected" id="filter"> Filter </button>
+                                </div>
+
+                                <div class="filter_block">
+                                    <select class="form-control selected" id="SelectCinemas">
+                                        <option value="all">Kinoteatrlar</option>
+                                        @foreach (var item in Model.Cinemas)
+                                        {
+
+                                            <option value="@item.Id">
+                                                @item.CinemaName
+                                            </option>
+
+                                        }
+                                    </select>
+                                </div>
+
+                                <div class="filter_block">
+                                    <select class="form-control selected" id="SelectLanguages">
+                                        <option value="all">Filmin dili</option>
+                                        @foreach (var item in Model.Languages)
+                                        {
+                                            <option value="@item.Id">
+                                                @item.Lang
+                                            </option>
+                                        }
+                                    </select>
+                                </div>
                             </div>
 
-                            <div class="filter_block">
-                                <select class="form-control selected" id="SelectCinemas">
-                                    <option value="all">Kinoteatrlar</option>
-                                    @foreach (var item in Model.Cinemas)
-                                    {
+                            <div class="d-flex justify-content-end h-100">
 
-                                        <option value="@item.Id">
-                                            @item.CinemaName
-                                        </option>
+                                <form method="get" asp-action="Index" class="searchbar">
+                                    <input class="search_input" type="text" name="moviesearch" placeholder="Search movie...">
+                                    <a href="#tabs" class="search_icon"><i class="fas fa-search"></i></a>
 
-                                    }
-                                </select>
+                                </form>
+
                             </div>
 
-                            <div class="filter_block">
-                                <select class="form-control selected" id="SelectLanguages">
-                                    <option value="all">Filmin dili</option>
-                                    @foreach (var item in Model.Languages)
-                                    {
-                                        <option value="@item.Id">
-                                            @item.Lang
-                                        </option>
-                                    }
-                                </select>
-                            </div>
                         </div>
-                    </div>
+
+                        @*<div class="input-group">
+                        <div class="form-outline">
+                            <input type="search" id="form1" class="form-control" />
+                            <label class="form-label" for="form1">Search</label>
+                        </div>
+                        <button type="button" class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>*@
 
 
-                    <div class="catalog catalog--list">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div id="Movies" class="row row--grid">
-                                        <partial name="_MoviePartial" model="Model.Movies" />
+
+
+                        <div class="catalog catalog--list">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div id="Movies" class="row row--grid">
+                                            <partial name="_MoviePartial" model="Model.Movies" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- </div> -->
                     </div>
-                    <!-- </div> -->
                 </div>
+
+
             </div>
             <div class="tab-pane fade" id="pills-schedule" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div class="schedule_list tab_list">
@@ -173,9 +205,7 @@
 
                 </div>
             </div>
-           
-
-
+        </div>
     </div>
 </section>
 
