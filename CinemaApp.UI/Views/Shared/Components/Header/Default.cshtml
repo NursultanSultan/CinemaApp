@@ -1,82 +1,98 @@
 ﻿<!-- Header start -->
-<header id="header">
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">
-                <img src="~/assets/image/pixoo-logo2.png" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-                    <img src="./assets/image/532-5328945_menu-bar-icon-white-clipart-png-download-menu.png" alt="">
-                </span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Bas Sehife</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./platinium.html">Platinum</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./category.html">Categoriyalar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tarifler</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Haqqimizda</a>
-                    </li>
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="header__content">
+                    <!-- header logo -->
+                    <a href="index.html" class="header__logo">
+                        <img src="img/logo.svg" alt="">
+                        My<span>Flix</span>
+                    </a>
+                    <!-- end header logo -->
+                    <!-- header nav -->
+                    <ul class="header__nav">
+                        <!-- dropdown -->
+                        <li class="header__nav-item">
+                            <a href="pricing.html" class="header__nav-link">Home</a>
 
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <div style="background-color: #fff; border-radius:10px;" class="dropdown ml-auto mt-1">
-                            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
 
-                                <i style="font-size: 15px;  " class="bi bi-person"></i>
-
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" asp-controller="Account" asp-action="AccountProfil">
-
-                                    Profile:
-                                    <span class="text-dark">@User.Identity.Name</span><hr />
-                                </a>
-
-                                <a class="dropdown-item" asp-controller="Favorite" asp-action="ShowFavorite">
-                                    <i class="bi bi-save"></i>
-                                    Saved
-                                </a>
-                                <a class="dropdown-item" asp-controller="Account" asp-action="AccountSetting">
-                                    <i class="bi bi-gear"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" asp-controller="Account" asp-action="SignOut">
-                                    <i class="bi bi-door-open"></i>
-                                    Log out
-                                </a>
-
-                            </div>
-                        </div>
-                    }
-                    else
-                    {
-                        <li class="nav-item mt-1">
-                            <a style="margin-left:10px;" asp-controller="Account" asp-action="Login" class="btn btn-success">Sign In</a>
-                            <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Sign Up</a>
                         </li>
-                    }
+                        <!-- end dropdown -->
+                        <!-- dropdown -->
+                        <li class="header__nav-item">
+                            <a class="dropdown-toggle header__nav-link" href="#" role="button" id="dropdownMenuCatalog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalog <i class="icon ion-ios-arrow-down"></i></a>
 
-                   
+                            <ul class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuCatalog">
+                                <li><a href="catalog.html">Catalog style 1</a></li>
+                                <li><a href="catalog2.html">Catalog style 2</a></li>
+                                <li><a href="details.html">Details style 1</a></li>
+                                <li><a href="details2.html">Details style 2</a></li>
+                            </ul>
+                        </li>
+                        <!-- end dropdown -->
 
-                </ul>
+                        <li class="header__nav-item">
+                            <a href="pricing.html" class="header__nav-link">Pricing plan</a>
+                        </li>
 
 
+                    </ul>
+                    <!-- end header nav -->
+                    <!-- header auth -->
+                    <div class="header__auth">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div style="background-color: #f9ab00; border-radius: 10px;" class="dropdown ml-auto mt-1">
+                                <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
 
+                                    <i style="font-size: 15px; color: #fff !important " class="bi bi-person"></i>
+
+                                </button>
+                                <div class="dropdown-menu header__dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" asp-controller="Account" asp-action="AccountProfil">
+
+                                        Profile:
+                                        <span style="color:#fff !important" class="text-dark">@User.Identity.Name</span><hr />
+                                    </a>
+
+                                    <a class="dropdown-item" asp-controller="Favorite" asp-action="ShowFavorite">
+                                        <i class="bi bi-save"></i>
+                                        Saved
+                                    </a>
+                                    <a class="dropdown-item" asp-controller="Account" asp-action="AccountSetting">
+                                        <i class="bi bi-gear"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" asp-controller="Account" asp-action="SignOut">
+                                        <i class="bi bi-door-open"></i>
+                                        Log out
+                                    </a>
+
+                                </div>
+                            </div>
+                        }
+                        else
+                        {   
+                            <a asp-controller="Account" asp-action="Login" class="header__sign-in">
+                                <i class="icon ion-ios-log-in"></i>
+                                <span>sign in</span>
+                            </a>
+                        }
+                        
+                    </div>
+                    <!-- end header auth -->
+                    <!-- header menu btn -->
+                    <button class="header__btn" type="button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <!-- end header menu btn -->
+                </div>
             </div>
-
-
-        </nav>
+        </div>
     </div>
 </header>
-<!-- Header end -->
+
+
