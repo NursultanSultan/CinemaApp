@@ -22,7 +22,7 @@ namespace CinemaApp.UI.Controllers
 
         public IActionResult Detail(int Id)
         {
-            var cinema = _context.Movies.Where(c => c.Id == Id).FirstOrDefault();
+            var cinema = _context.Cinemas.Where(c => c.Id == Id).FirstOrDefault();
             return View(cinema);
         }
     }

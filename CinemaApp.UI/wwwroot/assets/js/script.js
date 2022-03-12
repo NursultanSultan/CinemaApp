@@ -10,7 +10,7 @@ $('.header__search-btn, .header__search-close').on('click', function () {
 
 $(document).ready(function () {
     $("#testimonial-slider").owlCarousel({
-        items: 3,
+        
         itemsDesktop: [1000, 3],
         itemsDesktopSmall: [980, 2],
         itemsTablet: [768, 2],
@@ -18,11 +18,49 @@ $(document).ready(function () {
         pagination: true,
         navigation: false,
         slideSpeed: 1000,
-        autoPlay: true
+        autoPlay: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            400: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
         
     });
 });
 
+
+
+$('#hero_owl').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: false,
+    smartSpeed: 500,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    responsive: {
+        0: {
+            items: 1
+        },
+        400: {
+            items: 2
+        },
+        600: {
+            items: 3
+        },
+        1000: {
+            items: 5
+        }
+    }
+})
 
 //var tab_header = document.querySelectorAll(".btn");
 //var tab_content = document.querySelectorAll(".tab_list");

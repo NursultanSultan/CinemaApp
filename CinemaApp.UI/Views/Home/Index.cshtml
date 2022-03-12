@@ -1,16 +1,52 @@
 ﻿@model HomeDto
-@{
+@{ 
     ViewData["Title"] = "Index";
 }
 
 
 <!-- Main start -->
 
-<section id="hero">
+@*<section id="hero">
     <div class="hero-image">
-        <img style="width: 100%;" src="./assets/image/1_5lyavS59mazOFnb55Z6znQ.png" alt="">
+        <img style="width: 100%;" src="~/assets/image/1_5lyavS59mazOFnb55Z6znQ.png" alt="">
+    </div>
+</section>*@
+
+<section id="hero" class="hero mt-5" style="background: url('./assets/image/herobackgroundimg.jpg') center/cover no-repeat fixed;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="hero_title">
+                    New movies in cinema
+                </div>
+
+                <div id="hero_owl" class="owl-carousel owl-theme">
+
+                    @foreach (var movie in Model.OwlMovies)
+                    {
+                        <div class="item">
+                            <div class="item-raiting">@movie.ImdbPoint</div>
+                            <div class="item-img">
+                                <img src="~/assets/image/@movie.PosterUrl" alt="">
+                                <a asp-controller="Movie" asp-action="Detail" asp-route-id="@movie.Id" class="item-play">
+                                    <i class="bi bi-play-fill"></i>
+                                </a>
+                            </div>
+
+                            <div class="item-content">
+                                <a href="#" class="item-name">@movie.MovieName</a>
+                                <a href="#" class="item-genre">Comedy</a>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
 
 
 
@@ -35,7 +71,7 @@
     </div>
 
     <div class="tab_body">
-        <div class="tab-content" id="pills-tabContent">
+        <div class="tab-content" id="pills-tabContent"> 
             <div class="tab-pane fade show active" id="pills-today" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="today_list tab_list show active">
                     <div class="container">
@@ -176,10 +212,10 @@
                                         </td>
                                         <td>Zal1</td>
                                         <td>
-                                            <img style="width:55px;height: 50px;" src="./assets/image/ni_twod.png" alt="">
+                                            <img style="width:55px;height: 50px;" src="~/assets/image/ni_twod.png" alt="">
                                         </td>
                                         <td>
-                                            <img style="width:55px;height: 50px;" src="./assets/image/ni_tur.png" alt="">
+                                            <img style="width:55px;height: 50px;" src="~/assets/image/ni_tur.png" alt="">
                                         </td>
                                         <td>8.00 AZN</td>
 
@@ -204,7 +240,7 @@
 
 <section id="parallax">
     <div class="parallax_image">
-        <!-- <img  src="./assets/image/The-Best-Movies-Trilogies-Of-All-Time.jpg" alt=""> -->
+        <!-- <img  src="~/assets/image/The-Best-Movies-Trilogies-Of-All-Time.jpg" alt=""> -->
 
         <div class="container h-100">
             <div class="parallax_content h-100">

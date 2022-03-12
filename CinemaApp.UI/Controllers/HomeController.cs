@@ -24,10 +24,12 @@ namespace CinemaApp.UI.Controllers
             var movies = _context.Movies.Where(m => !m.IsDeleted && moviesearch != null ? (
             m.MovieName.Contains(moviesearch)
             ) :true);
-           
+
             HomeDto homedto = new HomeDto
             {
                 Movies = movies.ToList(),
+                OwlMovies = _context.Movies.Where(m => m.IsDeleted == false).Take(6)
+                            .OrderByDescending(m => m.Id).ToList(),
                 Cinemas = _context.Cinemas.Where(c => c.IsDeleted == false).ToList(),
                 Languages = _context.Languages.Where(l => l.IsDeleted == false).ToList()
             };

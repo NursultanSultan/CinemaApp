@@ -1,6 +1,6 @@
 ﻿using CinemaApp.Business.DTOs;
+using CinemaApp.Business.Utilities.Email;
 using CinemaApp.DataAcces.DAL;
-using CinemaApp.UI.Utilities.Email;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +38,14 @@ namespace CinemaApp.UI.Controllers
         public async Task<IActionResult> Register(RegisterDto registerDto)
         {
             if (!ModelState.IsValid) return View();
+
+            var isExistEmail = _userManager.FindByEmailAsync(registerDto.Email);
+
+            if (isExistEmail != null)
+            {
+                ModelState.AddModelError(string.Empty, "you cannot register with this email because it is  already exist");
+                return View();
+            }
 
             IdentityUser newUser = new IdentityUser
             {

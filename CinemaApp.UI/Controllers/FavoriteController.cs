@@ -1,4 +1,5 @@
-﻿using CinemaApp.DataAcces.DAL;
+﻿using CinemaApp.Business.DTOs;
+using CinemaApp.DataAcces.DAL;
 using CinemaApp.Entity.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,8 @@ namespace CinemaApp.UI.Controllers
             ClaimsPrincipal currentUser = User;
             var userId = _userManager.GetUserId(User);
 
+            FavoriteAddDto favoriteAdd = new FavoriteAddDto();
+
             Favorite favorite = _context.Favorites.Where(f => f.UserId == userId && f.MovieId == movieId).FirstOrDefault();
 
             if (userId != null)
@@ -44,11 +47,12 @@ namespace CinemaApp.UI.Controllers
                         MovieId = movieId,
                     };
                     await _context.Favorites.AddAsync(favorite);
-
+                    favoriteAdd.IsFavorite = true;
                 }
                 else
                 {
                     _context.Favorites.Remove(favorite);
+                    favoriteAdd.IsFavorite = false;
                 }
 
             }
@@ -60,6 +64,7 @@ namespace CinemaApp.UI.Controllers
 
         public async Task<IActionResult> ShowFavorite()
         {
+
             var userId = _userManager.GetUserId(User);
 
             var MovieIds = _context.Favorites
@@ -71,6 +76,9 @@ namespace CinemaApp.UI.Controllers
             var favMovie = _context.Movies
                                 .Where(m => MovieIds.Contains(m.Id))
                                 .ToList();
+
+
+            
 
             return View(favMovie);
 

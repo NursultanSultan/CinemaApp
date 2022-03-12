@@ -9,7 +9,8 @@
             <div class="col-12">
                 <div id="Movies" class="row row--grid">
 
-                    @foreach (var movie in Model)
+                    <partial name="_MoviePartial" />
+                    @*@foreach (var movie in Model)
                     {
 
                         <div class="col-12 col-md-6 col-xl-4">
@@ -40,7 +41,7 @@
                         </div>
 
 
-                    }
+                    }*@
 
 
                 </div>
