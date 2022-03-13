@@ -33,6 +33,9 @@ namespace CinemaApp.Entity.Entities
 
         public ICollection<MovieCategory> MovieCategories { get; set; }
 
+        public ICollection<Comment> Comments { get; set; }
+
+
 
         public bool IsDeleted { get; set; }
 

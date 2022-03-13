@@ -1,8 +1,12 @@
 ﻿using CinemaApp.DataAcces.DAL;
+using CinemaApp.Entity.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace CinemaApp.UI.Controllers
@@ -10,9 +14,11 @@ namespace CinemaApp.UI.Controllers
     public class MovieController : Controller
     {
         private AppDbContext _context { get; }
-        public MovieController(AppDbContext context)
+        private UserManager<IdentityUser> _userManager { get; }
+        public MovieController(AppDbContext context , UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -22,8 +28,45 @@ namespace CinemaApp.UI.Controllers
 
         public IActionResult Detail(int Id)
         {
-            var movie = _context.Movies.Where(m => m.Id == Id).FirstOrDefault();
+            var movie = _context.Movies.Where(m => m.Id == Id)
+                .Include(m => m.Comments)
+                .ThenInclude(m => m.User)
+                .FirstOrDefault();
             return View(movie);
+        }
+
+       
+        [HttpPost]
+        public async Task<IActionResult> CommentAdd(int movieId , string content )
+        {
+            ClaimsPrincipal currentUser = User;
+            var userId = _userManager.GetUserId(User);
+
+
+            var comment = new Comment
+            {
+                UserId = userId,
+                MovieId = movieId,
+                Content = content
+            };
+
+            await _context.Comments.AddAsync(comment);
+            await _context.SaveChangesAsync();
+
+            var result = _context.Comments
+                    .Where(m => m.MovieId == movieId && m.Content.Contains(content))
+                    .Include(m => m.User)
+                    .FirstOrDefault();
+                                                                 
+
+            return PartialView("_CommentPartial", result);
+
+        }
+
+        public async Task CommentDelete(int commentId)
+        {
+            var comment = _context.Comments.Where(c => c.Id == commentId).FirstOrDefault();
+            _context.Comments.Remove(comment);
         }
 
     }

@@ -28,6 +28,8 @@ namespace CinemaApp.DataAcces.DAL
         public DbSet<MovieFormat> MovieFormats{ get; set; }
         public DbSet<MovieLanguage> MovieLanguages { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,6 +40,7 @@ namespace CinemaApp.DataAcces.DAL
             modelBuilder.ApplyConfiguration(new LanguageConfiguration());
             modelBuilder.ApplyConfiguration(new MovieConfiguration());
             modelBuilder.ApplyConfiguration(new SessionConfiguration());
+            modelBuilder.ApplyConfiguration(new CommentConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

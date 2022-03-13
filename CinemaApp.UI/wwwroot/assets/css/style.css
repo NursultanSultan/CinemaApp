@@ -1774,6 +1774,10 @@
   margin-right: 5px;
 }
 
+.comments__actions .Comment__Delete__btn{
+    
+}
+
 .comments__actions button:hover {
   color: #f9ab00;
 }

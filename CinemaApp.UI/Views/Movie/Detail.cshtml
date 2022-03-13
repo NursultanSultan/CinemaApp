@@ -244,45 +244,27 @@
 
             <div class="row">
                 <div class="col-lg-8 col-md-12">
-                    <div class="comments">
-                        <ul class="comments__list">
-                            <li class="comments__item mt-4">
-                                <div class="comments__autor">
-                                    <img class="comments__avatar" src="~/assets/image/user.svg" alt="">
-                                    <span class="comments__name">John Doe</span>
-                                    <span class="comments__time">30.08.2018, 17:53</span>
-                                </div>
-                                <p class="comments__text mt-3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                                <div class="comments__actions">
-                                    <div class="comments__rate">
-                                        <button type="button">
-                                            <i class="bi bi-plus-square"></i>
-                                            12
-                                        </button>
+                    <div class="comments" data-id="@Model.Id">
+                        <ul id="comment__list" class="comments__list">
+                            @foreach (var comment in Model.Comments)
+                            {
+                                <partial name="_CommentPartial" model="comment" />
 
-                                        <button type="button">
-                                            7
-                                            <i class="bi bi-dash-square"></i>
-                                        </button>
-                                    </div>
-
-
-                                </div>
-                            </li>
-
-
-
+                            }
                         </ul>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <form method="post" class="form comment__form">
+                                <textarea id="text" class="form__textarea" placeholder="Add comment"></textarea>
+                                <button type="submit" class="form__btn comment__btn">Send</button>
+                            </form>
+                        }
 
-                        <form method="post" class="form">
-                            <textarea id="text" name="text" class="form__textarea" placeholder="Add comment"></textarea>
-                            <button type="button" class="form__btn">Send</button>
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+        
     </section>
     <!-- movie comment end -->
 

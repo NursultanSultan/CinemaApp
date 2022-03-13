@@ -1,0 +1,36 @@
+﻿@model Comment
+
+
+    <li class="comments__item mt-4">
+        <div class="comments__autor">
+            <img class="comments__avatar" src="~/assets/image/user.svg" alt="">
+            <span class="comments__name">@Model.User.UserName</span>
+            <span class="comments__time">@Model.dateTime</span>
+        </div>
+        <p class="comments__text mt-3">@Model.Content</p>
+        <div class="comments__actions" data-id="@Model.Id">
+            <div class="comments__rate">
+                <button type="button">
+                    <i class="bi bi-plus-square"></i>
+                    12
+                </button>
+
+                <button type="button">
+                    7
+                    <i class="bi bi-dash-square"></i>
+                </button>
+            </div>
+
+            <form method="post">
+                <button type="submit" class="Comment__Delete__btn">Delete</button>
+            </form>
+
+            
+
+        </div>
+    </li>
+
+
+
+
+
