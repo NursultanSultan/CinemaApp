@@ -1,4 +1,4 @@
-﻿using CinemaApp.Core.Entities;
+﻿
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CinemaApp.Entity.Entities
 {
-    public class Favorite : IEntity
+    public class Favorite 
     {
         public int Id { get; set; }
 

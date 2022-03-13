@@ -1583,6 +1583,9 @@
       "CinemaApp.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CinemaApp.Entity": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/CinemaApp.Core.dll": {}
         },
@@ -1594,7 +1597,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "CinemaApp.Core": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "3.1.22",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.22"
         },
@@ -5967,6 +5969,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CinemaApp.Core >= 1.0.0",
       "CinemaApp.Entity >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.22",
       "Microsoft.EntityFrameworkCore >= 3.1.22",
@@ -6002,6 +6005,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj": {
+              "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj"
+            },
             "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj": {
               "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj"
             }

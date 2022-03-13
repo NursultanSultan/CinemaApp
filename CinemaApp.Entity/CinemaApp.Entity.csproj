@@ -9,8 +9,4 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.22" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CinemaApp.Core\CinemaApp.Core.csproj" />
-  </ItemGroup>
-
 </Project>

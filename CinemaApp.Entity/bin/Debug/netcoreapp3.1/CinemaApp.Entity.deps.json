@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v3.1": {
       "CinemaApp.Entity/1.0.0": {
         "dependencies": {
-          "CinemaApp.Core": "1.0.0",
           "Microsoft.AspNetCore.Http.Features": "3.1.22",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.22"
         },
@@ -284,11 +283,6 @@
             "fileVersion": "4.700.20.56604"
           }
         }
-      },
-      "CinemaApp.Core/1.0.0": {
-        "runtime": {
-          "CinemaApp.Core.dll": {}
-        }
       }
     }
   },
@@ -486,11 +480,6 @@
       "sha512": "sha512-TQqNjDcTVu6eTDB2S0vjSUhn0udEugL93D9zgsOsSiJO1kv1UWDM2o0+79H95I5X+S0VPEzm4ihj6KPwhNEb7g==",
       "path": "system.io.pipelines/4.7.4",
       "hashPath": "system.io.pipelines.4.7.4.nupkg.sha512"
-    },
-    "CinemaApp.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

@@ -1,12 +1,12 @@
 ﻿
-using CinemaApp.Core.Entities;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CinemaApp.Entity.Entities
 {
-    public class MovieCategory : IEntity
+    public class MovieCategory 
     {
         public int Id { get; set; }
 

@@ -1,5 +1,4 @@
 ﻿
-using CinemaApp.Core.Entities;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Text;
 
 namespace CinemaApp.Entity.Entities
 {
-    public class Format : IEntity
+    public class Format
     {
         public int Id { get; set; }
 

@@ -1,4 +1,4 @@
-/*const { text } = require("d3-request");*/
+
 
 $('.header__btn').on('click', function () {
     $(this).toggleClass('header__btn--active');
@@ -26,13 +26,13 @@ $(document).ready(function () {
                 items: 1
             },
             400: {
-                items: 2
+                items: 1
             },
             600: {
-                items: 3
+                items: 2
             },
             1000: {
-                items: 5
+                items: 3
             }
         }
         
@@ -142,7 +142,7 @@ $(document).ready(function () {
                 console.log(response);
                 //commentlist.innerHTML = "";
                 commentlist.innerHTML += response;
-               
+                
             },
             failure: function (response) {
                 alert(response.responseText);
@@ -153,33 +153,32 @@ $(document).ready(function () {
         });
     });
 
-    $(".Comment__Delete__btn").submit(function (e) {
+    //$(".comment__delete__form").submit(function (e) {
 
-        e.preventDefault();
+    //    e.preventDefault();
+    //    var commentId = $(this).parent().data("id");
 
-        var commentId = $(this).parent().parent().data("id");
+    //    console.log("comment id:" + commentId);
 
-        console.log("comment :" + commentId);
-
-        //$.ajax({
-        //    type: "GET",
-        //    url: `/Favorite/AddFavorite?movieId=${MvId}`,
-        //    //data: {
-        //    //    "movieId":+MvId
-        //    //},
-        //    success: function (response) {
-        //        //Movies.innerHTML = "";
-        //        //Movies.innerHTML = response;
-        //        console.log(response);
-        //    },
-        //    failure: function (response) {
-        //        alert(response.responseText);
-        //    },
-        //    error: function (response) {
-        //        alert(response.responseText);
-        //    }
-        //});
-    });
+    //    $.ajax({
+    //        type: "POST",
+    //        url: /Movie/CommentDelete,
+    //        data: {
+    //            "commentId": commentId
+    //        },
+    //        success: function (response) {
+    //            //Movies.innerHTML = "";
+    //            //Movies.innerHTML = response;
+    //            console.log(response);
+    //        },
+    //        failure: function (response) {
+    //            alert(response.responseText);
+    //        },
+    //        error: function (response) {
+    //            alert(response.responseText);
+    //        }
+    //    });
+    //});
 
 });
 

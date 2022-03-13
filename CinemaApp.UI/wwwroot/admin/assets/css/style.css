@@ -16073,7 +16073,7 @@ code {
 
 /* Footer */
 .footer {
-  background: #000000;
+  background: #191c24 !important;
   color: color(dark);
   padding: 20px 1rem;
   transition: all 0.25s ease;
@@ -20831,7 +20831,7 @@ div.tagsinput {
       width: 100%; } }
 
 .content-wrapper {
-  background: #000000;
+  background: #191c24 !important;
   padding: 1.875rem 1.75rem;
   width: 100%;
   -webkit-flex-grow: 1;

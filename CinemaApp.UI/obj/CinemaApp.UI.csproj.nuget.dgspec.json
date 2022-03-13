@@ -43,6 +43,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -85,7 +91,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj": {
+                "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -140,6 +150,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj": {
+                "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj"
+              },
               "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj": {
                 "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj"
               }
@@ -223,11 +236,7 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {
-              "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj": {
-                "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -311,6 +320,10 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.22, )"

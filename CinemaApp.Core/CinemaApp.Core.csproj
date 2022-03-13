@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\UnitOfWork\" />
+    <ProjectReference Include="..\CinemaApp.Entity\CinemaApp.Entity.csproj" />
   </ItemGroup>
 
 </Project>

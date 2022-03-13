@@ -1,3 +1,5 @@
+using CinemaApp.Core;
+using CinemaApp.DataAcces;
 using CinemaApp.DataAcces.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,11 +27,14 @@ namespace CinemaApp.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:Default"]);
             });
+
+            services.AddScoped<IUnitOfWork , UnitOfWork>();
 
             services.AddIdentity<IdentityUser, IdentityRole>(opt => { opt.SignIn.RequireConfirmedEmail = true; })
                     .AddEntityFrameworkStores<AppDbContext>()
@@ -59,9 +64,16 @@ namespace CinemaApp.UI
 
             app.UseEndpoints(endpoints =>
             {
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                
             });
         }
     }

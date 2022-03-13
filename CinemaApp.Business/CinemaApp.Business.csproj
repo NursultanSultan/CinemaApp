@@ -7,8 +7,11 @@
   <ItemGroup>
     <Folder Include="Implementations\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="Profiles\" />
     <Folder Include="Validators\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
 
   <ItemGroup>

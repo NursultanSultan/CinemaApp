@@ -63,11 +63,14 @@ namespace CinemaApp.UI.Controllers
 
         }
 
-        public async Task CommentDelete(int commentId)
-        {
-            var comment = _context.Comments.Where(c => c.Id == commentId).FirstOrDefault();
-            _context.Comments.Remove(comment);
-        }
+        //[HttpPost]
+        //public async Task CommentDelete(int commentId)
+        //{
+        //    var comment = _context.Comments.Where(c => c.Id == commentId).FirstOrDefault();
+
+        //    _context.Comments.Remove(comment);
+        //    await _context.SaveChangesAsync();
+        //}
 
     }
 }

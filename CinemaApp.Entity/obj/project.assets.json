@@ -311,16 +311,6 @@
         "runtime": {
           "lib/netcoreapp3.0/System.IO.Pipelines.dll": {}
         }
-      },
-      "CinemaApp.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/CinemaApp.Core.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CinemaApp.Core.dll": {}
-        }
       }
     }
   },
@@ -882,16 +872,10 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "CinemaApp.Core/1.0.0": {
-      "type": "project",
-      "path": "../CinemaApp.Core/CinemaApp.Core.csproj",
-      "msbuildProject": "../CinemaApp.Core/CinemaApp.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "CinemaApp.Core >= 1.0.0",
       "Microsoft.AspNetCore.Http.Features >= 3.1.22",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.22"
     ]
@@ -922,11 +906,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj": {
-              "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
