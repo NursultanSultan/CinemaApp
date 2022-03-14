@@ -1,6 +1,9 @@
-﻿using CinemaApp.Business.DTOs.MovieDtos;
+﻿using AutoMapper;
+using CinemaApp.Business.DTOs.MovieDtos;
 using CinemaApp.Business.Interfaces;
+using CinemaApp.Core;
 using CinemaApp.Entity.Entities;
+using Microsoft.AspNetCore.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +13,18 @@ namespace CinemaApp.Business.Implementations
 {
     public class MovieService : IMovieService
     {
+
+        private IUnitOfWork _unitOfWork { get; }
+        private IMapper _mapper { get; }
+        private IWebHostEnvironment _env { get; }
+
+        public MovieService(IUnitOfWork unitOfWork, IMapper mapper, IWebHostEnvironment env)
+        {
+            _unitOfWork = unitOfWork;
+            _mapper = mapper;
+            _env = env;
+        }
+
         public Task CreateAsync(MovieCreateDto createDto)
         {
             throw new NotImplementedException();

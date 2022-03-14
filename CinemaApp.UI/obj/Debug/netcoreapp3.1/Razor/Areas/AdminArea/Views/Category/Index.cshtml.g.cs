@@ -35,20 +35,48 @@ using CinemaApp.Business.DTOs.CategoryDtos;
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Areas\AdminArea\Views\_ViewImports.cshtml"
-using CinemaApp.Entity.Entities;
+using CinemaApp.Business.DTOs.MovieDtos;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 5 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Areas\AdminArea\Views\_ViewImports.cshtml"
+using CinemaApp.Business.DTOs.CinemaDtos;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Areas\AdminArea\Views\_ViewImports.cshtml"
+using CinemaApp.Business.DTOs.FormatDtos;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Areas\AdminArea\Views\_ViewImports.cshtml"
+using CinemaApp.Business.DTOs.LanguageDtos;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Areas\AdminArea\Views\_ViewImports.cshtml"
+using CinemaApp.Entity.Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Areas\AdminArea\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c0e1dfc78f2a6c2d8748317e6f58a9408203bf18", @"/Areas/AdminArea/Views/Category/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"490015b4fb8b49e38bf65bd65254346260e75a9f", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f202fc01feb60e0fb97d9b1c59f3a56e5443933e", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     public class Areas_AdminArea_Views_Category_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<CategoryReadDto>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Category", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -97,7 +125,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"col-lg-12 m-5 grid-margin stretch-card\">\r\n    <div class=\"card\">\r\n        <div class=\"card-body\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0e1dfc78f2a6c2d8748317e6f58a9408203bf187672", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0e1dfc78f2a6c2d8748317e6f58a9408203bf188533", async() => {
                 WriteLiteral("Create");
             }
             );
@@ -147,7 +175,7 @@ using Microsoft.AspNetCore.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                <td>\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c0e1dfc78f2a6c2d8748317e6f58a9408203bf1810225", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c0e1dfc78f2a6c2d8748317e6f58a9408203bf1811086", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -180,7 +208,7 @@ AddHtmlAttributeValue("", 1069, item.CategoryImageURL, 1069, 22, false);
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                                \r\n\r\n                                <td>\r\n\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0e1dfc78f2a6c2d8748317e6f58a9408203bf1812373", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0e1dfc78f2a6c2d8748317e6f58a9408203bf1813234", async() => {
                 WriteLiteral("Update");
             }
             );
@@ -214,7 +242,7 @@ AddHtmlAttributeValue("", 1069, item.CategoryImageURL, 1069, 22, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0e1dfc78f2a6c2d8748317e6f58a9408203bf1814914", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0e1dfc78f2a6c2d8748317e6f58a9408203bf1815775", async() => {
                 WriteLiteral("\r\n                                        <button type=\"submit\" class=\"btn btn-inverse-danger btn-fw mt-2\">Delete</button>\r\n                                    ");
             }
             );

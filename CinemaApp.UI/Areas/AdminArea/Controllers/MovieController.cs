@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using CinemaApp.Business.DTOs;
 using CinemaApp.Business.DTOs.MovieDtos;
+using CinemaApp.Business.Interfaces;
 using CinemaApp.Core;
 using CinemaApp.Entity.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -16,10 +18,16 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
     {
         private IUnitOfWork _unitOfWork { get; }
         private IMapper _mapper { get; }
-        public MovieController(IUnitOfWork unitOfWork , IMapper mapper)
+        private IWebHostEnvironment _env { get; }
+        private IMovieService _movieService { get; }
+
+        public MovieController(IUnitOfWork unitOfWork, IMapper mapper
+                , IWebHostEnvironment env, IMovieService movieService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _env = env;
+            _movieService = movieService;
         }
 
         public IActionResult Index()
@@ -73,7 +81,7 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update()
+        public async Task<IActionResult> Update(MovieUpdateDto updateDto)
         {
 
             //if (!ModelState.IsValid) return View();

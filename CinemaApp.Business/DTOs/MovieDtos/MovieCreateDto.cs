@@ -21,8 +21,8 @@ namespace CinemaApp.Business.DTOs.MovieDtos
         [Required]
         public string TrailerUrl { get; set; }
 
-        [Required]
-        public decimal Price { get; set; }
+        //[Required]
+        //public decimal Price { get; set; }
 
         [Required, MaxLength(255)]
         public string AboutContent { get; set; }

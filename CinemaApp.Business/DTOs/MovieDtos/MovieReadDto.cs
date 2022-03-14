@@ -17,20 +17,20 @@ namespace CinemaApp.Business.DTOs.MovieDtos
 
         public string BackgroundImgUrl { get; set; }
 
-        public string TrailerUrl { get; set; }
+        //public string TrailerUrl { get; set; }
 
-        public decimal Price { get; set; }
+        //public decimal Price { get; set; }
 
-        public string AboutContent { get; set; }
+        //public string AboutContent { get; set; }
 
         public double ImdbPoint { get; set; }
 
-        public int AgeLimit { get; set; }
+        //public int AgeLimit { get; set; }
 
-        public string Country { get; set; }
+        //public string Country { get; set; }
 
         public string Director { get; set; }  // Rejissor
 
-        public int Duration { get; set; }  // Filmin muddeti
+        //public int Duration { get; set; }  // Filmin muddeti
     }
 }
