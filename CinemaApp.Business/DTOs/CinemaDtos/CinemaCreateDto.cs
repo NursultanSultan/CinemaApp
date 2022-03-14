@@ -28,7 +28,7 @@ namespace CinemaApp.Business.DTOs.CinemaDtos
         public string EMail { get; set; }
 
         [Required]
-        public string WorkingHour { get; set; }
+        public string WorkingHour { get; set; } 
 
         [Required]
         public string MapLocation { get; set; }

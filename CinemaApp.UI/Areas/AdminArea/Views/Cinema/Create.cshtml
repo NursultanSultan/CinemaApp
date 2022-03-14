@@ -1,0 +1,69 @@
+﻿@model CinemaCreateDto
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col-md-12 m-5 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="CinemaName"></label>
+                    <input asp-for="CinemaName" class="form-control">
+                    <span asp-validation-for="CinemaName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ShortContent"></label>
+                    <input asp-for="ShortContent" class="form-control">
+                    <span asp-validation-for="ShortContent" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="OurAdress"></label>
+                    <input asp-for="OurAdress" class="form-control">
+                    <span asp-validation-for="OurAdress" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PhoneNumber"></label>
+                    <input asp-for="PhoneNumber" class="form-control">
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="EMail"></label>
+                    <input asp-for="EMail" class="form-control">
+                    <span asp-validation-for="EMail" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="WorkingHour"></label>
+                    <input asp-for="WorkingHour" class="form-control">
+                    <span asp-validation-for="WorkingHour" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="MapLocation"></label>
+                    <input asp-for="MapLocation" class="form-control">
+                    <span asp-validation-for="MapLocation" class="text-danger"></span>
+                </div>
+
+                
+
+                <div class="form-group">
+                    <label asp-for="CinemaPosterPhoto"></label>
+                    <input accept="image/" asp-for="CinemaPosterPhoto" class="form-control">
+                    <span asp-validation-for="CinemaPosterPhoto" class="text-danger"></span>
+                </div>
+
+                
+
+                <button type="submit" class="btn btn-primary me-2">Create</button>
+                <button asp-controller="Category" asp-action="Index" class="btn btn-dark">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+

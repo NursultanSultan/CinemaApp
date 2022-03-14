@@ -192,3 +192,6 @@ C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Category\Index.cshtml.g.cs
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Movie\Create.cshtml.g.cs
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Movie\Update.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Cinema\Index.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Cinema\Create.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Cinema\Update.cshtml.g.cs
