@@ -32,7 +32,7 @@ namespace CinemaApp.Business.Implementations
             Category category = new Category
             {
                 CategoryName = createDto.CategoryName
-                
+
             };
 
             string root = Path.Combine(_env.WebRootPath, "assets", "image");

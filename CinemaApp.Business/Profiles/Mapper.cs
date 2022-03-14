@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CinemaApp.Business.DTOs;
 using CinemaApp.Business.DTOs.CategoryDtos;
+using CinemaApp.Business.DTOs.MovieDtos;
 using CinemaApp.Entity.Entities;
 using System;
 using System.Collections.Generic;

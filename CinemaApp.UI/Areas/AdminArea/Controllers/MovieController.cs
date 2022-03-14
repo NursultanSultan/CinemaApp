@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CinemaApp.Business.DTOs;
+using CinemaApp.Business.DTOs.MovieDtos;
 using CinemaApp.Core;
 using CinemaApp.Entity.Entities;
 using Microsoft.AspNetCore.Mvc;

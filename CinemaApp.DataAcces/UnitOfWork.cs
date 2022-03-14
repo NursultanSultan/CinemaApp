@@ -15,6 +15,9 @@ namespace CinemaApp.DataAcces
         private AppDbContext _context { get; }
         private IMovieRepository _movieRepository;
         private ICategoryRepository _categoryRepository;
+        private ICinemaRepository _cinemaRepository;
+        private ILanguageRepository _languageRepository;
+        private IFormatRepository _formatRepository;
 
         public UnitOfWork(AppDbContext context)
         {
@@ -25,6 +28,9 @@ namespace CinemaApp.DataAcces
 
         public IMovieRepository movieRepository => _movieRepository = _movieRepository ?? new MovieRepository(_context);
         public ICategoryRepository categoryRepository => _categoryRepository = _categoryRepository ?? new CategoryRepository(_context);
+        public ICinemaRepository cinemaRepository => _cinemaRepository = _cinemaRepository ?? new CinemaRepository(_context);
+        public ILanguageRepository languageRepository => _languageRepository = _languageRepository ?? new LanguageRepository(_context);
+        public IFormatRepository formatRepository => _formatRepository = _formatRepository ?? new FormatRepository(_context);
 
 
         public async Task SavechangeAsync()

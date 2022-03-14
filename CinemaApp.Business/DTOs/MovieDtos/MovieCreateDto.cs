@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace CinemaApp.Business.DTOs
+namespace CinemaApp.Business.DTOs.MovieDtos
 {
     public class MovieCreateDto
     {

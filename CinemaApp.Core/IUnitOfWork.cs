@@ -12,6 +12,12 @@ namespace CinemaApp.Core
 
         public ICategoryRepository categoryRepository { get; }
 
+        public ICinemaRepository cinemaRepository { get; }
+
+        public ILanguageRepository languageRepository { get; }
+
+        public IFormatRepository formatRepository { get; }
+
 
         public Task SavechangeAsync();
     }

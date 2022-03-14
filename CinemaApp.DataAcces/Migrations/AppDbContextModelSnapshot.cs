@@ -53,6 +53,10 @@ namespace CinemaApp.DataAcces.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CinemaPosterURL")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("EMail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

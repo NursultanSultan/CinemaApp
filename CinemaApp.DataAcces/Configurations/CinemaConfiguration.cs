@@ -14,6 +14,10 @@ namespace CinemaApp.DataAcces.Configurations
 
             builder.Property(ci => ci.ShortContent).IsRequired().HasMaxLength(255);
 
+            builder.Property(ci => ci.CinemaPosterURL).IsRequired();
+
+            builder.Ignore(ci => ci.CinemaPosterPhoto);
+
             builder.Property(ci => ci.OurAdress).IsRequired();
 
             builder.Property(ci => ci.PhoneNumber).IsRequired();

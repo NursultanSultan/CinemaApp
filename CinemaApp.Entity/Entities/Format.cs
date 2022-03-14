@@ -13,7 +13,7 @@ namespace CinemaApp.Entity.Entities
         public string FormatType { get; set; }
 
         public string FormatIconUrl { get; set; }
-        public IFormFile FormatIconFile { get; set; }
+        public IFormFile FormatIconFile { get; set; } 
 
         public ICollection<MovieFormat> MovieFormats { get; set; }
 
