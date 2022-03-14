@@ -28,6 +28,9 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
+              "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj": {
+                "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj"
+              },
               "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj": {
                 "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj"
               }

@@ -14,6 +14,7 @@ namespace CinemaApp.DataAcces
 
         private AppDbContext _context { get; }
         private IMovieRepository _movieRepository;
+        private ICategoryRepository _categoryRepository;
 
         public UnitOfWork(AppDbContext context)
         {
@@ -23,6 +24,7 @@ namespace CinemaApp.DataAcces
 
 
         public IMovieRepository movieRepository => _movieRepository = _movieRepository ?? new MovieRepository(_context);
+        public ICategoryRepository categoryRepository => _categoryRepository = _categoryRepository ?? new CategoryRepository(_context);
 
 
         public async Task SavechangeAsync()

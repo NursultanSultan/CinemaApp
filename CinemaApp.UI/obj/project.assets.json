@@ -2755,6 +2755,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
+          "CinemaApp.Core": "1.0.0",
           "CinemaApp.Entity": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "3.1.23",
           "Microsoft.AspNetCore.Authentication.Google": "3.1.23"

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CinemaApp.Core.Interfaces
 {
-    public interface ICategoryRepository : IRepository<Movie>
+    public interface ICategoryRepository : IRepository<Category>
     {
 
     }

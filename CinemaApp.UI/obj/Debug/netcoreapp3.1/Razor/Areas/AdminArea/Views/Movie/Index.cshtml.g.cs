@@ -28,20 +28,27 @@ using CinemaApp.Business.DTOs;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Areas\AdminArea\Views\_ViewImports.cshtml"
-using CinemaApp.Entity.Entities;
+using CinemaApp.Business.DTOs.CategoryDtos;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Areas\AdminArea\Views\_ViewImports.cshtml"
+using CinemaApp.Entity.Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\Areas\AdminArea\Views\_ViewImports.cshtml"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"83872c409543ed4b61aab2914e2bdaf7d37b1145", @"/Areas/AdminArea/Views/Movie/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5358c61fa6329958e0ac68f05ca1ac581d4321e0", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"490015b4fb8b49e38bf65bd65254346260e75a9f", @"/Areas/AdminArea/Views/_ViewImports.cshtml")]
     public class Areas_AdminArea_Views_Movie_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

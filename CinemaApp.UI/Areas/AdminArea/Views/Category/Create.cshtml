@@ -1,0 +1,30 @@
+﻿@model CategoryCreateDto
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col-md-12 m-5 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="CategoryName"></label>
+                    <input asp-for="CategoryName" class="form-control">
+                    <span asp-validation-for="CategoryName" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="CategoryPhoto"></label>
+                    <input accept="image/" asp-for="CategoryPhoto" class="form-control">
+                    <span asp-validation-for="CategoryPhoto" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary me-2">Create</button>
+                <button asp-controller="Category" asp-action="Index" class="btn btn-dark">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,53 @@
+﻿@model List<CategoryReadDto>
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+
+<div class="col-lg-12 m-5 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-outline-success btn-fw d-flex justify-content-center">Create</a>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <td>Settings</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@count</td>
+                                <td>
+                                    <img style="width:200px;height:200px;border-radius:0;" src="~/assets/image/@item.CategoryImageURL" alt="Alternate Text" />
+                                </td>
+                                <td>@item.CategoryName</td>
+                                
+
+                                <td>
+
+                                    <a asp-controller="Category" asp-action="Update" asp-route-id="@item.Id" class="btn btn-inverse-primary btn-fw mt-2">Update</a>
+
+                                    <form asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id" method="post">
+                                        <button type="submit" class="btn btn-inverse-danger btn-fw mt-2">Delete</button>
+                                    </form>
+                                </td>
+
+                            </tr>
+                            count++;
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

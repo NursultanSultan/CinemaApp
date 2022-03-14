@@ -1,3 +1,6 @@
+using CinemaApp.Business.Implementations;
+using CinemaApp.Business.Interfaces;
+using CinemaApp.Business.Profiles;
 using CinemaApp.Core;
 using CinemaApp.DataAcces;
 using CinemaApp.DataAcces.DAL;
@@ -27,8 +30,8 @@ namespace CinemaApp.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(Startup));
-            
+            //services.AddAutoMapper(typeof(Startup));
+            services.AddMapperService();
 
             services.AddControllersWithViews();
             
@@ -39,6 +42,7 @@ namespace CinemaApp.UI
             });
 
             services.AddScoped<IUnitOfWork , UnitOfWork>();
+            services.AddScoped<ICategoryService, CategoryService>();
 
             services.AddIdentity<IdentityUser, IdentityRole>(opt => { opt.SignIn.RequireConfirmedEmail = true; })
                     .AddEntityFrameworkStores<AppDbContext>()

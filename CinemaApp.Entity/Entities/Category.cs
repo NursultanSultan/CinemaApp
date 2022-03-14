@@ -12,8 +12,6 @@ namespace CinemaApp.Entity.Entities
 
         public string CategoryName { get; set; }
 
-        
-
         public string CategoryImageURL { get; set; }
         public IFormFile CategoryPhoto { get; set; }
 
