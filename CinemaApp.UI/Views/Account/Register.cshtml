@@ -62,11 +62,11 @@
                                 <div class="d-flex">
                                     <button class="btn btn-facebook col me-2">
                                         <i class="mdi mdi-facebook"></i> 
-                                        <a style="color:white;text-decoration:none;" href="https://www.facebook.com/nursultan.sultanov.96">Facebook</a>
+                                        <a style="color:white;text-decoration:none;" asp-controller="Account" asp-action="FacebookLogin" >Facebook</a>
                                     </button>
                                     <button class="btn btn-google col">
-                                        <i class="mdi mdi-instagram"></i> 
-                                        <a style="color:white;text-decoration:none;" href="https://www.instagram.com/nursultan.sultanov244/">Instagram</a>
+                                        <i class="mdi mdi-google"></i> 
+                                        <a asp-controller="Account" asp-action="GoogleLogin" style="color:white;text-decoration:none;" >Google</a>
                                     </button>
                                 </div>  
                                 <p class="sign-up text-center">Already have an Account?<a asp-controller="Account" asp-action="login"> Sign In</a></p>

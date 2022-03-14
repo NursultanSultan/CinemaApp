@@ -28,7 +28,11 @@ namespace CinemaApp.UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
+            
+
             services.AddControllersWithViews();
+            
+
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration["ConnectionStrings:Default"]);
@@ -40,8 +44,25 @@ namespace CinemaApp.UI
                     .AddEntityFrameworkStores<AppDbContext>()
                     .AddDefaultTokenProviders();
 
+            
+
             services.AddControllers().AddNewtonsoftJson(x =>
                  x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+            services.AddAuthentication()
+                            .AddGoogle(options => {
+
+
+                                options.ClientId = "104954020607-duuco9c1pq89o5ck20b5spu1i0h6gqsi.apps.googleusercontent.com";
+                                options.ClientSecret = "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";
+                            });
+            services.AddAuthentication()
+                            .AddFacebook(options => {
+
+
+                                options.AppId = "328701479233888";
+                                options.AppSecret = "2ed5d93fd46a70bb5ee1d08a1f00fbf3";
+                            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

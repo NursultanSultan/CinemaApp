@@ -3,6 +3,7 @@ using CinemaApp.DataAcces.DAL;
 using CinemaApp.Entity.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,9 @@ namespace CinemaApp.UI.Controllers
 
             FavoriteAddDto favoriteAdd = new FavoriteAddDto();
 
-            Favorite favorite = _context.Favorites.Where(f => f.UserId == userId && f.MovieId == movieId).FirstOrDefault();
+            Favorite favorite = _context.Favorites
+                    .Where(f => f.UserId == userId && f.MovieId == movieId)
+                    .FirstOrDefault();
 
             if (userId != null)
             {
@@ -75,10 +78,11 @@ namespace CinemaApp.UI.Controllers
 
             var favMovie = _context.Movies
                                 .Where(m => MovieIds.Contains(m.Id))
+                                .Include(m => m.MovieCategories)
+                                .ThenInclude(m => m.Category)
                                 .ToList();
 
 
-            
 
             return View(favMovie);
 

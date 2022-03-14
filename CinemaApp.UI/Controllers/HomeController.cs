@@ -23,13 +23,18 @@ namespace CinemaApp.UI.Controllers
         {
             var movies = _context.Movies.Where(m => !m.IsDeleted && moviesearch != null ? (
             m.MovieName.Contains(moviesearch)
-            ) :true);
+            ) :true)
+                    .Include(m => m.MovieCategories)
+                    .ThenInclude(m => m.Category);
 
             HomeDto homedto = new HomeDto
             {
                 Movies = movies.ToList(),
                 OwlMovies = _context.Movies.Where(m => m.IsDeleted == false).Take(6)
-                            .OrderByDescending(m => m.Id).ToList(),
+                            .OrderByDescending(m => m.Id)
+                            .Include(m => m.MovieCategories)
+                            .ThenInclude(m => m.Category)
+                            .ToList(),
                 Cinemas = _context.Cinemas.Where(c => c.IsDeleted == false).ToList(),
                 Languages = _context.Languages.Where(l => l.IsDeleted == false).ToList()
             };
@@ -55,6 +60,8 @@ namespace CinemaApp.UI.Controllers
 
             var result = await _context.Movies
                                 .Where(m => MovieCineIds.Contains(m.Id) && MovieLangIds.Contains(m.Id))
+                                .Include(m => m.MovieCategories)
+                                .ThenInclude(m => m.Category)
                                 .ToListAsync();
 
             return PartialView("_MoviePartial", result);

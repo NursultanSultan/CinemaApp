@@ -17,7 +17,14 @@
                 <h3 class="card__title"><a asp-controller="Movie" asp-action="Detail" asp-route-id="@movie.Id">@movie.MovieName</a></h3>
                 <ul class="card__list">
                     <li>@movie.AgeLimit +</li>
-                    <li>Comedy</li>
+                    
+                    @foreach (var item in movie.MovieCategories)
+                    {
+                        <li>
+                            @item.Category.CategoryName
+                        </li>
+                    }
+                    
                     <li>2012</li>
                 </ul>
                 <ul class="card__info">

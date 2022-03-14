@@ -156,6 +156,7 @@ $(document).ready(function () {
     //$(".comment__delete__form").submit(function (e) {
 
     //    e.preventDefault();
+
     //    var commentId = $(this).parent().data("id");
 
     //    console.log("comment id:" + commentId);

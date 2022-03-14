@@ -185,3 +185,5 @@ C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "+yOPTsb997Q33Xq4WgoVuFJYlF/CYV1PjviHrUpN0AJz9v9srJsHg7dQCfHebiN7Fkw4t2R2tLAc2sMPZJoLYA==",
+  "dgSpecHash": "nqItwUnV/U2SogVLQVO5KrBLN3WPCqPlEQdLTDVKgP3Y8/kUYrj2GfFXlR3YEiky64vfRs5C7NTP3XeDhDYWEQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Home\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\3.1.23\\microsoft.aspnetcore.authentication.facebook.3.1.23.nupkg.sha512",
+    "C:\\Users\\Home\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.23\\microsoft.aspnetcore.authentication.google.3.1.23.nupkg.sha512",
     "C:\\Users\\Home\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.22\\microsoft.aspnetcore.cryptography.internal.3.1.22.nupkg.sha512",
     "C:\\Users\\Home\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.22\\microsoft.aspnetcore.cryptography.keyderivation.3.1.22.nupkg.sha512",
     "C:\\Users\\Home\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.22\\microsoft.aspnetcore.http.features.3.1.22.nupkg.sha512",

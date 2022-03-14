@@ -50,16 +50,27 @@
                                 <div class="form-group">
 
                                     Remember Me : <input asp-for="RememberMe">
-                                    
+
                                 </div>
 
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary btn-block enter-btn">SING IN</button>
                                 </div>
-                                
+
+                                <div class="d-flex">
+                                    <button class="btn btn-facebook col me-2">
+                                        <i class="mdi mdi-facebook"></i>
+                                        <a style="color:white;text-decoration:none;" asp-controller="Account" asp-action="FacebookLogin" >Facebook</a>
+                                    </button>
+                                    <button class="btn btn-google col">
+                                        <i class="mdi mdi-google"></i>
+                                        <a asp-controller="Account" asp-action="GoogleLogin" style="color:white;text-decoration:none;">Google</a>
+                                    </button>
+                                </div>
+
                                 <p class="sign-up text-center">don't have an account?<a asp-controller="Account" asp-action="Register"> Sign Up</a></p>
                                 <p class="text-center">Did you forget your password? <a asp-controller="Account" asp-action="ForgetPassword" class="forgot-pass">Forgot password</a></p>
-                               
+
                             </form>
                         </div>
                     </div>

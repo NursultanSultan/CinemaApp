@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
@@ -199,6 +200,65 @@ namespace CinemaApp.UI.Controllers
 
             return View();
         }
+
+
+        public IActionResult FacebookLogin(string returnUrl)
+        {
+            string redirectUrl = Url.Action("SocialMediaResponse", "Account", new { returnUrl = returnUrl });
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Facebook", redirectUrl);
+            return new ChallengeResult("Facebook", properties);
+        }
+
+        public IActionResult GoogleLogin(string returnUrl)
+        {
+            string redirectUrl = Url.Action("SocialMediaResponse", "Account", new { returnUrl = returnUrl });
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties("Google", redirectUrl);
+            return new ChallengeResult("Google", properties);
+        }
+
+        public async Task<IActionResult> SocialMediaResponse(string returnUrl)
+        {
+            var loginInfo = await _signInManager.GetExternalLoginInfoAsync();
+            if (loginInfo == null)
+            {
+                return RedirectToAction("Register");
+            }
+            else
+            {
+                var result =
+                    await _signInManager.ExternalLoginSignInAsync(loginInfo.LoginProvider, loginInfo.ProviderKey, true);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    if (loginInfo.Principal.HasClaim(scl => scl.Type == ClaimTypes.Email))
+                    {
+                        IdentityUser user = new IdentityUser()
+                        {
+                            Email = loginInfo.Principal.FindFirstValue(ClaimTypes.Email),
+                            UserName = loginInfo.Principal.FindFirstValue(ClaimTypes.GivenName),
+                            EmailConfirmed = true
+                        };
+                        var createResult = await _userManager.CreateAsync(user);
+                        if (createResult.Succeeded)
+                        {
+                            var identityLogin = await _userManager.AddLoginAsync(user, loginInfo);
+                            if (identityLogin.Succeeded)
+                            {
+                                await _signInManager.SignInAsync(user, true);
+                                return Redirect("Login");
+                            }
+                        }
+                    }
+                }
+            }
+
+            return RedirectToAction("Register");
+        }
+
+
 
         public IActionResult SuccesSending()
         {

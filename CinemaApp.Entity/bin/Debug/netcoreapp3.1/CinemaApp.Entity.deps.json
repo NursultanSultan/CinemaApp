@@ -8,11 +8,29 @@
     ".NETCoreApp,Version=v3.1": {
       "CinemaApp.Entity/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Facebook": "3.1.23",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.23",
           "Microsoft.AspNetCore.Http.Features": "3.1.22",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.22"
         },
         "runtime": {
           "CinemaApp.Entity.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Facebook/3.1.23": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "assemblyVersion": "3.1.23.0",
+            "fileVersion": "3.100.2322.12312"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/3.1.23": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "3.1.23.0",
+            "fileVersion": "3.100.2322.12312"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.22": {
@@ -291,6 +309,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/3.1.23": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vhlCNHGm47hkTy6yyrV1zIWsA/A9DI1Qw+oYQlgPOb+38yKsACCVlkZg5tdcvG/kQbVG86sHEdCgcU1BEDrUsw==",
+      "path": "microsoft.aspnetcore.authentication.facebook/3.1.23",
+      "hashPath": "microsoft.aspnetcore.authentication.facebook.3.1.23.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/3.1.23": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xNmGe3L4+X1YnPPaRHeX1fM4RXwnvxB6ZJoH1PrZ8+A5+0vQdgAm7dkgE0y9YBPDbRTKgJycjN5Irxiznzc7pg==",
+      "path": "microsoft.aspnetcore.authentication.google/3.1.23",
+      "hashPath": "microsoft.aspnetcore.authentication.google.3.1.23.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.22": {
       "type": "package",

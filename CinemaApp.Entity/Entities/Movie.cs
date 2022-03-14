@@ -20,7 +20,7 @@ namespace CinemaApp.Entity.Entities
 
         public string TrailerUrl { get; set; }
 
-        public decimal Price { get; set; }
+        public decimal Price { get; set; } 
 
         public ICollection<MovieCinema> MovieCinemas { get; set; }
 

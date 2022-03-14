@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using CinemaApp.Business.DTOs;
+using CinemaApp.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,6 +11,12 @@ namespace CinemaApp.Business.Profiles
     {
         public Mapper()
         {
+
+            CreateMap<MovieCreateDto, Movie>()
+                    .ForMember(x => x.PosterFile, opt => opt.Ignore())
+                    .ForMember(x => x.BackgroundImgFile, opt => opt.Ignore());
+
+
 
         }
     }
