@@ -391,6 +391,21 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "CinemaApp.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CinemaApp.Entity": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.Facebook": "3.1.23",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.23"
+        },
+        "compile": {
+          "bin/placeholder/CinemaApp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CinemaApp.Core.dll": {}
+        }
+      },
       "CinemaApp.Entity/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1146,6 +1161,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "CinemaApp.Core/1.0.0": {
+      "type": "project",
+      "path": "../CinemaApp.Core/CinemaApp.Core.csproj",
+      "msbuildProject": "../CinemaApp.Core/CinemaApp.Core.csproj"
+    },
     "CinemaApp.Entity/1.0.0": {
       "type": "project",
       "path": "../CinemaApp.Entity/CinemaApp.Entity.csproj",
@@ -1155,6 +1175,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
+      "CinemaApp.Core >= 1.0.0",
       "CinemaApp.Entity >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.Facebook >= 3.1.23",
       "Microsoft.AspNetCore.Authentication.Google >= 3.1.23"
@@ -1187,6 +1208,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj": {
+              "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Core\\CinemaApp.Core.csproj"
+            },
             "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj": {
               "projectPath": "C:\\Users\\Home\\source\\repos\\CinemaApp\\CinemaApp.Entity\\CinemaApp.Entity.csproj"
             }

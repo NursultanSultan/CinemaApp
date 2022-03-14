@@ -9,6 +9,7 @@
       "CinemaApp.Business/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
+          "CinemaApp.Core": "1.0.0",
           "CinemaApp.Entity": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "3.1.23",
           "Microsoft.AspNetCore.Authentication.Google": "3.1.23"
@@ -337,6 +338,16 @@
           }
         }
       },
+      "CinemaApp.Core/1.0.0": {
+        "dependencies": {
+          "CinemaApp.Entity": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.Facebook": "3.1.23",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.23"
+        },
+        "runtime": {
+          "CinemaApp.Core.dll": {}
+        }
+      },
       "CinemaApp.Entity/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Facebook": "3.1.23",
@@ -586,6 +597,11 @@
       "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "CinemaApp.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "CinemaApp.Entity/1.0.0": {
       "type": "project",

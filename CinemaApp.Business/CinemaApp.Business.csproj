@@ -5,8 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Implementations\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Validators\" />
   </ItemGroup>
 
@@ -17,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CinemaApp.Core\CinemaApp.Core.csproj" />
     <ProjectReference Include="..\CinemaApp.Entity\CinemaApp.Entity.csproj" />
   </ItemGroup>
 
