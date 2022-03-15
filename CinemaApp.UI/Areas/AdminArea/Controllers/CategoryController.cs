@@ -23,7 +23,7 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         private IWebHostEnvironment _env { get; }
         private ICategoryService _categoryService { get; }
 
-        public CategoryController(IUnitOfWork unitOfWork, IMapper mapper
+        public CategoryController(IUnitOfWork unitOfWork, IMapper mapper 
                 , IWebHostEnvironment env , ICategoryService categoryService)
         {
             _unitOfWork = unitOfWork;
@@ -135,14 +135,16 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int Id)
         {
-            var dbCategory = await _unitOfWork.categoryRepository
-                                        .GetAsync(c => c.Id == Id);
+            //var dbCategory = await _unitOfWork.categoryRepository
+            //                            .GetAsync(c => c.Id == Id);
 
-            if (dbCategory == null) return NotFound();
+            //if (dbCategory == null) return NotFound();
 
-            dbCategory.IsDeleted = true;
+            //dbCategory.IsDeleted = true;
 
-            await _unitOfWork.SavechangeAsync();
+            //await _unitOfWork.SavechangeAsync();
+
+            await _categoryService.RemoveAsync(Id);
             return RedirectToAction(nameof(Index));
         }
 

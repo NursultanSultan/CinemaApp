@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CinemaApp.Business.DTOs.CinemaDtos;
 using CinemaApp.Business.Interfaces;
+using CinemaApp.Business.Utilities.File;
 using CinemaApp.Core;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +31,8 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(/*await _cinemaService.GetAllAsync()*/);
+            return View(await _cinemaService.GetAllAsync());
+            
         }
 
         public IActionResult Create()
@@ -48,19 +50,19 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
             //Category category = _mapper.Map<Category>(categoryCreateDto);
 
             /*File upload start*/
-            //if (!createDto.CategoryPhoto.CheckFileType("image/"))
-            //{
-            //    ModelState.AddModelError("Photo", "File must be image type");
-            //    return View(categoryCreateDto);
-            //}
+            if (!createDto.CinemaPosterPhoto.CheckFileType("image/"))
+            {
+                ModelState.AddModelError("Photo", "File must be image type");
+                return View(createDto);
+            }
 
-            //if (!categoryCreateDto.CategoryPhoto.CheckFileSize(300))
-            //{
-            //    ModelState.AddModelError("Photo", "File must be less than 300kb");
-            //    return View(categoryCreateDto);
-            //}
+            if (!createDto.CinemaPosterPhoto.CheckFileSize(300))
+            {
+                ModelState.AddModelError("Photo", "File must be less than 300kb");
+                return View(createDto);
+            }
 
-            //await _categoryService.CreateAsync(categoryCreateDto);
+            await _cinemaService.CreateAsync(createDto);
 
             return RedirectToAction(nameof(Index));
 
@@ -131,14 +133,15 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int Id)
         {
-            var dbCategory = await _unitOfWork.cinemaRepository
-                                        .GetAsync(c => c.Id == Id);
+            //var dbCategory = await _unitOfWork.cinemaRepository
+            //                            .GetAsync(c => c.Id == Id);
 
-            if (dbCategory == null) return NotFound();
+            //if (dbCategory == null) return NotFound();
 
-            dbCategory.IsDeleted = true;
+            //dbCategory.IsDeleted = true;
 
-            await _unitOfWork.SavechangeAsync();
+            //await _unitOfWork.SavechangeAsync();
+            await _cinemaService.RemoveAsync(Id);
             return RedirectToAction(nameof(Index));
         }
     }

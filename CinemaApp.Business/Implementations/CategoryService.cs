@@ -48,7 +48,7 @@ namespace CinemaApp.Business.Implementations
         public async Task<IEnumerable<CategoryReadDto>> GetAllAsync()
         {
             var dbCategories = await _unitOfWork.categoryRepository
-                                        .GetAllAsync(c => c.IsDeleted == false);
+                                        .GetAllAsync(c => c.IsDeleted == false); 
 
             //List<CategoryReadDto> readVM = _mapper.Map<List<CategoryReadDto>>(dbCategories);
             List<CategoryReadDto> categoryDtos = new List<CategoryReadDto>();
@@ -73,9 +73,17 @@ namespace CinemaApp.Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task RemoveAsync(int id)
+        public async Task RemoveAsync(int id)
         {
-            throw new NotImplementedException();
+            var dbCategory = await _unitOfWork.categoryRepository
+                                        .GetAsync(c => c.Id == id);
+
+            if (dbCategory == null) throw new NullReferenceException();
+
+            dbCategory.IsDeleted = true;
+
+            await _unitOfWork.SavechangeAsync();
+
         }
 
         public CategoryUpdateDto Update(int id)

@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using CinemaApp.Business.DTOs.CinemaDtos;
 using CinemaApp.Business.Interfaces;
+using CinemaApp.Business.Utilities.File;
 using CinemaApp.Core;
 using CinemaApp.Entity.Entities;
 using Microsoft.AspNetCore.Hosting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,14 +27,53 @@ namespace CinemaApp.Business.Implementations
             _env = env;
         }
 
-        public Task CreateAsync(CinemaCreateDto createDto)
+        public async Task CreateAsync(CinemaCreateDto createDto)
         {
-            throw new NotImplementedException();
+            Cinema cinema = new Cinema
+            {
+                CinemaName = createDto.CinemaName,
+                EMail = createDto.EMail,
+                ShortContent = createDto.ShortContent,
+                MapLocation = createDto.MapLocation,
+                OurAdress = createDto.OurAdress,
+                PhoneNumber = createDto.PhoneNumber,
+                WorkingHour = createDto.WorkingHour
+
+            };
+
+            string root = Path.Combine(_env.WebRootPath, "assets", "image");
+            string FileName = await createDto.CinemaPosterPhoto.SaveFileAsync(root);
+            cinema.CinemaPosterURL = FileName;
+
+            /*File upload end*/
+
+            await _unitOfWork.cinemaRepository.CreateAsync(cinema);
+            await _unitOfWork.SavechangeAsync();
         }
 
-        public Task<IEnumerable<CinemaReadDto>> GetAllAsync()
+        public async Task<IEnumerable<CinemaReadDto>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var dbCinemas = await _unitOfWork.cinemaRepository
+                                        .GetAllAsync(c => c.IsDeleted == false);
+
+            //List<CategoryReadDto> readVM = _mapper.Map<List<CategoryReadDto>>(dbCategories);
+            List<CinemaReadDto> cinemaDtos = new List<CinemaReadDto>();
+
+            foreach (var cinema in dbCinemas)
+            {
+                CinemaReadDto readDto = new CinemaReadDto
+                {
+                   Id = cinema.Id,
+                   CinemaName = cinema.CinemaName,
+                   CinemaPosterURL = cinema.CinemaPosterURL,
+                   EMail = cinema.EMail,
+                   
+                };
+
+                cinemaDtos.Add(readDto);
+            }
+
+            return cinemaDtos;
         }
 
         public Task<Cinema> GetAsync(int id)
@@ -40,9 +81,16 @@ namespace CinemaApp.Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task RemoveAsync(int id)
+        public async Task RemoveAsync(int id)
         {
-            throw new NotImplementedException();
+            var dbCategory = await _unitOfWork.cinemaRepository
+                                        .GetAsync(c => c.Id == id);
+
+            if (dbCategory == null)throw new NullReferenceException();
+
+            dbCategory.IsDeleted = true;
+
+            await _unitOfWork.SavechangeAsync();
         }
 
         public CinemaUpdateDto Update(int id)
