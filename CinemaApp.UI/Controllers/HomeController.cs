@@ -36,7 +36,9 @@ namespace CinemaApp.UI.Controllers
                             .ThenInclude(m => m.Category)
                             .ToList(),
                 Cinemas = _context.Cinemas.Where(c => c.IsDeleted == false).ToList(),
-                Languages = _context.Languages.Where(l => l.IsDeleted == false).ToList()
+                Languages = _context.Languages.Where(l => l.IsDeleted == false).ToList(),
+                Categories = _context.Categories.Where(c => c.IsDeleted == false).ToList()
+                
             };
 
             return View(homedto);

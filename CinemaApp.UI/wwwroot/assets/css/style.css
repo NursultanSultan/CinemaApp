@@ -472,8 +472,9 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  padding: 120px 0;
+  padding: 80px 0;
 }
+
 
 .hero::before {
   content: "";
@@ -702,8 +703,10 @@
   display: none;
 }
 
+
+
 @media screen and (max-width: 768px) {
-  .filter_blocks {
+    .filter_blocks {
     flex-direction:column;
   }
 }
@@ -876,6 +879,10 @@
 }
 .table-dark:hover {
     --bs-table-hover-bg: #151f30 !important; 
+}
+
+#parallax{
+    padding:80px 0;
 }
 
 .parallax_image {

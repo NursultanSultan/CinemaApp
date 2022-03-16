@@ -61,17 +61,23 @@
         
         <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="pills-today-tab" data-toggle="pill" href="#pills-today" role="tab" aria-controls="pills-home" aria-selected="true">In Cinema</a>
+                <a class="nav-link active" id="pills-today-tab" data-toggle="pill" href="#pills-today" role="tab" aria-controls="pills-home" aria-selected="true">Movies</a>
+            </li>
+            @*<li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-schedule-tab" data-toggle="pill" href="#pills-schedule" role="tab" aria-controls="pills-profile" aria-selected="false">Schedule</a>
+            </li>*@
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-cinema-tab" data-toggle="pill" href="#pills-cinema" role="tab" aria-controls="pills-profile" aria-selected="false">Cinema</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" id="pills-schedule-tab" data-toggle="pill" href="#pills-schedule" role="tab" aria-controls="pills-profile" aria-selected="false">Schedule</a>
+                <a class="nav-link" id="pills-category-tab" data-toggle="pill" href="#pills-category" role="tab" aria-controls="pills-profile" aria-selected="false">Category</a>
             </li>
 
         </ul>
     </div>
 
     <div class="tab_body">
-        <div class="tab-content" id="pills-tabContent"> 
+        <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-today" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="today_list tab_list show active">
                     <div class="container">
@@ -111,10 +117,10 @@
 
                             <div class="d-flex justify-content-end h-100">
 
-                                <form  method="get" asp-action="Index" class="searchbar">
+                                <form method="get" asp-action="Index" class="searchbar">
                                     <input class="search_input" type="text" name="moviesearch" placeholder="Search movie...">
                                     <button type="submit" class="search_icon">
-                                        <i  class="fas fa-search"></i>
+                                        <i class="fas fa-search"></i>
                                     </button>
 
                                 </form>
@@ -123,7 +129,7 @@
 
                         </div>
 
-                      
+
                         <div class="catalog catalog--list">
                             <div class="container">
                                 <div class="row">
@@ -149,7 +155,7 @@
                         <div class="filter_blocks mobile_hide">
 
                             <div class="filter_block">
-                                
+
                                 <select class="form-control selected" id="exampleFormControlSelect1">
                                     <option>03.03.2022</option>
                                     <option>04.03.2022</option>
@@ -157,7 +163,7 @@
                                     <option>06.03.2022</option>
                                     <option>07.03.2022</option>
                                 </select>
-                                
+
                             </div>
 
                             <div class="filter_block">
@@ -230,6 +236,65 @@
 
                 </div>
             </div>
+            <div class="tab-pane fade" id="pills-cinema" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="cinema_list tab_list mt-3">
+
+                    <div class="container">
+
+                        <div class="row">
+
+                            @foreach (var cinema in Model.Cinemas)
+                            {
+                                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mt-3">
+                                    <a asp-controller="Cinema" asp-action="Detail" asp-route-id="@cinema.Id" class="cinema">
+                                        <div class="category__cover">
+                                            <img src="~/assets/image/@cinema.CinemaPosterURL" alt="Alternate Text" />
+                                        </div>
+                                        <h3 class="category__title">@cinema.CinemaName</h3>
+                                        @*<span class="category__value">322</span>*@
+                                    </a>
+                                </div>
+                            }
+
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-category" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="category_list tab_list">
+
+                    <div class="container">
+
+                        <div class="row">
+
+                            @foreach (var category in Model.Categories)
+                            {
+                                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                                    <a href="category.html" class="category">
+                                        <div class="category__cover">
+                                            <img src="~/assets/image/@category.CategoryImageURL" alt="Alternate Text" />
+                                        </div>
+                                        <h3 class="category__title">@category.CategoryName</h3>
+                                        @*<span class="category__value">322</span>*@
+                                    </a>
+                                </div>
+                            }
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
         </div>
     </div>
 </section>

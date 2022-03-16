@@ -11,5 +11,6 @@ namespace CinemaApp.Business.DTOs
         public List<Movie> OwlMovies { get; set; }
         public List<Cinema> Cinemas { get; set; }
         public List<Language> Languages { get; set; }
+        public List<Category> Categories { get; set; }
     }
 }
