@@ -444,6 +444,551 @@
   }
 
 
+section__title,
+section__text
+{
+    color:#fff !important;
+}
+/*sign in*/
+.sign {
+    display: block;
+    position: relative;
+}
+
+.sign__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.sign__form {
+  background-color: #131720;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 16px;
+  padding: 30px 20px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  border: 4px solid #151f30;
+}
+
+.sign__form--contacts,
+.sign__form--profile {
+  margin-top: 20px;
+  max-width: 100%;
+  padding: 20px 20px 5px;
+}
+
+.sign__form--contacts .sign__btn,
+.sign__form--profile .sign__btn {
+  margin: 0 0 15px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.sign__form--contacts .row,
+.sign__form--profile .row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.sign__form--contacts .col-12,
+.sign__form--profile .col-12 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sign__form--profile .sign__btn {
+  margin: 5px 0 15px;
+}
+
+.sign__form--first {
+  margin-top: 0;
+}
+
+.sign__logo {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.sign__logo a {
+  max-width: 100%;
+  width: auto;
+}
+
+.sign__logo img {
+  width: 90px;
+}
+
+.sign__title {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Rubik', sans-serif;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.sign__label {
+  font-weight: 400;
+  font-size: 14px;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+}
+
+.sign__input {
+  background-color: #151f30;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  height: 44px;
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.sign__input:focus {
+  background-color: #151f30;
+  border-color: #2f80ed;
+}
+
+.sign__select {
+  background: url("../img/arrow2.svg") no-repeat center right 20px #151f30;
+  background-size: 16px auto;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  height: 44px;
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.sign__select:focus {
+  background-color: #151f30;
+}
+
+.sign__textarea {
+  background-color: #151f30;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  height: 144px;
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+  padding: 15px 20px;
+  resize: none;
+}
+
+.sign__textarea:focus {
+  background-color: #151f30;
+  border-color: #2f80ed;
+}
+
+.sign__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.sign__group--checkbox {
+  width: 100%;
+  text-align: left;
+}
+
+.sign__group--checkbox input:not(:checked),
+.sign__group--checkbox input:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+.sign__group--checkbox input:not(:checked) + label,
+.sign__group--checkbox input:checked + label {
+  font-size: 14px;
+  color: #e0e0e0;
+  font-weight: normal;
+  position: relative;
+  cursor: pointer;
+  padding-left: 35px;
+  line-height: 22px;
+  margin: 0;
+}
+
+.sign__group--checkbox input:not(:checked) + label a,
+.sign__group--checkbox input:checked + label a {
+  color: #2f80ed;
+}
+
+.sign__group--checkbox input:not(:checked) + label a:hover,
+.sign__group--checkbox input:checked + label a:hover {
+  color: #2f80ed;
+  text-decoration: underline;
+}
+
+.sign__group--checkbox input:not(:checked) + label:before,
+.sign__group--checkbox input:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  background-color: #151f30;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+.sign__group--checkbox input:not(:checked) + label:after,
+.sign__group--checkbox input:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: url("../img/checkmark.svg") no-repeat center/12px auto;
+  border-radius: 8px;
+}
+
+.sign__group--checkbox input:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.sign__group--checkbox input:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.sign__group--checkbox label::-moz-selection {
+  background: transparent;
+  color: #e0e0e0;
+}
+
+.sign__group--checkbox label::selection {
+  background: transparent;
+  color: #e0e0e0;
+}
+
+.sign__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px auto;
+  width: 100%;
+  height: 50px;
+  border-radius: 16px;
+  background-color: #2f80ed;
+  font-size: 14px;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sign__btn:hover {
+  color: #151f30;
+  background-color: #fff;
+}
+
+.sign__text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.sign__text a {
+  position: relative;
+  color: #2f80ed;
+}
+
+.sign__text a:hover {
+  color: #2f80ed;
+  text-decoration: underline;
+}
+
+.sign__text--small {
+  font-size: 12px;
+}
+
+.sign__delimiter {
+  font-size: 14px;
+  color: #e0e0e0;
+  line-height: 100%;
+}
+
+.sign__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.sign__social a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 44px;
+  width: calc(33% - 10px);
+  border-radius: 16px;
+  color: #fff;
+}
+
+.sign__social a svg {
+  height: auto;
+  fill: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sign__social a.fb {
+  background-color: #3b5999;
+}
+
+.sign__social a.fb svg {
+  width: 10px;
+}
+
+.sign__social a.gl {
+  background-color: #df4a32;
+}
+
+.sign__social a.gl svg {
+  width: 18px;
+}
+
+.sign__social a.tw {
+  background-color: #1da1f2;
+}
+
+.sign__social a.tw svg {
+  width: 18px;
+}
+
+.sign__social a:hover {
+  background-color: #fff;
+}
+
+.sign__social a:hover.fb svg {
+  fill: #3b5999;
+}
+
+.sign__social a:hover.gl svg {
+  fill: #df4a32;
+}
+
+.sign__social a:hover.tw svg {
+  fill: #1da1f2;
+}
+
+.sign__value {
+  font-size: 24px;
+  color: #fff;
+  display: block;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.sign__radio {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.sign__radio li {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.sign__radio li:last-child {
+  margin-bottom: 0;
+}
+
+.sign__radio span {
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.sign__radio input:not(:checked),
+.sign__radio input:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+.sign__radio label {
+  display: block;
+  margin: 0;
+  position: relative;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 14px;
+  color: #e0e0e0;
+  line-height: 24px;
+  padding-left: 25px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sign__radio label:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 4px solid rgba(47, 128, 237, 0.5);
+  background-color: transparent;
+  border-radius: 50%;
+  left: 0;
+  top: 4px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sign__radio input:checked + label {
+  color: #fff;
+}
+
+.sign__radio input:checked + label:before {
+  border-color: #2f80ed;
+}
+
+@media (min-width: 576px) {
+  .sign__form {
+    padding: 40px;
+  }
+  .sign__form--contacts,
+  .sign__form--profile {
+    padding: 20px 20px 5px;
+  }
+  .sign__logo {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sign__form--contacts,
+  .sign__form--profile {
+    padding: 30px 30px 15px;
+    margin-top: 30px;
+  }
+  .sign__form--contacts .sign__btn,
+  .sign__form--profile .sign__btn {
+    margin: 10px 0 15px;
+  }
+  .sign__form--first {
+    margin-top: 0;
+  }
+  .sign__wrap {
+    margin-top: 30px;
+    padding: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sign__form--profile {
+    margin-top: 0;
+  }
+  .sign__form--profile .sign__btn {
+    width: 180px;
+  }
+}
+
+
+/*sign in end*/
 
 
 
@@ -2407,6 +2952,70 @@
  .partners img {
     width: 100%;
 }
+
+ #contact_us{
+    padding: 100px 0;
+}
+
+.contacts__list {
+  margin-top: 20px;
+}
+.contacts__list a {
+  font-size: 16px;
+  line-height: 30px;
+  color: #fff;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+}
+.contacts__list a:hover {
+  color: #2f80ed;
+}
+.contacts__social {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.contacts__social a {
+  margin-top: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  transition-property: all;
+}
+.contacts__social a svg {
+  width: 100%;
+  height: auto;
+}
+.contacts__social a:last-child {
+  margin-right: 0;
+}
+.contacts__social a:hover {
+  opacity: 1 !important;
+}
+.contacts__social:hover a {
+  opacity: 0.4;
+}
+@media (min-width: 768px) {
+  .contacts__list {
+    margin-top: 30px;
+  }
+  .contacts__list a {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .contacts__social {
+    margin-top: 10px;
+  }
+}
+
 
 
 
