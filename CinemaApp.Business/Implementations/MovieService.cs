@@ -30,9 +30,30 @@ namespace CinemaApp.Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<MovieReadDto>> GetAllAsync()
+        public async Task<IEnumerable<MovieReadDto>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var dbMovies = await _unitOfWork.movieRepository
+                                        .GetAllAsync(c => c.IsDeleted == false);
+
+            //List<CategoryReadDto> readVM = _mapper.Map<List<CategoryReadDto>>(dbCategories);
+            List<MovieReadDto> movieDtos = new List<MovieReadDto>();
+
+            foreach (var movie in dbMovies)
+            {
+                MovieReadDto readDto = new MovieReadDto
+                {
+                    Id = movie.Id,
+                    MovieName = movie.MovieName,
+                    BackgroundImgUrl = movie.BackgroundImgUrl,
+                    Director = movie.Director,
+                    PosterUrl = movie.PosterUrl,
+                    ImdbPoint = movie.ImdbPoint
+                };
+
+                movieDtos.Add(readDto);
+            }
+
+            return movieDtos;
         }
 
         public Task<Movie> GetAsync(int id)
@@ -45,7 +66,7 @@ namespace CinemaApp.Business.Implementations
             throw new NotImplementedException();
         }
 
-        public MovieUpdateDto Update(int id)
+        public MovieUpdateDto Update(int id) 
         {
             throw new NotImplementedException();
         }

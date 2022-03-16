@@ -30,9 +30,27 @@ namespace CinemaApp.Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<LangReadDto>> GetAllAsync()
+        public async Task<IEnumerable<LangReadDto>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var dbLanguages = await _unitOfWork.languageRepository
+                                        .GetAllAsync(c => c.IsDeleted == false);
+
+            //List<CategoryReadDto> readVM = _mapper.Map<List<CategoryReadDto>>(dbCategories);
+            List<LangReadDto> languageDtos = new List<LangReadDto>();
+
+            foreach (var language in dbLanguages)
+            {
+                LangReadDto readDto = new LangReadDto
+                {
+                    Id = language.Id,
+                    Lang = language.Lang,
+                    LangIconUrl = language.LangIconUrl
+                };
+
+                languageDtos.Add(readDto);
+            }
+
+            return languageDtos;
         }
 
         public Task<Language> GetAsync(int id)

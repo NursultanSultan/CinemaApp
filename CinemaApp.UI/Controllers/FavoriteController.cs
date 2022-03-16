@@ -83,7 +83,6 @@ namespace CinemaApp.UI.Controllers
                                 .ToList();
 
 
-
             return View(favMovie);
 
         }

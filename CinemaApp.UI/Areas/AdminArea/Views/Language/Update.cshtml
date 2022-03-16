@@ -1,0 +1,30 @@
+﻿@model LangUpdateDto
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="col-md-12 m-5 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Lang"></label>
+                    <input asp-for="Lang" class="form-control">
+                    <span asp-validation-for="Lang" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="LangIconFile"></label>
+                    <input accept="image/" asp-for="LangIconFile" class="form-control">
+                    <span asp-validation-for="LangIconFile" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary me-2">Create</button>
+                <button asp-controller="Language" asp-action="Index" class="btn btn-dark">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+

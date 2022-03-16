@@ -195,3 +195,8 @@ C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Cinema\Index.cshtml.g.cs
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Cinema\Create.cshtml.g.cs
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Cinema\Update.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Language\Index.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Language\Create.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\Language\Update.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\UserSetting\ChangeSetting.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs

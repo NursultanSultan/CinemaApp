@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="header__content">
                     <!-- header logo -->
-                    <a href="#" class="header__logo">
+                    <a asp-controller="Home" asp-action="Index" class="header__logo">
                         <img src="img/logo.svg" alt="">
                         My<span>Flix</span>
                     </a>
@@ -14,7 +14,7 @@
                     <ul class="header__nav">
                         <!-- dropdown -->
                         <li class="header__nav-item">
-                            <a href="pricing.html" class="header__nav-link">Home</a>
+                            <a asp-controller="Home" asp-action="Index" class="header__nav-link">Home</a>
 
 
                         </li>
@@ -33,7 +33,7 @@
                         <!-- end dropdown -->
 
                         <li class="header__nav-item">
-                            <a href="pricing.html" class="header__nav-link">Pricing plan</a>
+                            <a asp-controller="About" asp-action="Index" class="header__nav-link">About Us</a>
                         </li>
 
 

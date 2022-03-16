@@ -2337,6 +2337,69 @@
 }
 
 
+#about__page{
+    padding: 80px 0;
+}
+
+.movie_about{
+    padding: 60px 0;
+    // background-color: #1a191f;
+    color: white;
+}
+
+ .movie_about .title,
+ .movie_about .desc{
+    padding: 20px 0;
+}
+
+ .movie_about .desc{
+    line-height: 1.6;
+}
+
+ .movie_about .box{
+    display: flex;
+    margin-bottom: 25px;
+}
+
+
+ .movie_about .icon{
+    padding-right: 15px;
+    color: #f9ab00;
+}
+
+ .movie_about .icon i{
+    font-size: 27px;
+}
+
+/* works =========== */
+ .works{
+    color: white;
+    padding: 40px 0;
+}
+
+ .works .title{
+    padding: 30px 0;
+}
+
+ .works .box .number span{
+    color: #f9ab00;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+ .partners{
+    color: white;
+    padding: 40px 0;
+}
+
+ .partners .title,
+ .partners .desc{
+    padding: 20px 0;
+}
+
+ .partners img {
+    width: 100%;
+}
 
 
 

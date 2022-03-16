@@ -74,7 +74,9 @@ namespace CinemaApp.UI.Controllers
             if (emailResponse)
             {
 
-                return RedirectToAction("SuccesSending", "Account");
+                ModelState.AddModelError(string.Empty, "Succesed ");
+                return View();
+
             }
 
             return RedirectToAction("Index", "Home");

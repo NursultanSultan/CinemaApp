@@ -4,7 +4,7 @@
     int count = 1;
 }
 
-<div class="col-lg-12 m-5 grid-margin stretch-card">
+<div class="col-lg-12 m-5 grid-margin stretch-card"> 
     <div class="card">
         <div class="card-body">
             <a asp-controller="Movie" asp-action="Create" class="btn btn-outline-success btn-fw d-flex justify-content-center">Create</a>
@@ -31,10 +31,10 @@
                                 <td>@item.MovieName</td>
 
                                 <td>
-                                    <img style="width:200px;height:200px;border-radius:0;" src="~/assets/image/@item.PosterUrl alt="Alternate Text" />
+                                    <img style="width:200px;height:200px;border-radius:0;" src="~/assets/image/@item.PosterUrl" alt="Alternate Text" />
                                 </td>
                                 <td>
-                                    <img style="width:200px;height:200px;border-radius:0;" src="~/assets/image/@item.BackgroundImgUrl alt="Alternate Text" />
+                                    <img style="width:200px;height:200px;border-radius:0;" src="~/assets/image/@item.BackgroundImgUrl" alt="Alternate Text" />
                                 </td>
                                 <td>@item.Director</td>
                                 <td>@item.ImdbPoint</td>

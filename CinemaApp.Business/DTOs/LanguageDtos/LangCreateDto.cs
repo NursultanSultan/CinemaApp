@@ -9,7 +9,7 @@ namespace CinemaApp.Business.DTOs.LanguageDtos
     public class LangCreateDto
     {
         [Required]
-        public string Lang { get; set; } // Language
+        public string Lang { get; set; } // Language 
 
         [Required]
         public IFormFile LangIconFile { get; set; }

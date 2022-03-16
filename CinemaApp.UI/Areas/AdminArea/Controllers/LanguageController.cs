@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
-using CinemaApp.Business.DTOs.CategoryDtos;
+using CinemaApp.Business.DTOs.LanguageDtos;
 using CinemaApp.Business.Interfaces;
 using CinemaApp.Business.Utilities.File;
 using CinemaApp.Core;
-using CinemaApp.Entity.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -15,26 +14,26 @@ using System.Threading.Tasks;
 namespace CinemaApp.UI.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
-    public class CategoryController : Controller
+    public class LanguageController : Controller
     {
 
         private IUnitOfWork _unitOfWork { get; }
         private IMapper _mapper { get; }
         private IWebHostEnvironment _env { get; }
-        private ICategoryService _categoryService { get; } 
+        private ILanguageService _languageService { get; }
 
-        public CategoryController(IUnitOfWork unitOfWork, IMapper mapper 
-                , IWebHostEnvironment env , ICategoryService categoryService)
+        public LanguageController(IUnitOfWork unitOfWork, IMapper mapper
+                , IWebHostEnvironment env, ILanguageService languageService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _env = env;
-            _categoryService = categoryService;
+            _languageService = languageService;
         }
 
         public async Task<IActionResult> Index()
         {
-            return View(await _categoryService.GetAllAsync());
+            return View(await _languageService.GetAllAsync());
         }
 
         public IActionResult Create()
@@ -45,26 +44,26 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CategoryCreateDto categoryCreateDto)
+        public async Task<IActionResult> Create(LangCreateDto createDto)
         {
             if (!ModelState.IsValid) return View();
 
             //Category category = _mapper.Map<Category>(categoryCreateDto);
 
             /*File upload start*/
-            if (!categoryCreateDto.CategoryPhoto.CheckFileType("image/"))
+            if (!createDto.LangIconFile.CheckFileType("image/"))
             {
                 ModelState.AddModelError("Photo", "File must be image type");
-                return View(categoryCreateDto);
+                return View(createDto);
             }
 
-            if (!categoryCreateDto.CategoryPhoto.CheckFileSize(300))
+            if (!createDto.LangIconFile.CheckFileSize(300))
             {
                 ModelState.AddModelError("Photo", "File must be less than 300kb");
-                return View(categoryCreateDto);
+                return View(createDto);
             }
 
-            await _categoryService.CreateAsync(categoryCreateDto);
+            await _languageService.CreateAsync(createDto);
 
             return RedirectToAction(nameof(Index));
 
@@ -77,35 +76,35 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int Id, CategoryUpdateDto categoryUpdateDto)
+        public async Task<IActionResult> Update(int Id, LangUpdateDto updateDto)
         {
 
             if (!ModelState.IsValid) return View();
 
-            if (Id != categoryUpdateDto.Id) return BadRequest();
-            var dbCategory = await _unitOfWork.categoryRepository
+            if (Id != updateDto.Id) return BadRequest();
+            var dbLanguage = await _unitOfWork.languageRepository
                                         .GetAsync(c => c.Id == Id);
 
-            if (dbCategory == null) return NotFound();
+            if (dbLanguage == null) return NotFound();
 
-            if (categoryUpdateDto.CategoryPhoto != null)
+            if (updateDto.LangIconFile != null)
             {
                 /*File upload start*/
-                if (!categoryUpdateDto.CategoryPhoto.CheckFileType("image/"))
+                if (!updateDto.LangIconFile.CheckFileType("image/"))
                 {
                     ModelState.AddModelError("Photo", "File must be image type");
-                    return View(categoryUpdateDto);
+                    return View(updateDto);
                 }
 
-                if (!categoryUpdateDto.CategoryPhoto.CheckFileSize(300))
+                if (!updateDto.LangIconFile.CheckFileSize(300))
                 {
                     ModelState.AddModelError("Photo", "File must be less than 300kb");
-                    return View(categoryUpdateDto);
+                    return View(updateDto);
                 }
 
 
                 string root = Path.Combine(_env.WebRootPath, "assets", "image");
-                string FileName = dbCategory.CategoryImageURL;
+                string FileName = dbLanguage.LangIconUrl;
                 string resultPath = Path.Combine(root, FileName);
 
                 if (System.IO.File.Exists(resultPath))
@@ -113,17 +112,14 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
                     System.IO.File.Delete(resultPath);
                 }
 
-                string UpdatedFileName = await categoryUpdateDto.CategoryPhoto.SaveFileAsync(root);
-                dbCategory.CategoryImageURL = UpdatedFileName;
+                string UpdatedFileName = await updateDto.LangIconFile.SaveFileAsync(root);
+                dbLanguage.LangIconUrl = UpdatedFileName;
 
                 /*File upload end*/
             }
 
-            dbCategory.CategoryName = categoryUpdateDto
-                                      .CategoryName != null ? categoryUpdateDto.CategoryName : dbCategory.CategoryName;
+            dbLanguage.Lang = updateDto.Lang != null ? updateDto.Lang : dbLanguage.Lang;
 
-
-            
 
             await _unitOfWork.SavechangeAsync();
 
@@ -144,7 +140,7 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
 
             //await _unitOfWork.SavechangeAsync();
 
-            await _categoryService.RemoveAsync(Id);
+            await _languageService.RemoveAsync(Id);
             return RedirectToAction(nameof(Index));
         }
 

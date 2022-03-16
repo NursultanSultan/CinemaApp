@@ -3,12 +3,8 @@ using CinemaApp.Business.DTOs;
 using CinemaApp.Business.DTOs.MovieDtos;
 using CinemaApp.Business.Interfaces;
 using CinemaApp.Core;
-using CinemaApp.Entity.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CinemaApp.UI.Areas.AdminArea.Controllers
@@ -30,9 +26,9 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
             _movieService = movieService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_unitOfWork.movieRepository.GetAllAsync(m => m.IsDeleted == false));
+            return View(await _movieService.GetAllAsync());
         }
 
         public IActionResult Create()
@@ -46,7 +42,9 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         {
             if (!ModelState.IsValid) return View();
 
-            Movie movie = _mapper.Map<Movie>(createDto);
+            //Movie movie = _mapper.Map<Movie>(createDto);
+
+
 
             /*File upload start*/
             //if (!createVM.Photo.CheckFileType("image/"))
