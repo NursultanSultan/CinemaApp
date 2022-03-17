@@ -3,7 +3,7 @@ using CinemaApp.Business.DTOs.MovieDtos;
 using CinemaApp.Business.Interfaces;
 using CinemaApp.Core;
 using CinemaApp.Entity.Entities;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting; 
 using System;
 using System.Collections.Generic;
 using System.Text;

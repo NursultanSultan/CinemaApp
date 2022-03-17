@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CinemaApp.Business.DTOs.CategoryDtos;
+using CinemaApp.Business.Exceptions.FileExceptions;
 using CinemaApp.Business.Interfaces;
 using CinemaApp.Business.Utilities.File;
 using CinemaApp.Core;
@@ -34,6 +35,14 @@ namespace CinemaApp.Business.Implementations
                 CategoryName = createDto.CategoryName
 
             };
+            if (!createDto.CategoryPhoto.CheckFileType("image/"))
+            {
+                throw new FileTypeException("File must be image type");
+            }
+            if (!createDto.CategoryPhoto.CheckFileSize(300))
+            {
+                throw new FileTypeException("File must be less than 300kb");
+            }
 
             string root = Path.Combine(_env.WebRootPath, "assets", "image");
             string FileName = await createDto.CategoryPhoto.SaveFileAsync(root);

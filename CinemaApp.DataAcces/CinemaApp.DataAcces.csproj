@@ -9,6 +9,8 @@
     <Compile Remove="Migrations\20220228072650_ICreatNewColomnMovieSessionTable.Designer.cs" />
     <Compile Remove="Migrations\20220228112016_ICreatNewColomnMovieSessionTable.cs" />
     <Compile Remove="Migrations\20220228112016_ICreatNewColomnMovieSessionTable.Designer.cs" />
+    <Compile Remove="Migrations\20220317080012_IAddedNewsTable.cs" />
+    <Compile Remove="Migrations\20220317080012_IAddedNewsTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

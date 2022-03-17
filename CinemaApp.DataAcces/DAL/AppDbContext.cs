@@ -29,6 +29,7 @@ namespace CinemaApp.DataAcces.DAL
         public DbSet<MovieLanguage> MovieLanguages { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<News> News { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

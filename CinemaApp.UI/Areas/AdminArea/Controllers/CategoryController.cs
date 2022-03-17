@@ -47,26 +47,29 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CategoryCreateDto categoryCreateDto)
         {
-            if (!ModelState.IsValid) return View();
 
             //Category category = _mapper.Map<Category>(categoryCreateDto);
 
             /*File upload start*/
-            if (!categoryCreateDto.CategoryPhoto.CheckFileType("image/"))
+            try
             {
-                ModelState.AddModelError("Photo", "File must be image type");
+                if (!ModelState.IsValid) return View();
+                await _categoryService.CreateAsync(categoryCreateDto);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(String.Empty,ex.Message.ToString());
                 return View(categoryCreateDto);
             }
 
-            if (!categoryCreateDto.CategoryPhoto.CheckFileSize(300))
-            {
-                ModelState.AddModelError("Photo", "File must be less than 300kb");
-                return View(categoryCreateDto);
-            }
+            //if (!categoryCreateDto.CategoryPhoto.CheckFileSize(300))
+            //{
+            //    ModelState.AddModelError("Photo", "File must be less than 300kb");
+            //    return View(categoryCreateDto);
+            //}
 
-            await _categoryService.CreateAsync(categoryCreateDto);
-
-            return RedirectToAction(nameof(Index));
+          
 
         }
 

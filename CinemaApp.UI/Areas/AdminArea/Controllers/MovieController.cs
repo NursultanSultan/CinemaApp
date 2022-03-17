@@ -31,9 +31,14 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
             return View(await _movieService.GetAllAsync());
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View();
+            var categories = await _unitOfWork.categoryRepository.GetAllAsync();
+            MovieCreateDto createDto = new MovieCreateDto
+            {
+                Categories = categories
+            };
+            return View(createDto);
         }
 
         [HttpPost]

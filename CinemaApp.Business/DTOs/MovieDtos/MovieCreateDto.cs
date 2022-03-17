@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CinemaApp.Entity.Entities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -41,5 +42,6 @@ namespace CinemaApp.Business.DTOs.MovieDtos
 
         [Required]
         public int Duration { get; set; }  // Filmin muddeti
+        public IEnumerable<Category> Categories { get; set; }
     }
 }
