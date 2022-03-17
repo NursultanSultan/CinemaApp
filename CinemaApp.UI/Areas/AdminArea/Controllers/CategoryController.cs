@@ -63,14 +63,6 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
                 return View(categoryCreateDto);
             }
 
-            //if (!categoryCreateDto.CategoryPhoto.CheckFileSize(300))
-            //{
-            //    ModelState.AddModelError("Photo", "File must be less than 300kb");
-            //    return View(categoryCreateDto);
-            //}
-
-          
-
         }
 
         public IActionResult Update(int Id)

@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using CinemaApp.Business.DTOs.CinemaDtos;
+using CinemaApp.Business.Exceptions.FileExceptions;
 using CinemaApp.Business.Interfaces;
 using CinemaApp.Business.Utilities.File;
 using CinemaApp.Core;
 using CinemaApp.Entity.Entities;
 using Microsoft.AspNetCore.Hosting;
 using System;
-using System.Collections.Generic;
+using System.Collections.Generic; 
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,6 +41,15 @@ namespace CinemaApp.Business.Implementations
                 WorkingHour = createDto.WorkingHour
 
             };
+
+            if (!createDto.CinemaPosterPhoto.CheckFileType("image/"))
+            {
+                throw new FileTypeException("File must be image type");
+            }
+            if (!createDto.CinemaPosterPhoto.CheckFileSize(300))
+            {
+                throw new FileTypeException("File must be less than 300kb");
+            }
 
             string root = Path.Combine(_env.WebRootPath, "assets", "image");
             string FileName = await createDto.CinemaPosterPhoto.SaveFileAsync(root);
@@ -98,9 +108,51 @@ namespace CinemaApp.Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task UpdateAsync(int id, CinemaUpdateDto updateDto)
+        public async Task UpdateAsync(int id, CinemaUpdateDto updateDto)
         {
-            throw new NotImplementedException();
+            var dbCinema = await _unitOfWork.cinemaRepository
+                                        .GetAsync(c => c.Id == id);
+
+            if (dbCinema == null) throw new NullReferenceException();
+
+            if (updateDto.CinemaPosterPhoto != null)
+            {
+                /*File upload start*/
+                if (!updateDto.CinemaPosterPhoto.CheckFileType("image/"))
+                {
+                    throw new FileTypeException("File must be image type");
+                }
+                if (!updateDto.CinemaPosterPhoto.CheckFileSize(300))
+                {
+                    throw new FileTypeException("File must be less than 300kb");
+                }
+
+
+                string root = Path.Combine(_env.WebRootPath, "assets", "image");
+                string FileName = dbCinema.CinemaPosterURL;
+                string resultPath = Path.Combine(root, FileName);
+
+                if (System.IO.File.Exists(resultPath))
+                {
+                    System.IO.File.Delete(resultPath);
+                }
+
+                string UpdatedFileName = await updateDto.CinemaPosterPhoto.SaveFileAsync(root);
+                dbCinema.CinemaPosterURL = UpdatedFileName;
+
+                /*File upload end*/
+            }
+
+            dbCinema.CinemaName = updateDto.CinemaName != null ? updateDto.CinemaName : dbCinema.CinemaName;
+            dbCinema.EMail = updateDto.EMail != null ? updateDto.EMail : dbCinema.EMail;
+            dbCinema.ShortContent = updateDto.ShortContent != null ? updateDto.ShortContent : dbCinema.ShortContent;
+            dbCinema.MapLocation = updateDto.MapLocation != null ? updateDto.MapLocation : dbCinema.MapLocation;
+            dbCinema.OurAdress = updateDto.OurAdress != null ? updateDto.OurAdress : dbCinema.OurAdress;
+            dbCinema.PhoneNumber = updateDto.PhoneNumber != null ? updateDto.PhoneNumber : dbCinema.PhoneNumber;
+            dbCinema.WorkingHour = updateDto.WorkingHour != null ? updateDto.WorkingHour : dbCinema.WorkingHour;
+
+
+            await _unitOfWork.SavechangeAsync();
         }
     }
 }
