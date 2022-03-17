@@ -100,9 +100,46 @@ namespace CinemaApp.Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task UpdateAsync(int id, CategoryUpdateDto updateDto)
+        public async Task UpdateAsync(int id, CategoryUpdateDto updateDto)
         {
-            throw new NotImplementedException();
+            var dbCategory = await _unitOfWork.categoryRepository
+                                        .GetAsync(c => c.Id == id);
+
+            if (dbCategory == null) throw new NullReferenceException();
+
+            if (updateDto.CategoryPhoto != null)
+            {
+                /*File upload start*/
+                if (!updateDto.CategoryPhoto.CheckFileType("image/"))
+                {
+                    throw new FileTypeException("File must be image type");
+                }
+                if (!updateDto.CategoryPhoto.CheckFileSize(300))
+                {
+                    throw new FileTypeException("File must be less than 300kb");
+                }
+
+
+                string root = Path.Combine(_env.WebRootPath, "assets", "image");
+                string FileName = dbCategory.CategoryImageURL;
+                string resultPath = Path.Combine(root, FileName);
+
+                if (System.IO.File.Exists(resultPath))
+                {
+                    System.IO.File.Delete(resultPath);
+                }
+
+                string UpdatedFileName = await updateDto.CategoryPhoto.SaveFileAsync(root);
+                dbCategory.CategoryImageURL = UpdatedFileName;
+
+                /*File upload end*/
+            }
+
+            dbCategory.CategoryName = updateDto
+                                      .CategoryName != null ? updateDto.CategoryName : dbCategory.CategoryName;
+
+
+            await _unitOfWork.SavechangeAsync();
         }
     }
 }

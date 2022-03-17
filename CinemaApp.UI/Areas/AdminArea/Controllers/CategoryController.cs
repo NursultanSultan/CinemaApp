@@ -82,55 +82,19 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(int Id, CategoryUpdateDto categoryUpdateDto)
         {
-
-            if (!ModelState.IsValid) return View();
-
-            if (Id != categoryUpdateDto.Id) return BadRequest();
-            var dbCategory = await _unitOfWork.categoryRepository
-                                        .GetAsync(c => c.Id == Id);
-
-            if (dbCategory == null) return NotFound();
-
-            if (categoryUpdateDto.CategoryPhoto != null)
+            try
             {
-                /*File upload start*/
-                if (!categoryUpdateDto.CategoryPhoto.CheckFileType("image/"))
-                {
-                    ModelState.AddModelError("Photo", "File must be image type");
-                    return View(categoryUpdateDto);
-                }
+                if (!ModelState.IsValid) return View();
+                if (Id != categoryUpdateDto.Id) return BadRequest();
 
-                if (!categoryUpdateDto.CategoryPhoto.CheckFileSize(300))
-                {
-                    ModelState.AddModelError("Photo", "File must be less than 300kb");
-                    return View(categoryUpdateDto);
-                }
-
-
-                string root = Path.Combine(_env.WebRootPath, "assets", "image");
-                string FileName = dbCategory.CategoryImageURL;
-                string resultPath = Path.Combine(root, FileName);
-
-                if (System.IO.File.Exists(resultPath))
-                {
-                    System.IO.File.Delete(resultPath);
-                }
-
-                string UpdatedFileName = await categoryUpdateDto.CategoryPhoto.SaveFileAsync(root);
-                dbCategory.CategoryImageURL = UpdatedFileName;
-
-                /*File upload end*/
+                await _categoryService.UpdateAsync(Id, categoryUpdateDto);
+                return RedirectToAction(nameof(Index));
             }
-
-            dbCategory.CategoryName = categoryUpdateDto
-                                      .CategoryName != null ? categoryUpdateDto.CategoryName : dbCategory.CategoryName;
-
-
-            
-
-            await _unitOfWork.SavechangeAsync();
-
-            return RedirectToAction(nameof(Index));
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(String.Empty, ex.Message.ToString());
+                return View(categoryUpdateDto);
+            }
 
         }
 
@@ -138,14 +102,6 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int Id)
         {
-            //var dbCategory = await _unitOfWork.categoryRepository
-            //                            .GetAsync(c => c.Id == Id);
-
-            //if (dbCategory == null) return NotFound();
-
-            //dbCategory.IsDeleted = true;
-
-            //await _unitOfWork.SavechangeAsync();
 
             await _categoryService.RemoveAsync(Id);
             return RedirectToAction(nameof(Index));
