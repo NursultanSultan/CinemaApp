@@ -7,6 +7,7 @@
     <div class="card">
         <div class="card-body">
 
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <form class="forms-sample" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label asp-for="CinemaName"></label>
@@ -50,7 +51,7 @@
                     <span asp-validation-for="MapLocation" class="text-danger"></span>
                 </div>
 
-                
+
 
                 <div class="form-group">
                     <label asp-for="CinemaPosterPhoto"></label>
@@ -58,7 +59,7 @@
                     <span asp-validation-for="CinemaPosterPhoto" class="text-danger"></span>
                 </div>
 
-                
+
 
                 <button type="submit" class="btn btn-primary me-2">Create</button>
                 <button asp-controller="Cinema" asp-action="Index" class="btn btn-dark">Cancel</button>

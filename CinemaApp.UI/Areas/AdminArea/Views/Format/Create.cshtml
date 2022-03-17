@@ -1,0 +1,30 @@
+﻿@model FormatCreateDto
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="col-md-12 m-5 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div asp-validation-summary="ModelOnly">   </div>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="FormatType"></label>
+                    <input asp-for="FormatType" class="form-control">
+                    <span asp-validation-for="FormatType" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FormatIconFile"></label>
+                    <input accept="image/" asp-for="FormatIconFile" class="form-control">
+                    <span asp-validation-for="FormatIconFile" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary me-2">Create</button>
+                <button asp-controller="Format" asp-action="Index" class="btn btn-dark">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+

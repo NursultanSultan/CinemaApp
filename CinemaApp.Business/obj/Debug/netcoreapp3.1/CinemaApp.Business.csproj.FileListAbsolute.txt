@@ -12,3 +12,4 @@ C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\bin\Debug\netcoreapp3.1\
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\bin\Debug\netcoreapp3.1\CinemaApp.Entity.pdb
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\bin\Debug\netcoreapp3.1\CinemaApp.Core.dll
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\bin\Debug\netcoreapp3.1\CinemaApp.Core.pdb
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.Business\obj\Debug\netcoreapp3.1\CinemaApp.Business.csproj.CopyComplete

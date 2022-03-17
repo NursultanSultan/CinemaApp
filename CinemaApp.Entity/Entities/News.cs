@@ -10,6 +10,8 @@ namespace CinemaApp.Entity.Entities
 
         public string Content { get; set; }
 
+        public DateTime NewsDate { get; set; }
+
         public bool IsDelete { get; set; }
     }
 }

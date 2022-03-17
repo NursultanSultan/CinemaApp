@@ -30,7 +30,7 @@ namespace CinemaApp.Business.Implementations
 
         public async Task CreateAsync(CategoryCreateDto createDto)
         {
-            Category category = new Category
+            Category category = new Category 
             {
                 CategoryName = createDto.CategoryName
 
