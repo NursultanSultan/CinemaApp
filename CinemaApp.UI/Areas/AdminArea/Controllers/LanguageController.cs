@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.IO; 
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -46,26 +46,17 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(LangCreateDto createDto)
         {
-            if (!ModelState.IsValid) return View();
-
-            //Category category = _mapper.Map<Category>(categoryCreateDto);
-
-            /*File upload start*/
-            if (!createDto.LangIconFile.CheckFileType("image/"))
+            try
             {
-                ModelState.AddModelError("Photo", "File must be image type");
+                if (!ModelState.IsValid) return View();
+                await _languageService.CreateAsync(createDto);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(String.Empty, ex.Message.ToString());
                 return View(createDto);
             }
-
-            if (!createDto.LangIconFile.CheckFileSize(300))
-            {
-                ModelState.AddModelError("Photo", "File must be less than 300kb");
-                return View(createDto);
-            }
-
-            await _languageService.CreateAsync(createDto);
-
-            return RedirectToAction(nameof(Index));
 
         }
 
@@ -79,51 +70,19 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         public async Task<IActionResult> Update(int Id, LangUpdateDto updateDto)
         {
 
-            if (!ModelState.IsValid) return View();
-
-            if (Id != updateDto.Id) return BadRequest();
-            var dbLanguage = await _unitOfWork.languageRepository
-                                        .GetAsync(c => c.Id == Id);
-
-            if (dbLanguage == null) return NotFound();
-
-            if (updateDto.LangIconFile != null)
+            try
             {
-                /*File upload start*/
-                if (!updateDto.LangIconFile.CheckFileType("image/"))
-                {
-                    ModelState.AddModelError("Photo", "File must be image type");
-                    return View(updateDto);
-                }
+                if (!ModelState.IsValid) return View();
+                if (Id != updateDto.Id) return BadRequest();
 
-                if (!updateDto.LangIconFile.CheckFileSize(300))
-                {
-                    ModelState.AddModelError("Photo", "File must be less than 300kb");
-                    return View(updateDto);
-                }
-
-
-                string root = Path.Combine(_env.WebRootPath, "assets", "image");
-                string FileName = dbLanguage.LangIconUrl;
-                string resultPath = Path.Combine(root, FileName);
-
-                if (System.IO.File.Exists(resultPath))
-                {
-                    System.IO.File.Delete(resultPath);
-                }
-
-                string UpdatedFileName = await updateDto.LangIconFile.SaveFileAsync(root);
-                dbLanguage.LangIconUrl = UpdatedFileName;
-
-                /*File upload end*/
+                await _languageService.UpdateAsync(Id, updateDto);
+                return RedirectToAction(nameof(Index));
             }
-
-            dbLanguage.Lang = updateDto.Lang != null ? updateDto.Lang : dbLanguage.Lang;
-
-
-            await _unitOfWork.SavechangeAsync();
-
-            return RedirectToAction(nameof(Index));
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(String.Empty, ex.Message.ToString());
+                return View(updateDto);
+            }
 
         }
 
@@ -131,15 +90,7 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int Id)
         {
-            //var dbCategory = await _unitOfWork.categoryRepository
-            //                            .GetAsync(c => c.Id == Id);
-
-            //if (dbCategory == null) return NotFound();
-
-            //dbCategory.IsDeleted = true;
-
-            //await _unitOfWork.SavechangeAsync();
-
+            
             await _languageService.RemoveAsync(Id);
             return RedirectToAction(nameof(Index));
         }
