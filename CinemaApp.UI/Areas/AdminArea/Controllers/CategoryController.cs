@@ -79,7 +79,7 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
                 if (!ModelState.IsValid) return View();
                 if (Id != categoryUpdateDto.Id) return BadRequest();
 
-                await _categoryService.UpdateAsync(Id, categoryUpdateDto);
+                await _categoryService.UpdateAsync(Id, categoryUpdateDto); 
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)

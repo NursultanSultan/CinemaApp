@@ -3,8 +3,10 @@ using CinemaApp.Business.DTOs;
 using CinemaApp.Business.DTOs.MovieDtos;
 using CinemaApp.Business.Interfaces;
 using CinemaApp.Core;
+using CinemaApp.Entity.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace CinemaApp.UI.Areas.AdminArea.Controllers
@@ -36,7 +38,8 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
             var categories = await _unitOfWork.categoryRepository.GetAllAsync();
             MovieCreateDto createDto = new MovieCreateDto
             {
-                Categories = categories
+                Categories = categories,
+
             };
             return View(createDto);
         }
@@ -45,7 +48,24 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(MovieCreateDto createDto)
         {
-            if (!ModelState.IsValid) return View();
+           
+            try
+            {
+                if (!ModelState.IsValid) return View();
+                await _movieService.CreateAsync(createDto);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(String.Empty, ex.Message.ToString());
+                return View(createDto);
+            }
+
+            //MovieCategory movieCategory = new MovieCategory
+            //{
+            //    CategoryId = createDto.CategoryId
+
+            //};
 
             //Movie movie = _mapper.Map<Movie>(createDto);
 
@@ -72,8 +92,6 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
 
             //await _context.Doctors.AddAsync(doctor);
             //await _context.SaveChangesAsync();
-
-            return RedirectToAction(nameof(Index));
 
         }
 

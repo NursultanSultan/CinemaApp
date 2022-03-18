@@ -1,4 +1,5 @@
 ﻿using CinemaApp.Core.Interfaces;
+using CinemaApp.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,6 +18,12 @@ namespace CinemaApp.Core
         public ILanguageRepository languageRepository { get; }
 
         public IFormatRepository formatRepository { get; }
+
+        public INewsRepository newsRepository { get; }
+
+        public IMovieCategoryRepository movieCategoryRepository { get;}
+
+
 
 
         public Task SavechangeAsync();
