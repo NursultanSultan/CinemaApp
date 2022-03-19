@@ -44,6 +44,21 @@ namespace CinemaApp.Business.DTOs.MovieDtos
         public int Duration { get; set; }  // Filmin muddeti
 
         public IEnumerable<Category> Categories { get; set; }
-        public int CategoryId { get; set; }
+        [Required]
+        public List<int> CategoryIds { get; set; }
+
+        public IEnumerable<Cinema> Cinemas { get; set; }
+        [Required]
+        public List<int> CinemaIds { get; set; }
+
+        public IEnumerable<Language> Languages { get; set; }
+        [Required]
+        public List<int> LanguageIds { get; set; }
+
+        public IEnumerable<Format> Formats { get; set; }
+        [Required]
+        public List<int> FormatIds { get; set; }
+
+
     }
 }

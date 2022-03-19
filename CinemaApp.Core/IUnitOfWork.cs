@@ -23,7 +23,11 @@ namespace CinemaApp.Core
 
         public IMovieCategoryRepository movieCategoryRepository { get;}
 
+        public IMovieCinemaRepository movieCinemaRepository { get;}
 
+        public IMovieLanguageRepository movieLanguageRepository { get;}
+
+        public IMovieFormatRepository movieFormatRepository { get;}
 
 
         public Task SavechangeAsync();

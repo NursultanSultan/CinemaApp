@@ -20,6 +20,9 @@ namespace CinemaApp.DataAcces
         private IFormatRepository _formatRepository;
         private INewsRepository _newsRepository;
         private IMovieCategoryRepository _movieCategoryRepository;
+        private IMovieCinemaRepository _movieCinemaRepository;
+        private IMovieLanguageRepository _movieLanguageRepository;
+        private IMovieFormatRepository _movieFormatRepository;
 
         public UnitOfWork(AppDbContext context)
         {
@@ -35,6 +38,9 @@ namespace CinemaApp.DataAcces
         public IFormatRepository formatRepository => _formatRepository = _formatRepository ?? new FormatRepository(_context);
         public INewsRepository newsRepository => _newsRepository = _newsRepository ?? new NewsRepository(_context);
         public IMovieCategoryRepository movieCategoryRepository => _movieCategoryRepository = _movieCategoryRepository ?? new MovieCategoryRepository(_context);
+        public IMovieCinemaRepository movieCinemaRepository => _movieCinemaRepository = _movieCinemaRepository ?? new MovieCinemaRepository(_context);
+        public IMovieLanguageRepository movieLanguageRepository => _movieLanguageRepository = _movieLanguageRepository ?? new MovielanguageRepository(_context);
+        public IMovieFormatRepository movieFormatRepository => _movieFormatRepository = _movieFormatRepository ?? new MovieFormatRepository(_context);
 
         
 

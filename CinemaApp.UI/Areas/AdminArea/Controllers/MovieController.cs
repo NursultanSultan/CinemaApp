@@ -36,10 +36,17 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         public async Task<IActionResult> Create()
         {
             var categories = await _unitOfWork.categoryRepository.GetAllAsync();
+            var cinemas = await _unitOfWork.cinemaRepository.GetAllAsync();
+            var languages = await _unitOfWork.languageRepository.GetAllAsync();
+            var formats = await _unitOfWork.formatRepository.GetAllAsync();
+
             MovieCreateDto createDto = new MovieCreateDto
             {
                 Categories = categories,
-
+                Cinemas = cinemas,
+                Languages = languages
+                //Formats = formats
+    
             };
             return View(createDto);
         }
@@ -61,37 +68,7 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
                 return View(createDto);
             }
 
-            //MovieCategory movieCategory = new MovieCategory
-            //{
-            //    CategoryId = createDto.CategoryId
-
-            //};
-
-            //Movie movie = _mapper.Map<Movie>(createDto);
-
-
-
-            /*File upload start*/
-            //if (!createVM.Photo.CheckFileType("image/"))
-            //{
-            //    ModelState.AddModelError("Photo", "File must be image type");
-            //    return View(createVM);
-            //}
-
-            //if (!createVM.Photo.CheckFileSize(300))
-            //{
-            //    ModelState.AddModelError("Photo", "File must be less than 300kb");
-            //    return View(createVM);
-            //}
-
-            //string root = Path.Combine(_env.WebRootPath, "assets", "image");
-            //string FileName = await createVM.Photo.SaveFileAsync(root);
-            //doctor.Image = FileName;
-
-            /*File upload end*/
-
-            //await _context.Doctors.AddAsync(doctor);
-            //await _context.SaveChangesAsync();
+            
 
         }
 

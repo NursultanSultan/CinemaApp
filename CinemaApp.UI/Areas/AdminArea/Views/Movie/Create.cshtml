@@ -16,11 +16,49 @@
                 </div>
 
                 <div class="form-group">
-                    <select asp-for="CategoryId" style="background-color: #2A3038 ; color:#fff" class="form-select mt-3 mb-3" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
+
+                    <select asp-for="CategoryIds" style="background-color: #2A3038 ; color:#fff" class="form-select mt-3 mb-3" aria-label="Default select example">
+                        <option selected>Categories</option>
                         @foreach (var category in Model.Categories)
                         {
                             <option value="@category.Id"> @category.CategoryName</option>
+
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+
+                    <select asp-for="CinemaIds" style="background-color: #2A3038 ; color:#fff" class="form-select mt-3 mb-3" aria-label="Default select example">
+                        <option selected>Cinemas</option>
+                        @foreach (var cinema in Model.Cinemas)
+                        {
+                            <option value="@cinema.Id"> @cinema.CinemaName</option>
+
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+
+                    <select asp-for="LanguageIds" style="background-color: #2A3038 ; color:#fff" class="form-select mt-3 mb-3" aria-label="Default select example">
+                        <option selected>Language</option>
+                        @foreach (var lang in Model.Languages)
+                        {
+                            <option value="@lang.Id"> @lang.Lang</option>
+
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+
+                    <select asp-for="FormatIds" style="background-color: #2A3038 ; color:#fff" class="form-select mt-3 mb-3" aria-label="Default select example">
+                        <option selected>Categories</option>
+                        @foreach (var format in Model.Formats)
+                        {
+                            <option value="@format.Id"> @format.FormatType</option>
+
                         }
                     </select>
                 </div>

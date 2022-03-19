@@ -83,9 +83,16 @@ namespace CinemaApp.Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task RemoveAsync(int id)
+        public async Task RemoveAsync(int id)
         {
-            throw new NotImplementedException();
+            var dbLanguage = await _unitOfWork.languageRepository
+                                        .GetAsync(c => c.Id == id);
+
+            if (dbLanguage == null) throw new NullReferenceException();
+
+            dbLanguage.IsDeleted = true;
+
+            await _unitOfWork.SavechangeAsync();
         }
 
         public LangUpdateDto Update(int id)

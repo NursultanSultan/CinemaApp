@@ -70,15 +70,76 @@ namespace CinemaApp.Business.Implementations
             await _unitOfWork.movieRepository.CreateAsync(movie);
             await _unitOfWork.SavechangeAsync();
 
+
             Movie CreatedMovie = await _unitOfWork.movieRepository
                                         .GetAsync(m => m.MovieName == createDto.MovieName && m.Director == createDto.Director);
-            MovieCategory movieCategory = new MovieCategory
-            {
-                MovieId = CreatedMovie.Id,
-                CategoryId = createDto.CategoryId
-            };
-            await _unitOfWork.movieCategoryRepository.CreateAsync(movieCategory);
+            
+            await CategoryCreateRelation(createDto.CategoryIds, createDto, CreatedMovie);
+            await CinemaCreateRelation(createDto.CinemaIds, createDto, CreatedMovie);
+            await LanguageCreateRelation(createDto.LanguageIds, createDto, CreatedMovie);
+            await FormatCreateRelation(createDto.FormatIds, createDto, CreatedMovie);
+
             await _unitOfWork.SavechangeAsync();
+        }
+
+        public async Task CategoryCreateRelation(List<int> CategoryIds , MovieCreateDto createDto ,Movie CreatedMovie)
+        {
+            foreach (var id in createDto.CategoryIds)
+            {
+                MovieCategory movieCategory = new MovieCategory()
+                {
+                    CategoryId = id,
+                    MovieId = CreatedMovie.Id
+
+                };
+                //movie.MovieCategories.Add(movieCategory);
+                await _unitOfWork.movieCategoryRepository.CreateAsync(movieCategory);
+            }
+        }
+
+        public async Task CinemaCreateRelation(List<int> CinemaIds, MovieCreateDto createDto, Movie CreatedMovie)
+        {
+            foreach (var id in createDto.CinemaIds)
+            {
+                MovieCinema movieCinema = new MovieCinema()
+                {
+                    CinemaId = id,
+                    MovieId = CreatedMovie.Id
+
+                };
+                //movie.MovieCategories.Add(movieCategory);
+                await _unitOfWork.movieCinemaRepository.CreateAsync(movieCinema);
+            }
+        }
+
+        public async Task LanguageCreateRelation(List<int> LanguageIds, MovieCreateDto createDto, Movie CreatedMovie)
+        {
+            foreach (var id in createDto.LanguageIds)
+            {
+                MovieLanguage movieLanguage = new MovieLanguage()
+                {
+                    LanguageId = id,
+                    MovieId = CreatedMovie.Id
+
+                };
+                //movie.MovieCategories.Add(movieCategory);
+                await _unitOfWork.movieLanguageRepository.CreateAsync(movieLanguage);
+            }
+        }
+
+        public async Task FormatCreateRelation(List<int> FormatIds, MovieCreateDto createDto, Movie CreatedMovie)
+        {
+            foreach (var id in createDto.FormatIds)
+            {
+                MovieFormat movieFormat = new MovieFormat()
+                {
+                    FormatId = id,
+                    MovieId = CreatedMovie.Id
+
+                };
+                //movie.MovieCategories.Add(movieCategory);
+                await _unitOfWork.movieFormatRepository.CreateAsync(movieFormat);
+            }
         }
 
         public async Task<IEnumerable<MovieReadDto>> GetAllAsync()
@@ -112,9 +173,16 @@ namespace CinemaApp.Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task RemoveAsync(int id)
+        public async Task RemoveAsync(int id)
         {
-            throw new NotImplementedException();
+            var dbMovie = await _unitOfWork.movieRepository
+                                        .GetAsync(c => c.Id == id);
+
+            if (dbMovie == null) throw new NullReferenceException();
+
+            dbMovie.IsDeleted = true;
+
+            await _unitOfWork.SavechangeAsync();
         }
 
         public MovieUpdateDto Update(int id) 
