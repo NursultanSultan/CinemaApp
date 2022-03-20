@@ -44,8 +44,8 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
             {
                 Categories = categories,
                 Cinemas = cinemas,
-                Languages = languages
-                //Formats = formats
+                Languages = languages,
+                Formats = formats
     
             };
             return View(createDto);

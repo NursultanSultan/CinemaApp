@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using static CinemaApp.Business.Utilities.Helper.Helper;
 using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
 namespace CinemaApp.UI.Controllers
@@ -17,15 +18,18 @@ namespace CinemaApp.UI.Controllers
     {
         private UserManager<IdentityUser> _userManager { get; }
         private SignInManager<IdentityUser> _signInManager { get; }
+        private RoleManager<IdentityRole> _roleManager { get; }
         private IConfiguration _configuration { get; }
         private AppDbContext _context { get; }
 
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager
-            , IConfiguration configuration , AppDbContext context)
+            , IConfiguration configuration , AppDbContext context , RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
             _configuration = configuration;
+
             _context = context;
         }
 
@@ -40,13 +44,13 @@ namespace CinemaApp.UI.Controllers
         {
             if (!ModelState.IsValid) return View();
 
-            var isExistEmail = _userManager.FindByEmailAsync(registerDto.Email);
+            //var isExistEmail = _userManager.FindByEmailAsync(registerDto.Email);
 
-            if (isExistEmail != null)
-            {
-                ModelState.AddModelError(string.Empty, "you cannot register with this email because it is  already exist");
-                return View();
-            }
+            //if (isExistEmail != null)
+            //{
+            //    ModelState.AddModelError(string.Empty, "you cannot register with this email because it is  already exist");
+            //    return View();
+            //}
 
             IdentityUser newUser = new IdentityUser
             {
@@ -66,6 +70,8 @@ namespace CinemaApp.UI.Controllers
                 return View();
             }
 
+            await _userManager.AddToRoleAsync(newUser, UserRoles.Member.ToString());
+
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
             var confirmationLink = Url.Action("ConfirmEmail", "Email", new { token, email = registerDto.Email }, Request.Scheme);
             EmailHelper emailHelper = new EmailHelper(_configuration.GetSection("EmailConfirmation:fromEmail").Value, _configuration.GetSection("EmailConfirmation:fromPassword").Value);
@@ -78,6 +84,8 @@ namespace CinemaApp.UI.Controllers
                 return View();
 
             }
+
+           
 
             return RedirectToAction("Index", "Home");
 
@@ -203,6 +211,20 @@ namespace CinemaApp.UI.Controllers
             return View();
         }
 
+        //-------------------------------------
+
+        //public async Task CreateRole()
+        //{
+        //    foreach (var role in Enum.GetValues(typeof(UserRoles)))
+        //    {
+        //        if (!await _roleManager.RoleExistsAsync(role.ToString()))
+        //        {
+        //            await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+        //        }
+        //    }
+        //}
+
+        //-------------------------------
 
         public IActionResult FacebookLogin(string returnUrl)
         {

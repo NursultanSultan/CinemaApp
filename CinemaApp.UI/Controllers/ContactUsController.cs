@@ -12,5 +12,7 @@ namespace CinemaApp.UI.Controllers
         {
             return View();
         }
+
+
     }
 }

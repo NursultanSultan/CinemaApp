@@ -54,7 +54,7 @@
                 <div class="form-group">
 
                     <select asp-for="FormatIds" style="background-color: #2A3038 ; color:#fff" class="form-select mt-3 mb-3" aria-label="Default select example">
-                        <option selected>Categories</option>
+                        <option selected>Formats</option>
                         @foreach (var format in Model.Formats)
                         {
                             <option value="@format.Id"> @format.FormatType</option>
