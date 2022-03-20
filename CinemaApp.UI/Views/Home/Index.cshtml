@@ -36,7 +36,12 @@
 
                             <div class="item-content">
                                 <a href="#" class="item-name">@movie.MovieName</a>
-                                <a href="#" class="item-genre">Comedy</a>
+                                @foreach (var item in movie.MovieCategories)
+                                {
+                                    <a class="item-genre">
+                                        @item.Category.CategoryName
+                                    </a>
+                                }
                             </div>
                         </div>
                     }
@@ -327,83 +332,23 @@
         <div class="row">
             <div class="col-md-12">
                 <div id="testimonial-slider" class="owl-carousel">
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <div class="testimonial-icon">
-                                <i class="fa fa-quote-left"></i>
-                            </div>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
-                            </p>
-                        </div>
-                        <h3 class="title">John</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
 
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <div class="testimonial-icon">
-                                <i class="fa fa-quote-left"></i>
-                            </div>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
-                            </p>
-                        </div>
-                        <h3 class="title">Kelle</h3>
-                        <span class="post">Web Designer</span>
-                    </div>
 
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <div class="testimonial-icon">
-                                <i class="fa fa-quote-left"></i>
+                    @foreach (var news in Model.News)
+                    {
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <div class="testimonial-icon">
+                                    <i class="fa fa-quote-left"></i>
+                                </div>
+                                <p class="description">
+                                    @news.Content
+                                </p>
                             </div>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
-                            </p>
+                            <h5 style="font-size:15px;" class="title">@news.NewsDate</h5>
+                            
                         </div>
-                        <h3 class="title">Steven</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
-
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <div class="testimonial-icon">
-                                <i class="fa fa-quote-left"></i>
-                            </div>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
-                            </p>
-                        </div>
-                        <h3 class="title">Peter</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
-
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <div class="testimonial-icon">
-                                <i class="fa fa-quote-left"></i>
-                            </div>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
-                            </p>
-                        </div>
-                        <h3 class="title">Peter</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
-
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <div class="testimonial-icon">
-                                <i class="fa fa-quote-left"></i>
-                            </div>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum dolor sit amet eros imperdiet, sit amet hendrerit nisi vehicula.
-                            </p>
-                        </div>
-                        <h3 class="title">Peter</h3>
-                        <span class="post">Web Developer</span>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CinemaApp.Business.Implementations
 {
@@ -45,6 +46,7 @@ namespace CinemaApp.Business.Implementations
             
 
             string root = Path.Combine(_env.WebRootPath, "assets", "image");
+
            
 
             string PosterFileName = await FileUpload(createDto.PosterFile, root);
@@ -80,6 +82,7 @@ namespace CinemaApp.Business.Implementations
             {
                 throw new FileTypeException("File must be less than 300kb");
             }
+
             string FileName = await file.SaveFileAsync(root);
             return FileName;
         }

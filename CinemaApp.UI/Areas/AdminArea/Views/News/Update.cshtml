@@ -1,0 +1,22 @@
+﻿@model News
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="col-md-12 m-5 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Content"></label>
+                    <input asp-for="Content" class="form-control">
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary me-2">Edit</button>
+                <button asp-controller="News" asp-action="Index" class="btn btn-dark">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

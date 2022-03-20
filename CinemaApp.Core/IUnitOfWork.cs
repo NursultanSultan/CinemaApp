@@ -29,6 +29,8 @@ namespace CinemaApp.Core
 
         public IMovieFormatRepository movieFormatRepository { get;}
 
+        
+
 
         public Task SavechangeAsync();
     }

@@ -38,7 +38,8 @@ namespace CinemaApp.UI.Controllers
                             .ToList(),
                 Cinemas = _context.Cinemas.Where(c => c.IsDeleted == false).ToList(),
                 Languages = _context.Languages.Where(l => l.IsDeleted == false).ToList(),
-                Categories = _context.Categories.Where(c => c.IsDeleted == false).ToList()
+                Categories = _context.Categories.Where(c => c.IsDeleted == false).ToList(),
+                News = _context.News.Where(n => n.IsDelete == false).ToList()
                 
             };
 
@@ -97,6 +98,7 @@ namespace CinemaApp.UI.Controllers
 
             return Json(sessions);
         }
+
 
         
 

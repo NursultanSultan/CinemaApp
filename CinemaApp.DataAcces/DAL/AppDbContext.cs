@@ -42,6 +42,7 @@ namespace CinemaApp.DataAcces.DAL
             modelBuilder.ApplyConfiguration(new MovieConfiguration());
             modelBuilder.ApplyConfiguration(new SessionConfiguration());
             modelBuilder.ApplyConfiguration(new CommentConfiguration());
+            modelBuilder.ApplyConfiguration(new NewsConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
