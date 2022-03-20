@@ -21,7 +21,8 @@ namespace CinemaApp.UI.Controllers
 
         public IActionResult Index(string? moviesearch)
         {
-            var movies = _context.Movies.Where(m => !m.IsDeleted && moviesearch != null ? (
+            var dbMovies = _context.Movies.Where(m => m.IsDeleted == false);
+            var movies = dbMovies.Where(m => moviesearch != null ? (
             m.MovieName.Contains(moviesearch)
             ) :true)
                     .Include(m => m.MovieCategories)

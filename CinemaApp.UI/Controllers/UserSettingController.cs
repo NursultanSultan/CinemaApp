@@ -28,14 +28,8 @@ namespace CinemaApp.UI.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> ChangeSetting()
+        public IActionResult ChangeSetting()
         {
-            ClaimsPrincipal currentUser = User;
-            var user = await _userManager.GetUserAsync(User);
-            UserSettingDto userSettingDto = new UserSettingDto
-            {
-                UserName = user.UserName
-            };
             return View();
         }
 

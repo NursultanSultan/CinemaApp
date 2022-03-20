@@ -5,7 +5,8 @@ using CinemaApp.Business.Interfaces;
 using CinemaApp.Business.Utilities.File;
 using CinemaApp.Core;
 using CinemaApp.Entity.Entities;
-using Microsoft.AspNetCore.Hosting; 
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,27 +42,14 @@ namespace CinemaApp.Business.Implementations
                 Duration = createDto.Duration,
                 TrailerUrl = createDto.TrailerUrl
             };
-            if (!createDto.PosterFile.CheckFileType("image/"))
-            {
-                throw new FileTypeException("File must be image type");
-            }
-            if (!createDto.PosterFile.CheckFileSize(300))
-            {
-                throw new FileTypeException("File must be less than 300kb");
-            }
-
-            if (!createDto.BackgroundImgFile.CheckFileType("image/"))
-            {
-                throw new FileTypeException("File must be image type");
-            }
-            if (!createDto.BackgroundImgFile.CheckFileSize(300))
-            {
-                throw new FileTypeException("File must be less than 300kb");
-            }
+            
 
             string root = Path.Combine(_env.WebRootPath, "assets", "image");
-            string PosterFileName = await createDto.PosterFile.SaveFileAsync(root);
-            string BackgroundFileName = await createDto.PosterFile.SaveFileAsync(root);
+           
+
+            string PosterFileName = await FileUpload(createDto.PosterFile, root);
+            string BackgroundFileName = await FileUpload(createDto.BackgroundImgFile, root);
+
             movie.PosterUrl = PosterFileName;
             movie.BackgroundImgUrl = BackgroundFileName;
 
@@ -80,6 +68,20 @@ namespace CinemaApp.Business.Implementations
             await FormatCreateRelation(createDto.FormatIds, createDto, CreatedMovie);
 
             await _unitOfWork.SavechangeAsync();
+        }
+
+        public async Task<string> FileUpload(IFormFile file ,string root )
+        {
+            if (!file.CheckFileType("image/"))
+            {
+                throw new FileTypeException("File must be image type");
+            }
+            if (!file.CheckFileSize(300))
+            {
+                throw new FileTypeException("File must be less than 300kb");
+            }
+            string FileName = await file.SaveFileAsync(root);
+            return FileName;
         }
 
         public async Task CategoryCreateRelation(List<int> CategoryIds , MovieCreateDto createDto ,Movie CreatedMovie)
@@ -200,14 +202,14 @@ namespace CinemaApp.Business.Implementations
             if (updateDto.PosterFile != null)
             {
                 /*File upload start*/
-                if (!updateDto.PosterFile.CheckFileType("image/"))
-                {
-                    throw new FileTypeException("File must be image type");
-                }
-                if (!updateDto.PosterFile.CheckFileSize(300))
-                {
-                    throw new FileTypeException("File must be less than 300kb");
-                }
+                //if (!updateDto.PosterFile.CheckFileType("image/"))
+                //{
+                //    throw new FileTypeException("File must be image type");
+                //}
+                //if (!updateDto.PosterFile.CheckFileSize(300))
+                //{
+                //    throw new FileTypeException("File must be less than 300kb");
+                //}
 
 
                 string root = Path.Combine(_env.WebRootPath, "assets", "image");
@@ -219,7 +221,9 @@ namespace CinemaApp.Business.Implementations
                     System.IO.File.Delete(resultPath);
                 }
 
-                string UpdatedFileName = await updateDto.PosterFile.SaveFileAsync(root);
+                //string UpdatedFileName = await updateDto.PosterFile.SaveFileAsync(root);
+
+                string UpdatedFileName = await FileUpload(updateDto.PosterFile, root);
                 dbMovie.PosterUrl = UpdatedFileName;
 
                 /*File upload end*/

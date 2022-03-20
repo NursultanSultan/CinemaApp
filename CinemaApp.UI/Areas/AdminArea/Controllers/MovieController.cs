@@ -79,55 +79,20 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(MovieUpdateDto updateDto)
+        public async Task<IActionResult> Update(int Id,MovieUpdateDto updateDto)
         {
+            try
+            {
+                if (!ModelState.IsValid) return View();
+                await _movieService.UpdateAsync(Id , updateDto);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(String.Empty, ex.Message.ToString());
+                return View(updateDto);
+            }
 
-            //if (!ModelState.IsValid) return View();
-
-            //if (Id != updateVM.Id) return BadRequest();
-            //var dbDoctor = await _context.Doctors.FindAsync(Id);
-            //if (dbDoctor == null) return NotFound();
-
-            //if (updateVM.Photo != null)
-            //{
-            //    /*File upload start*/
-            //    if (!updateVM.Photo.CheckFileType("image/"))
-            //    {
-            //        ModelState.AddModelError("Photo", "File must be image type");
-            //        return View(updateVM);
-            //    }
-
-            //    if (!updateVM.Photo.CheckFileSize(300))
-            //    {
-            //        ModelState.AddModelError("Photo", "File must be less than 300kb");
-            //        return View(updateVM);
-            //    }
-
-
-            //    string root = Path.Combine(_env.WebRootPath, "assets", "image");
-            //    string FileName = dbDoctor.Image;
-            //    string resultPath = Path.Combine(root, FileName);
-
-            //    if (System.IO.File.Exists(resultPath))
-            //    {
-            //        System.IO.File.Delete(resultPath);
-            //    }
-
-            //    string UpdatedFileName = await updateVM.Photo.SaveFileAsync(root);
-            //    dbDoctor.Image = UpdatedFileName;
-
-            //    /*File upload end*/
-            //}
-
-            //dbDoctor.Name = updateVM.Name != null ? updateVM.Name : dbDoctor.Name;
-            //dbDoctor.Work = updateVM.Work != null ? updateVM.Work : dbDoctor.Work;
-
-
-
-
-            //await _context.SaveChangesAsync();
-
-            return RedirectToAction(nameof(Index));
 
         }
 
@@ -135,12 +100,7 @@ namespace CinemaApp.UI.Areas.AdminArea.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int Id)
         {
-            //var dbDoctor = await _context.Doctors.FindAsync(Id);
-            //if (dbDoctor == null) return NotFound();
-
-            //dbDoctor.IsDeleted = true;
-
-            //await _context.SaveChangesAsync();
+            await _movieService.RemoveAsync(Id);
             return RedirectToAction(nameof(Index));
         }
     }

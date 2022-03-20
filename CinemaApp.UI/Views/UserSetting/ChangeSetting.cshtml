@@ -15,16 +15,16 @@
                             <form method="post" class="sign__form sign__form--profile">
                                 
                                     <div class="col-lg-3 d-flex justify-content-center">
-                                        <h4 class="sign__title">Change setting</h4>
+                                        <h4 style="font-size:26px" class="sign__title">Change setting</h4>
                                     </div>
 
                                     
 
                                         
-                                    <div class="col-12 col-md-6 col-lg-6">
+                                    <div class="col-12 col-md-6 col-lg-4">
                                         <div class="sign__group mt-5">
                                             <label class="sign__label" asp-for="UserName">Login</label>
-                                            <input asp-for="UserName" class="sign__input" placeholder="username">
+                                            <input asp-for="UserName" class="sign__input" placeholder="@User.Identity.Name">
                                         </div>
                                     </div>
                                        
@@ -38,14 +38,14 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-6 col-lg-3 ">
+                                    <div class="col-12 col-md-6 col-lg-4 ">
                                         <div class="sign__group">
                                             <label class="sign__label" asp-for="NewPassword">New password</label>
                                             <input asp-for="NewPassword" class="sign__input">
                                         </div>
                                     </div>
 
-                                    <div class="col-12 col-md-6 col-lg-3 ">
+                                    <div class="col-12 col-md-6 col-lg-4 ">
                                         <div class="sign__group">
                                             <label class="sign__label" asp-for="ConfirmNewPassword">Confirm new password</label>
                                             <input asp-for="ConfirmNewPassword" class="sign__input">
