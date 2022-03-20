@@ -9,7 +9,8 @@ namespace CinemaApp.Business.DTOs
     {
         public string UserName { get; set; }
 
-        public string OldPassword { get; set; }
+        [DataType(DataType.Password)]
+        public string CurrentPassword { get; set; }
 
         [DataType(DataType.Password)]
         public string NewPassword { get; set; }

@@ -450,6 +450,9 @@ section__text
     color:#fff !important;
 }
 /*sign in*/
+#user_setting {
+    padding: 100px 0;
+}
 .sign {
     display: block;
     position: relative;

@@ -1,10 +1,12 @@
 ﻿using CinemaApp.Business.DTOs;
+using CinemaApp.Business.Exceptions.UserExceptions;
 using CinemaApp.DataAcces.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace CinemaApp.UI.Controllers
@@ -26,75 +28,73 @@ namespace CinemaApp.UI.Controllers
             _context = context;
         }
 
-        public IActionResult ChangeSetting()
+        public async Task<IActionResult> ChangeSetting()
         {
+            ClaimsPrincipal currentUser = User;
+            var user = await _userManager.GetUserAsync(User);
+            UserSettingDto userSettingDto = new UserSettingDto
+            {
+                UserName = user.UserName
+            };
             return View();
         }
 
-        //public async Task<IActionResult> ChangeSetting(UserSettingDto userSettingDto)
-        //{
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangeSetting(UserSettingDto userSetting)
+        {
+            if (!ModelState.IsValid) return View(userSetting);
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "User is Not Found");
+                return View(userSetting);
+            }
 
-        //}
+            try
+            {
+                if (userSetting.UserName != null)
+                {
+                    await ChangeUserName(user, userSetting);
+                }
+                if (userSetting.CurrentPassword != null && userSetting.NewPassword != null)
+                {
+                    await ChangePassword(user, userSetting);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(String.Empty, ex.Message.ToString());
+                return View(userSetting);
+            }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> ChangePassword(ChangePasswordDTO password)
-        //{
-        //    if (!ModelState.IsValid) return View(password);
-        //    var user = await _userManager.GetUserAsync(User);
-        //    if (user == null)
-        //    {
-        //        ModelState.AddModelError(string.Empty, "User is Not Found");
-        //        return View();
-        //    }
-        //    var checkPasword = await _userManager.CheckPasswordAsync(user, password.CurrentPassword);
-        //    if (!checkPasword)
-        //    {
-        //        ModelState.AddModelError(string.Empty, "Incorrect Password");
-        //        return View(password);
-        //    }
-        //    var result = await _userManager.ChangePasswordAsync(user, password.CurrentPassword,
-        //                                                                password.NewPassword);
-        //    if (!result.Succeeded)
-        //    {
-        //        foreach (var error in result.Errors)
-        //        {
-        //            ModelState.AddModelError(string.Empty, error.Description);
-        //        }
-        //        return View(password);
-        //    }
-        //    await _signInManager.RefreshSignInAsync(user);
-        //    return RedirectToAction("Index", "Home");
-        //}
+            return RedirectToAction("Index", "Home");
+        }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> ChangeUsername(ChangeUserNameDTO username)
-        //{
-        //    if (!ModelState.IsValid) return View(username);
-        //    var user = await _userManager.GetUserAsync(User);
-        //    if (user == null)
-        //    {
-        //        ModelState.AddModelError(string.Empty, "User is Not Found");
-        //        return View(username);
-        //    }
-        //    var checkPasword = await _userManager.CheckPasswordAsync(user, username.Password);
-        //    if (!checkPasword)
-        //    {
-        //        ModelState.AddModelError(string.Empty, "Incorrect Password");
-        //        return View(username);
-        //    }
-        //    var result = await _userManager.SetUserNameAsync(user, username.NewUsername);
-        //    if (!result.Succeeded)
-        //    {
-        //        foreach (var error in result.Errors)
-        //        {
-        //            ModelState.AddModelError(string.Empty, error.Description);
-        //        }
-        //        return View(username);
-        //    }
-        //    await _signInManager.RefreshSignInAsync(user);
-        //    return RedirectToAction("Index", "Home");
-        //}
+        public async Task ChangeUserName(IdentityUser User , UserSettingDto userSettingDto)
+        {
+            var result = await _userManager.SetUserNameAsync(User, userSettingDto.UserName);
+            if (!result.Succeeded)
+            {
+                throw new SetUserNameException("User name invalid");
+            }
+            await _signInManager.RefreshSignInAsync(User);
+           
+        }
+
+        public async Task ChangePassword(IdentityUser User, UserSettingDto userSettingDto)
+        {
+            var result = await _userManager.ChangePasswordAsync(User, userSettingDto.CurrentPassword,
+                                                                        userSettingDto.NewPassword);
+            if (!result.Succeeded)
+            {
+                throw new SetPasswordException("Invalid Password");
+            }
+            await _signInManager.RefreshSignInAsync(User);
+
+        }
+
+        
+
     }
 }

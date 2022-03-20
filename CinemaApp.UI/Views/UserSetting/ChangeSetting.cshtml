@@ -1,7 +1,70 @@
-﻿
+﻿@model UserSettingDto
 @{
     ViewData["Title"] = "ChangeSetting";
 }
 
-<h1>ChangeSetting</h1>
+<section id="user_setting">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="sign__wrap">
+                    <div class="row">
+                        <!-- password form -->
+                        <div class="col-lg-12">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <form method="post" class="sign__form sign__form--profile">
+                                
+                                    <div class="col-lg-3 d-flex justify-content-center">
+                                        <h4 class="sign__title">Change setting</h4>
+                                    </div>
+
+                                    
+
+                                        
+                                    <div class="col-12 col-md-6 col-lg-6">
+                                        <div class="sign__group mt-5">
+                                            <label class="sign__label" asp-for="UserName">Login</label>
+                                            <input asp-for="UserName" class="sign__input" placeholder="username">
+                                        </div>
+                                    </div>
+                                       
+
+                                      
+
+                                    <div class="col-12 col-md-6 col-lg-4 ">
+                                        <div class="sign__group">
+                                            <label class="sign__label" asp-for="CurrentPassword">Current password</label>
+                                            <input asp-for="CurrentPassword" class="sign__input">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-3 ">
+                                        <div class="sign__group">
+                                            <label class="sign__label" asp-for="NewPassword">New password</label>
+                                            <input asp-for="NewPassword" class="sign__input">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6 col-lg-3 ">
+                                        <div class="sign__group">
+                                            <label class="sign__label" asp-for="ConfirmNewPassword">Confirm new password</label>
+                                            <input asp-for="ConfirmNewPassword" class="sign__input">
+                                        </div>
+                                    </div>
+                                       
+
+
+                                    <div class="col-lg-2 d-flex justify-content-center">
+                                        <button class="sign__btn" type="submit">Change</button>
+                                    </div>
+                               
+                            </form>
+                        </div>
+                        <!-- end password form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 

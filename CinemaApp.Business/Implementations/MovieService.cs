@@ -190,9 +190,52 @@ namespace CinemaApp.Business.Implementations
             throw new NotImplementedException();
         }
 
-        public Task UpdateAsync(int id, MovieUpdateDto updateDto)
+        public async Task UpdateAsync(int id, MovieUpdateDto updateDto)
         {
-            throw new NotImplementedException();
+            var dbMovie = await _unitOfWork.movieRepository
+                                        .GetAsync(c => c.Id == id);
+
+            if (dbMovie == null) throw new NullReferenceException();
+
+            if (updateDto.PosterFile != null)
+            {
+                /*File upload start*/
+                if (!updateDto.PosterFile.CheckFileType("image/"))
+                {
+                    throw new FileTypeException("File must be image type");
+                }
+                if (!updateDto.PosterFile.CheckFileSize(300))
+                {
+                    throw new FileTypeException("File must be less than 300kb");
+                }
+
+
+                string root = Path.Combine(_env.WebRootPath, "assets", "image");
+                string FileName = dbMovie.PosterUrl;
+                string resultPath = Path.Combine(root, FileName);
+
+                if (System.IO.File.Exists(resultPath))
+                {
+                    System.IO.File.Delete(resultPath);
+                }
+
+                string UpdatedFileName = await updateDto.PosterFile.SaveFileAsync(root);
+                dbMovie.PosterUrl = UpdatedFileName;
+
+                /*File upload end*/
+            }
+
+            dbMovie.MovieName = updateDto.MovieName != null ? updateDto.MovieName : dbMovie.MovieName;
+            dbMovie.TrailerUrl = updateDto.TrailerUrl != null ? updateDto.TrailerUrl : dbMovie.TrailerUrl;
+            dbMovie.AboutContent = updateDto.AboutContent != null ? updateDto.AboutContent : dbMovie.AboutContent;
+            dbMovie.ImdbPoint = updateDto.ImdbPoint != null ? updateDto.ImdbPoint : dbMovie.ImdbPoint;
+            dbMovie.AgeLimit = updateDto.AgeLimit != null ? updateDto.AgeLimit : dbMovie.AgeLimit;
+            dbMovie.Country = updateDto.Country != null ? updateDto.Country : dbMovie.Country;
+            dbMovie.Director = updateDto.Director != null ? updateDto.Director : dbMovie.Director;
+            dbMovie.Duration = updateDto.Duration != null ? updateDto.Duration : dbMovie.Duration;
+
+
+            await _unitOfWork.SavechangeAsync();
         }
     }
 }

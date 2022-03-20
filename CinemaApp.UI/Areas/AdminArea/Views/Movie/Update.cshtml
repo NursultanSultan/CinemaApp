@@ -3,76 +3,120 @@
     ViewData["Title"] = "Update";
 }
 
-<div class="col-md-12 m-5 grid-margin stretch-card">
-    <div class="card">
-        <div class="card-body">
+<div class="container-fluid">
+    <div class="row mt-5">
 
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <form class="forms-sample" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label asp-for="MovieName"></label>
-                    <input asp-for="MovieName" class="form-control">
-                    <span asp-validation-for="MovieName" class="text-danger"></span>
+        <div class="col-12">
+            <form method="post" class="form" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-12 col-md-5 form__cover">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="form__img form__group">
+                                    <label asp-for="PosterFile"></label>
+                                    <input accept="image/" asp-for="PosterFile" class="form-control">
+                                    <span asp-validation-for="PosterFile" class="text-danger"></span>
+                                    @*<img id="form__img" src="#" alt=" ">*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-7 form__content">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form__group">
+                                    <input asp-for="MovieName" class="form__input" placeholder="Movie Name">
+                                    <span asp-validation-for="MovieName" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form__group">
+                                    <textarea asp-for="AboutContent" class="form__textarea" placeholder="Description"></textarea>
+                                    <span asp-validation-for="AboutContent" class="text-danger"></span>
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="form__group">
+                                    <label asp-for="ImdbPoint">IMDB point</label>
+                                    <input asp-for="ImdbPoint" class="form__input" placeholder="IMDB point">
+                                    <span asp-validation-for="ImdbPoint" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="form__group">
+                                    <label asp-for="AgeLimit"></label>
+                                    <input asp-for="AgeLimit" class="form__input" placeholder="Age limit">
+                                    <span asp-validation-for="AgeLimit" class="text-danger"></span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="form__group">
+                                    <label asp-for="Duration">Duration</label>
+                                    <input asp-for="Duration" class="form__input" placeholder="Duration">
+                                    <span asp-validation-for="Duration" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="form__group">
+                                    <input asp-for="Country" class="form__input" placeholder="Country">
+                                    <span asp-validation-for="Country" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6 col-lg-4">
+                                <div class="form__group form__group--link">
+                                    <input asp-for="Director" class="form__input" placeholder="Director">
+                                    <span asp-validation-for="Director" class="text-danger"></span>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="form__video">
+                                    <label id="movie1" asp-for="BackgroundImgFile">Upload background image</label>
+                                    <input accept="image/" asp-for="BackgroundImgFile" class="form__input">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <div class="form__group form__group--link">
+                                    <input asp-for="TrailerUrl" class="form__input" placeholder="Trailer url">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col-12">
+                        <div class="row">
+
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary me-2">Edit</button>
+                                <button asp-controller="Movie" asp-action="Index" class="btn btn-dark">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label asp-for="TrailerUrl"></label>
-                    <input asp-for="TrailerUrl" class="form-control">
-                    <span asp-validation-for="TrailerUrl" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="AboutContent"></label>
-                    <input asp-for="AboutContent" class="form-control">
-                    <span asp-validation-for="AboutContent" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="ImdbPoint"></label>
-                    <input asp-for="ImdbPoint" class="form-control">
-                    <span asp-validation-for="ImdbPoint" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="AgeLimit"></label>
-                    <input asp-for="AgeLimit" class="form-control">
-                    <span asp-validation-for="AgeLimit" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Country"></label>
-                    <input asp-for="Country" class="form-control">
-                    <span asp-validation-for="Country" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Director"></label>
-                    <input asp-for="Director" class="form-control">
-                    <span asp-validation-for="Director" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Duration"></label>
-                    <input asp-for="Duration" class="form-control">
-                    <span asp-validation-for="Duration" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="PosterFile"></label>
-                    <input accept="image/" asp-for="PosterFile" class="form-control">
-                    <span asp-validation-for="PosterFile" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="BackgroundImgFile"></label>
-                    <input accept="image/" asp-for="BackgroundImgFile" class="form-control">
-                    <span asp-validation-for="BackgroundImgFile" class="text-danger"></span>
-                </div>
-
-                <button type="submit" class="btn btn-primary me-2">Create</button>
-                <button asp-controller="Movie" asp-action="Index" class="btn btn-dark">Cancel</button>
             </form>
         </div>
+        <!-- end form -->
     </div>
 </div>
 
