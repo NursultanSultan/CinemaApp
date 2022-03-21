@@ -208,3 +208,4 @@ C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\News\Update.cshtml.g.cs
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\ContactUs\Create.cshtml.g.cs
 C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminArea\Views\ContactUs\Index.cshtml.g.cs
+C:\Users\Home\source\repos\CinemaApp\CinemaApp.UI\obj\Debug\netcoreapp3.1\Razor\Views\Platinium\Index.cshtml.g.cs
