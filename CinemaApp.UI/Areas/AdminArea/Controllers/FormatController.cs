@@ -2,6 +2,7 @@
 using CinemaApp.Business.DTOs.FormatDtos;
 using CinemaApp.Business.Interfaces;
 using CinemaApp.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 namespace CinemaApp.UI.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
     public class FormatController : Controller
     {
         private IUnitOfWork _unitOfWork { get; }

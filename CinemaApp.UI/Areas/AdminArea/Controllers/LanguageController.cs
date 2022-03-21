@@ -3,6 +3,7 @@ using CinemaApp.Business.DTOs.LanguageDtos;
 using CinemaApp.Business.Interfaces;
 using CinemaApp.Business.Utilities.File;
 using CinemaApp.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,6 +15,7 @@ using System.Threading.Tasks;
 namespace CinemaApp.UI.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
     public class LanguageController : Controller
     {
 

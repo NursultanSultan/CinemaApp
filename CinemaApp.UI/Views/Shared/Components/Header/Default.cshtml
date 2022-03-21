@@ -74,7 +74,7 @@
                         }
                         else
                         {   
-                            <a asp-controller="Account" asp-action="Login" class="header__sign-in">
+                            <a asp-controller="Account" asp-action="Login" asp-route-ReturnUrl="@Context.Request.Path.Value" class="header__sign-in">
                                 <i class="icon ion-ios-log-in"></i>
                                 <span>sign in</span>
                             </a>

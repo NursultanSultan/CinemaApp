@@ -2,6 +2,7 @@
 using CinemaApp.Business.Interfaces;
 using CinemaApp.Core;
 using CinemaApp.Entity.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 namespace CinemaApp.UI.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
     public class NewsController : Controller
     {
         private IUnitOfWork _unitOfWork { get; }
