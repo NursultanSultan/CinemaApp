@@ -48,6 +48,7 @@ namespace CinemaApp.UI
             services.AddScoped<ILanguageService, LanguageService>();
             services.AddScoped<IFormatService, FormatService>();
             services.AddScoped<INewsService, NewsService>();
+            services.AddScoped<IContactUsService, ContactUsService>();
 
             services.AddIdentity<IdentityUser, IdentityRole>(opt => { opt.SignIn.RequireConfirmedEmail = true; })
                     .AddEntityFrameworkStores<AppDbContext>()

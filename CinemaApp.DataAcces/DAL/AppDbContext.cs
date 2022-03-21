@@ -30,6 +30,7 @@ namespace CinemaApp.DataAcces.DAL
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<News> News { get; set; }
+        public DbSet<ContactUs> ContactUs { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,6 +44,7 @@ namespace CinemaApp.DataAcces.DAL
             modelBuilder.ApplyConfiguration(new SessionConfiguration());
             modelBuilder.ApplyConfiguration(new CommentConfiguration());
             modelBuilder.ApplyConfiguration(new NewsConfiguration());
+            modelBuilder.ApplyConfiguration(new ContactUsConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
