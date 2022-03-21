@@ -46,7 +46,13 @@
                             </li>
                             <li>
                                 <span>Janr : </span>
-                                <div class="list-detail">Action</div>
+                                @foreach (var category in Model.MovieCategories)
+                                {
+                                    <div class="list-detail">
+                                        @category.Category.CategoryName
+                                    </div>
+                                }
+
                             </li>
                             <li>
                                 <span>Olke : </span>
@@ -75,7 +81,7 @@
 
 
     <!-- tab start -->
-    <section id="tabs">
+    <!--<section id="tabs">
         <div class="tab_header">
             <a href="#Session" class="active btn" id="session" rel="session">Seanslar</a>
 
@@ -232,7 +238,7 @@
             </div>
 
         </div>
-    </section>
+    </section>-->
     <!-- tab end -->
 
     <!-- movie comment start -->

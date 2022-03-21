@@ -153,7 +153,7 @@
 
             </div>
             <div class="tab-pane fade" id="pills-schedule" role="tabpanel" aria-labelledby="pills-profile-tab">
-                <div class="schedule_list tab_list">
+                @*<div class="schedule_list tab_list">
 
                     <div class="container">
 
@@ -239,7 +239,7 @@
 
                     </div>
 
-                </div>
+                </div>*@
             </div>
             <div class="tab-pane fade" id="pills-cinema" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <div class="cinema_list tab_list mt-3">
@@ -280,13 +280,13 @@
                             @foreach (var category in Model.Categories)
                             {
                                 <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                                    <a href="category.html" class="category">
+                                    <div href="category.html" class="category">
                                         <div class="category__cover">
                                             <img src="~/assets/image/@category.CategoryImageURL" alt="Alternate Text" />
                                         </div>
                                         <h3 class="category__title">@category.CategoryName</h3>
                                         @*<span class="category__value">322</span>*@
-                                    </a>
+                                    </div>
                                 </div>
                             }
 

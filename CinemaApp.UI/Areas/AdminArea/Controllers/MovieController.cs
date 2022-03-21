@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace CinemaApp.UI.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
-    public class MovieController : Controller
+    public class MovieController : Controller 
     {
         private IUnitOfWork _unitOfWork { get; }
         private IMapper _mapper { get; }

@@ -63,7 +63,7 @@ namespace CinemaApp.UI.Controllers
 
 
             var result = await _context.Movies
-                                .Where(m => MovieCineIds.Contains(m.Id) && MovieLangIds.Contains(m.Id))
+                                .Where(m => MovieCineIds.Contains(m.Id) && MovieLangIds.Contains(m.Id) && !m.IsDeleted)
                                 .Include(m => m.MovieCategories)
                                 .ThenInclude(m => m.Category)
                                 .ToListAsync();

@@ -31,6 +31,8 @@ namespace CinemaApp.UI.Controllers
             var movie = _context.Movies.Where(m => m.Id == Id)
                 .Include(m => m.Comments)
                 .ThenInclude(m => m.User)
+                .Include(m => m.MovieCategories)
+                .ThenInclude(m => m.Category)
                 .FirstOrDefault();
             return View(movie);
         }

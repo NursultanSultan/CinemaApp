@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -78,7 +77,7 @@ namespace CinemaApp.Business.Implementations
             {
                 throw new FileTypeException("File must be image type");
             }
-            if (!file.CheckFileSize(300))
+            if (!file.CheckFileSize(2000))
             {
                 throw new FileTypeException("File must be less than 300kb");
             }
@@ -235,11 +234,11 @@ namespace CinemaApp.Business.Implementations
             dbMovie.MovieName = updateDto.MovieName != null ? updateDto.MovieName : dbMovie.MovieName;
             dbMovie.TrailerUrl = updateDto.TrailerUrl != null ? updateDto.TrailerUrl : dbMovie.TrailerUrl;
             dbMovie.AboutContent = updateDto.AboutContent != null ? updateDto.AboutContent : dbMovie.AboutContent;
-            dbMovie.ImdbPoint = updateDto.ImdbPoint != null ? updateDto.ImdbPoint : dbMovie.ImdbPoint;
-            dbMovie.AgeLimit = updateDto.AgeLimit != null ? updateDto.AgeLimit : dbMovie.AgeLimit;
+            dbMovie.ImdbPoint = updateDto.ImdbPoint != 0 ? updateDto.ImdbPoint : dbMovie.ImdbPoint;
+            dbMovie.AgeLimit = updateDto.AgeLimit != 0 ? updateDto.AgeLimit : dbMovie.AgeLimit;
             dbMovie.Country = updateDto.Country != null ? updateDto.Country : dbMovie.Country;
             dbMovie.Director = updateDto.Director != null ? updateDto.Director : dbMovie.Director;
-            dbMovie.Duration = updateDto.Duration != null ? updateDto.Duration : dbMovie.Duration;
+            dbMovie.Duration = updateDto.Duration != 0 ? updateDto.Duration : dbMovie.Duration;
 
 
             await _unitOfWork.SavechangeAsync();
